@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -29,8 +30,7 @@
 
 /* =========================================================
    DRC CC 121 — 10 YEARS
-   CINEMATIC PC PRESENTATION
-   MASTER TARGET : 1920 × 1080
+   CINEMATIC ANNIVERSARY PRESENTATION
    ========================================================= */
 
 
@@ -86,7 +86,9 @@ body{
 
     --blue:#1c789e;
     --blue2:#4aa2c2;
+
     --dark:#153e52;
+
     --muted:#65818f;
 
     --white:#ffffff;
@@ -172,13 +174,6 @@ body{
         );
 
     filter:blur(8px);
-
-    transform:
-        translate3d(0,0,0)
-        scale(1);
-
-    transition:
-        transform 2s var(--ease);
 
 }
 
@@ -517,9 +512,7 @@ body{
     transform:scale(1);
 
     transition:
-
         opacity 1.5s ease,
-
         transform 1.8s var(--ease);
 
 }
@@ -574,29 +567,18 @@ body{
     opacity:0;
 
     transform:
-
-        translate3d(
-            -50%,
-            -50%,
-            -650px
-        )
-
+        translate3d(-50%,-50%,-650px)
         scale(.4);
 
     filter:
-
         blur(18px)
-
         drop-shadow(
             0 35px 70px rgba(20,80,110,.16)
         );
 
     transition:
-
         opacity 1.1s ease,
-
         transform 2.2s var(--ease),
-
         filter 1.6s ease;
 
 }
@@ -606,19 +588,11 @@ body{
     opacity:1;
 
     transform:
-
-        translate3d(
-            -50%,
-            -50%,
-            100px
-        )
-
+        translate3d(-50%,-50%,100px)
         scale(1);
 
     filter:
-
         blur(0)
-
         drop-shadow(
             0 35px 70px rgba(20,80,110,.18)
         );
@@ -642,15 +616,11 @@ body{
     opacity:0;
 
     transition:
-
         opacity 1s ease,
-
         transform 1.6s var(--ease),
-
         filter 1.2s ease;
 
-    filter:
-        blur(9px);
+    filter:blur(9px);
 
 }
 
@@ -685,11 +655,9 @@ body{
 
     opacity:1;
 
-    filter:
-        blur(0);
+    filter:blur(0);
 
     transform:
-
         translate3d(0,0,40px)
         rotateY(0)
         scale(1);
@@ -732,9 +700,7 @@ body{
         translate3d(-50%,40px,0);
 
     transition:
-
         opacity 1s ease,
-
         transform 1.2s var(--ease);
 
     transition-delay:2s;
@@ -909,27 +875,24 @@ body{
     justify-content:center;
 
     padding:
-        80px
-        100px
-        110px;
+        70px
+        90px
+        100px;
 
     opacity:0;
 
     visibility:hidden;
 
     transform:
-        translate3d(80px,0,0)
-        scale(1.035);
+        translate3d(70px,0,0)
+        scale(1.025);
 
-    filter:blur(10px);
+    filter:blur(8px);
 
     transition:
-
-        opacity .85s ease,
-
-        transform 1.2s var(--ease),
-
-        filter 1s ease;
+        opacity .75s ease,
+        transform 1s var(--ease),
+        filter .85s ease;
 
 }
 
@@ -949,21 +912,6 @@ body{
 
 
 /* =========================================================
-   SCENE BACKGROUND
-   ========================================================= */
-
-.scene-bg{
-
-    position:absolute;
-
-    inset:0;
-
-    z-index:-10;
-
-}
-
-
-/* =========================================================
    SCENE CONTENT
    ========================================================= */
 
@@ -974,7 +922,7 @@ body{
     width:min(1550px,100%);
 
     max-height:
-        calc(100vh - 150px);
+        calc(100vh - 140px);
 
     z-index:50;
 
@@ -993,7 +941,7 @@ body{
 
     gap:18px;
 
-    margin-bottom:25px;
+    margin-bottom:22px;
 
     font-size:12px;
 
@@ -1038,7 +986,7 @@ body{
     font-family:"Manrope",sans-serif;
 
     font-size:
-        clamp(62px,6.2vw,118px);
+        clamp(55px,6vw,112px);
 
     line-height:.88;
 
@@ -1061,7 +1009,7 @@ body{
 
     animation:
         textEnter
-        1s
+        .9s
         .23s
         var(--ease)
         forwards;
@@ -1079,9 +1027,9 @@ body{
 
     max-width:1000px;
 
-    margin-top:34px;
+    margin-top:30px;
 
-    font-size:27px;
+    font-size:26px;
 
     line-height:1.5;
 
@@ -1098,7 +1046,7 @@ body{
 
     animation:
         textEnter
-        .9s
+        .8s
         .4s
         var(--ease)
         forwards;
@@ -1110,11 +1058,11 @@ body{
 
     max-width:1000px;
 
-    margin-top:24px;
+    margin-top:22px;
 
     font-size:16px;
 
-    line-height:1.75;
+    line-height:1.7;
 
     color:#66808d;
 
@@ -1129,7 +1077,7 @@ body{
 
     animation:
         textEnter
-        .9s
+        .8s
         .55s
         var(--ease)
         forwards;
@@ -1141,11 +1089,11 @@ body{
 
     max-width:1000px;
 
-    margin-top:30px;
+    margin-top:26px;
 
     font-family:"Manrope",sans-serif;
 
-    font-size:26px;
+    font-size:24px;
 
     line-height:1.45;
 
@@ -1164,7 +1112,7 @@ body{
 
     animation:
         textEnter
-        .9s
+        .8s
         .65s
         var(--ease)
         forwards;
@@ -1197,7 +1145,7 @@ body{
         .84fr
         1.16fr;
 
-    gap:90px;
+    gap:80px;
 
     align-items:center;
 
@@ -1275,6 +1223,11 @@ body{
         1.2s
         .2s
         var(--ease)
+        forwards,
+        kenBurnsMain
+        8s
+        1.3s
+        ease-in-out
         forwards;
 
 }
@@ -1305,19 +1258,6 @@ body{
 
 }
 
-
-/* =========================================================
-   KEN BURNS
-   ========================================================= */
-
-.scene.active .photo-main{
-
-    animation:
-        photoMain 1.2s .2s var(--ease) forwards,
-        kenBurnsMain 8s 1.3s ease-in-out forwards;
-
-}
-
 @keyframes kenBurnsMain{
 
     from{
@@ -1342,294 +1282,7 @@ body{
 
 
 /* =========================================================
-   SMALL PHOTOS
-   ========================================================= */
-
-.photo-small{
-
-    position:absolute;
-
-    width:35%;
-    height:32%;
-
-    border-radius:15px;
-
-    z-index:7;
-
-    opacity:0;
-
-    box-shadow:
-        0 25px 60px rgba(20,80,110,.16);
-
-}
-
-.p2{
-
-    top:2%;
-    right:2%;
-
-}
-
-.p3{
-
-    right:0;
-    bottom:3%;
-
-}
-
-.p4{
-
-    left:20%;
-    bottom:0;
-
-}
-
-.p5{
-
-    left:0;
-    bottom:18%;
-
-}
-
-
-.scene.active .p2{
-
-    animation:
-        small2
-        1s
-        .42s
-        var(--ease)
-        forwards;
-
-}
-
-.scene.active .p3{
-
-    animation:
-        small3
-        1s
-        .52s
-        var(--ease)
-        forwards;
-
-}
-
-.scene.active .p4{
-
-    animation:
-        small4
-        1s
-        .62s
-        var(--ease)
-        forwards;
-
-}
-
-.scene.active .p5{
-
-    animation:
-        small5
-        1s
-        .72s
-        var(--ease)
-        forwards;
-
-}
-
-
-@keyframes small2{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translate3d(100px,-70px,0)
-            rotate(15deg)
-            scale(.8);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            rotate(5deg)
-            scale(1);
-
-    }
-
-}
-
-@keyframes small3{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translate3d(100px,70px,0)
-            rotate(-15deg)
-            scale(.8);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            rotate(-4deg)
-            scale(1);
-
-    }
-
-}
-
-@keyframes small4{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translate3d(-50px,70px,0)
-            rotate(15deg)
-            scale(.8);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            rotate(3deg)
-            scale(1);
-
-    }
-
-}
-
-@keyframes small5{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translate3d(-70px,30px,0)
-            rotate(-15deg)
-            scale(.8);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            rotate(-5deg)
-            scale(1);
-
-    }
-
-}
-
-
-/* =========================================================
-   PHOTO STRIP
-   ========================================================= */
-
-.photo-strip{
-
-    display:grid;
-
-    grid-template-columns:
-        1.35fr
-        1fr
-        1fr
-        1fr;
-
-    gap:16px;
-
-    margin-top:45px;
-
-}
-
-.photo-strip img{
-
-    width:100%;
-    height:300px;
-
-    object-fit:cover;
-
-    border-radius:16px;
-
-    opacity:0;
-
-    transform:
-        translate3d(0,45px,0)
-        scale(.97);
-
-    box-shadow:
-        0 28px 60px rgba(20,80,110,.14);
-
-}
-
-.scene.active .photo-strip img{
-
-    animation:
-        stripEnter
-        .9s
-        var(--delay)
-        var(--ease)
-        forwards;
-
-}
-
-.photo-strip img:nth-child(1){
-    --delay:.2s;
-}
-
-.photo-strip img:nth-child(2){
-    --delay:.34s;
-}
-
-.photo-strip img:nth-child(3){
-    --delay:.48s;
-}
-
-.photo-strip img:nth-child(4){
-    --delay:.62s;
-}
-
-@keyframes stripEnter{
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translate3d(0,0,0)
-            scale(1);
-
-    }
-
-}
-
-.photo-strip img:nth-child(even){
-
-    transform:
-        translate3d(0,70px,0)
-        scale(.96);
-
-}
-
-
-/* =========================================================
-   HUGE 10
+   BIG NUMBER
    ========================================================= */
 
 .big-number{
@@ -1690,6 +1343,423 @@ body{
             scale(1);
 
     }
+
+}
+
+
+/* =========================================================
+   MEMORY / EMPLOYEE GALLERY
+   ========================================================= */
+
+.gallery-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-top:25px;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:.35em;
+
+    color:#66808d;
+
+}
+
+.gallery-title::before{
+
+    content:"";
+
+    width:40px;
+
+    height:1px;
+
+    background:#2b83a5;
+
+}
+
+
+.memory-gallery{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:22px;
+
+    margin-top:28px;
+
+    perspective:1200px;
+
+}
+
+
+.employee-gallery{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(6,1fr);
+
+    gap:18px;
+
+    margin-top:30px;
+
+    perspective:1200px;
+
+}
+
+
+/* =========================================================
+   PHOTO FRAME
+   ========================================================= */
+
+.memory-card,
+.employee-card{
+
+    position:relative;
+
+    padding:
+        10px
+        10px
+        15px;
+
+    background:#fff;
+
+    border-radius:7px;
+
+    box-shadow:
+        0 18px 42px rgba(25,85,110,.15),
+        0 3px 8px rgba(25,85,110,.07);
+
+    overflow:visible;
+
+    opacity:0;
+
+    transform:
+        translate3d(0,60px,0)
+        rotate(var(--rotate))
+        scale(.88);
+
+    will-change:
+        transform,
+        opacity;
+
+    transition:
+        transform .45s var(--ease),
+        box-shadow .35s ease;
+
+}
+
+
+/* =========================================================
+   PHOTO
+   ========================================================= */
+
+.memory-card img,
+.employee-card img{
+
+    display:block;
+
+    width:100%;
+
+    aspect-ratio:4 / 3;
+
+    object-fit:cover;
+
+    border-radius:3px;
+
+    background:#dceff5;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+
+/* =========================================================
+   FRAME INNER LINE
+   ========================================================= */
+
+.memory-card::after,
+.employee-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:7px;
+
+    border:
+        1px solid rgba(30,100,130,.10);
+
+    border-radius:4px;
+
+    pointer-events:none;
+
+}
+
+
+/* =========================================================
+   PAPER TAPE
+   ========================================================= */
+
+.memory-card::before,
+.employee-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:55px;
+
+    height:16px;
+
+    top:-8px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-3deg);
+
+    background:
+        rgba(255,245,200,.86);
+
+    box-shadow:
+        0 2px 6px rgba(40,80,90,.08);
+
+    z-index:10;
+
+}
+
+
+/* =========================================================
+   MEMORY PHOTO ANIMATION
+   ========================================================= */
+
+.scene.active .memory-card,
+.scene.active .employee-card{
+
+    animation:
+        memoryPhotoIn
+        .8s
+        var(--delay)
+        var(--ease)
+        forwards;
+
+}
+
+@keyframes memoryPhotoIn{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translate3d(
+                var(--from-x),
+                var(--from-y),
+                0
+            )
+            rotate(
+                calc(var(--rotate) * 2)
+            )
+            scale(.78);
+
+    }
+
+    65%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+            translate3d(0,0,0)
+            rotate(var(--rotate))
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   PHOTO HOVER
+   ========================================================= */
+
+.memory-card:hover,
+.employee-card:hover{
+
+    z-index:100;
+
+    transform:
+        translateY(-13px)
+        rotate(0deg)
+        scale(1.055) !important;
+
+    box-shadow:
+        0 30px 65px rgba(25,85,110,.23),
+        0 5px 12px rgba(25,85,110,.10);
+
+}
+
+
+/* =========================================================
+   MEMORY CARD VARIATIONS
+   ========================================================= */
+
+.memory-card:nth-child(1){
+
+    --rotate:-3deg;
+    --delay:.10s;
+    --from-x:-90px;
+    --from-y:60px;
+
+}
+
+.memory-card:nth-child(2){
+
+    --rotate:2deg;
+    --delay:.22s;
+    --from-x:60px;
+    --from-y:-70px;
+
+}
+
+.memory-card:nth-child(3){
+
+    --rotate:-1.5deg;
+    --delay:.34s;
+    --from-x:80px;
+    --from-y:60px;
+
+}
+
+.memory-card:nth-child(4){
+
+    --rotate:3deg;
+    --delay:.46s;
+    --from-x:-70px;
+    --from-y:-60px;
+
+}
+
+.memory-card:nth-child(5){
+
+    --rotate:-2deg;
+    --delay:.58s;
+    --from-x:70px;
+    --from-y:50px;
+
+}
+
+
+/* =========================================================
+   EMPLOYEE CARD VARIATIONS
+   ========================================================= */
+
+.employee-card{
+
+    --delay:.12s;
+
+    --from-x:0;
+
+    --from-y:50px;
+
+}
+
+.employee-card:nth-child(1){
+
+    --rotate:-2deg;
+    --delay:.10s;
+    --from-x:-60px;
+    --from-y:50px;
+
+}
+
+.employee-card:nth-child(2){
+
+    --rotate:2deg;
+    --delay:.20s;
+    --from-x:-25px;
+    --from-y:-55px;
+
+}
+
+.employee-card:nth-child(3){
+
+    --rotate:-1deg;
+    --delay:.30s;
+    --from-x:25px;
+    --from-y:55px;
+
+}
+
+.employee-card:nth-child(4){
+
+    --rotate:3deg;
+    --delay:.40s;
+    --from-x:55px;
+    --from-y:-55px;
+
+}
+
+.employee-card:nth-child(5){
+
+    --rotate:-2.5deg;
+    --delay:.50s;
+    --from-x:30px;
+    --from-y:60px;
+
+}
+
+.employee-card:nth-child(6){
+
+    --rotate:1.5deg;
+    --delay:.60s;
+    --from-x:-55px;
+    --from-y:-50px;
+
+}
+
+
+/* =========================================================
+   MEMORY SCENE
+   ========================================================= */
+
+.memory-scene h2{
+
+    font-size:
+        clamp(48px,5vw,90px);
+
+}
+
+
+/* =========================================================
+   EMPLOYEE SCENE
+   ========================================================= */
+
+.employee-scene h2{
+
+    font-size:
+        clamp(45px,4.7vw,86px);
 
 }
 
@@ -1993,6 +2063,7 @@ body{
 .humor .quote{
 
     margin-left:auto;
+
     margin-right:auto;
 
 }
@@ -2098,10 +2169,11 @@ body{
 .final h2{
 
     margin-left:auto;
+
     margin-right:auto;
 
     font-size:
-        clamp(70px,7vw,128px);
+        clamp(65px,6.8vw,125px);
 
 }
 
@@ -2189,7 +2261,7 @@ body{
 
 
 /* =========================================================
-   CINEMATIC CONTROLS
+   CONTROLS
    ========================================================= */
 
 .controls{
@@ -2233,9 +2305,7 @@ body{
     opacity:0;
 
     transition:
-
         opacity .45s ease,
-
         transform .45s var(--ease);
 
 }
@@ -2270,14 +2340,13 @@ body{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     font-size:17px;
 
     transition:
-
         transform .25s var(--ease),
-
         background .2s ease;
 
 }
@@ -2338,6 +2407,7 @@ body{
     position:absolute;
 
     top:28px;
+
     right:35px;
 
     z-index:700;
@@ -2370,7 +2440,7 @@ body{
 
 
 /* =========================================================
-   CINEMATIC VIGNETTE
+   VIGNETTE
    ========================================================= */
 
 .vignette{
@@ -2499,18 +2569,344 @@ body{
 
 
 /* =========================================================
-   FULLSCREEN MODE
+   RESPONSIVE
    ========================================================= */
 
-:fullscreen .counter{
+@media(max-width:1400px){
 
-    top:25px;
+    .scene{
+
+        padding:
+            55px
+            65px
+            90px;
+
+    }
+
+    .memory-gallery{
+
+        gap:16px;
+
+    }
+
+    .employee-gallery{
+
+        gap:13px;
+
+    }
+
+    .memory-card{
+
+        padding:
+            8px
+            8px
+            12px;
+
+    }
+
+    .employee-card{
+
+        padding:
+            7px
+            7px
+            10px;
+
+    }
 
 }
 
-:fullscreen .controls{
 
-    bottom:22px;
+@media(max-width:1100px){
+
+    .scene{
+
+        padding:
+            45px
+            45px
+            85px;
+
+    }
+
+    .scene h2{
+
+        font-size:
+            clamp(44px,5.5vw,78px);
+
+    }
+
+    .lead{
+
+        font-size:21px;
+
+    }
+
+    .memory-gallery{
+
+        grid-template-columns:
+            repeat(5,1fr);
+
+        gap:11px;
+
+    }
+
+    .employee-gallery{
+
+        grid-template-columns:
+            repeat(6,1fr);
+
+        gap:9px;
+
+    }
+
+    .memory-card,
+    .employee-card{
+
+        padding:
+            6px
+            6px
+            9px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL SCREEN
+   ========================================================= */
+
+@media(max-width:850px){
+
+    .opening-text h1{
+
+        font-size:58px;
+
+    }
+
+    .logo-main{
+
+        width:420px;
+
+    }
+
+    .logo-kai{
+
+        width:120px;
+
+        left:6%;
+
+    }
+
+    .logo-wisata{
+
+        width:135px;
+
+        right:6%;
+
+    }
+
+    .scene{
+
+        overflow:auto;
+
+        align-items:flex-start;
+
+        padding:
+            70px
+            25px
+            100px;
+
+    }
+
+    .scene-content{
+
+        max-height:none;
+
+    }
+
+    .memory-gallery{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .employee-gallery{
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+    }
+
+    .employee-gallery[style]{
+
+        grid-template-columns:
+            repeat(2,1fr) !important;
+
+    }
+
+    .stats{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .timeline{
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:600px){
+
+    .opening-text{
+
+        bottom:18%;
+
+    }
+
+    .opening-text .small{
+
+        font-size:9px;
+
+    }
+
+    .opening-text h1{
+
+        font-size:43px;
+
+    }
+
+    .opening-text p{
+
+        font-size:10px;
+
+    }
+
+    .logo-main{
+
+        width:300px;
+
+    }
+
+    .logo-kai{
+
+        width:85px;
+
+        top:17%;
+
+    }
+
+    .logo-wisata{
+
+        width:95px;
+
+        top:17%;
+
+    }
+
+    .scene{
+
+        padding:
+            55px
+            18px
+            90px;
+
+    }
+
+    .scene h2{
+
+        font-size:
+            43px;
+
+    }
+
+    .lead{
+
+        font-size:18px;
+
+    }
+
+    .quote{
+
+        font-size:18px;
+
+    }
+
+    .memory-gallery{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:13px;
+
+    }
+
+    .employee-gallery{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:12px;
+
+    }
+
+    .timeline{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .humor-box{
+
+        flex-direction:column;
+
+    }
+
+    .controls{
+
+        bottom:12px;
+
+        padding:5px;
+
+    }
+
+    .control{
+
+        width:35px;
+        height:35px;
+
+    }
+
+    .progress{
+
+        width:80px;
+
+    }
+
+    .counter{
+
+        top:15px;
+
+        right:15px;
+
+    }
+
+    .final-number{
+
+        font-size:190px;
+
+    }
 
 }
 
@@ -2563,17 +2959,13 @@ body{
             id="particles"
         ></div>
 
-
         <div class="cloud-floor">
 
             <div class="cloud-base"></div>
 
             <div class="cloud a"></div>
-
             <div class="cloud b"></div>
-
             <div class="cloud c"></div>
-
             <div class="cloud d"></div>
 
         </div>
@@ -2638,11 +3030,8 @@ body{
                 <div class="cloud-base"></div>
 
                 <div class="cloud a"></div>
-
                 <div class="cloud b"></div>
-
                 <div class="cloud c"></div>
-
                 <div class="cloud d"></div>
 
             </div>
@@ -2666,7 +3055,7 @@ body{
 
 
         <!-- =================================================
-             01
+             01 — OPENING
              ================================================= -->
 
         <section
@@ -2701,7 +3090,7 @@ body{
 
 
         <!-- =================================================
-             02
+             02 — TEN YEARS
              ================================================= -->
 
         <section
@@ -2739,132 +3128,71 @@ body{
 
 
         <!-- =================================================
-             03
+             03 — MEMORY 1–5
              ================================================= -->
 
         <section
-            class="scene"
-            data-duration="8500"
-        >
-
-            <div class="scene-content">
-
-                <div class="two-column">
-
-                    <div>
-
-                        <div class="eyebrow">
-                            THE BEGINNING
-                        </div>
-
-                        <h2>
-                            Sepuluh tahun,
-                            <span>banyak cerita.</span>
-                        </h2>
-
-                        <div class="quote">
-                            Dari hari pertama hingga hari ini,
-                            setiap momen punya ceritanya sendiri.
-                        </div>
-
-                    </div>
-
-
-                    <div class="collage">
-
-                        <img
-                            class="photo-main"
-                            src="foto1.jpg"
-                            alt=""
-                        >
-
-                        <img
-                            class="photo-small p2"
-                            src="foto2.jpg"
-                            alt=""
-                        >
-
-                        <img
-                            class="photo-small p3"
-                            src="foto3.jpg"
-                            alt=""
-                        >
-
-                        <img
-                            class="photo-small p4"
-                            src="foto4.jpg"
-                            alt=""
-                        >
-
-                        <img
-                            class="photo-small p5"
-                            src="foto5.jpg"
-                            alt=""
-                        >
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             04
-             ================================================= -->
-
-        <section
-            class="scene"
-            data-duration="8500"
+            class="scene photo-scene memory-scene"
+            data-duration="9000"
         >
 
             <div class="scene-content">
 
                 <div class="eyebrow">
-                    MOMENTS WE KEEP
+                    MEMORIES
                 </div>
 
                 <h2>
-                    Bukan cuma
-                    <span>pekerjaan.</span>
+                    Some moments
+                    <span>stay with us.</span>
                 </h2>
 
-                <div class="lead">
-                    Ada briefing. Ada tawa.
-                    Ada shift. Ada kopi.
-                    Ada cerita yang mungkin
-                    tidak pernah masuk laporan.
+                <div class="gallery-title">
+                    THE FIRST MEMORIES
                 </div>
 
-                <div class="photo-strip">
+                <div class="memory-gallery">
 
-                    <img
-                        src="foto6.jpg"
-                        alt=""
-                    >
+                    <div class="memory-card">
+                        <img
+                            src="foto1.jpg"
+                            alt=""
+                            loading="eager"
+                        >
+                    </div>
 
-                    <img
-                        src="foto7.jpg"
-                        alt=""
-                    >
+                    <div class="memory-card">
+                        <img
+                            src="foto2.jpg"
+                            alt=""
+                            loading="eager"
+                        >
+                    </div>
 
-                    <img
-                        src="foto8.jpg"
-                        alt=""
-                    >
+                    <div class="memory-card">
+                        <img
+                            src="foto3.jpg"
+                            alt=""
+                            loading="eager"
+                        >
+                    </div>
 
-                    <img
-                        src="foto9.jpg"
-                        alt=""
-                    >
+                    <div class="memory-card">
+                        <img
+                            src="foto4.jpg"
+                            alt=""
+                            loading="eager"
+                        >
+                    </div>
 
-                </div>
+                    <div class="memory-card">
+                        <img
+                            src="foto5.jpg"
+                            alt=""
+                            loading="eager"
+                        >
+                    </div>
 
-                <div class="quote">
-                    Karena pada akhirnya,
-                    yang paling kita ingat adalah orang-orangnya.
                 </div>
 
             </div>
@@ -2873,7 +3201,85 @@ body{
 
 
         <!-- =================================================
-             05
+             04 — MEMORY 6–10
+             ================================================= -->
+
+        <section
+            class="scene photo-scene memory-scene"
+            data-duration="9000"
+        >
+
+            <div class="scene-content">
+
+                <div class="eyebrow">
+                    THE JOURNEY
+                </div>
+
+                <h2>
+                    A decade
+                    <span>in memories.</span>
+                </h2>
+
+                <div class="gallery-title">
+                    MOMENTS WE KEEP
+                </div>
+
+                <div class="memory-gallery">
+
+                    <div class="memory-card">
+                        <img
+                            src="foto6.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="memory-card">
+                        <img
+                            src="foto7.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="memory-card">
+                        <img
+                            src="foto8.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="memory-card">
+                        <img
+                            src="foto9.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="memory-card">
+                        <img
+                            src="foto10.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="quote">
+                    Ada momen yang sederhana,
+                    tetapi justru paling sulit dilupakan.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             05 — HUMOR
              ================================================= -->
 
         <section
@@ -2921,7 +3327,7 @@ body{
 
 
         <!-- =================================================
-             06
+             06 — JOURNEY
              ================================================= -->
 
         <section
@@ -2960,7 +3366,7 @@ body{
 
 
         <!-- =================================================
-             07
+             07 — TIMELINE
              ================================================= -->
 
         <section
@@ -3037,52 +3443,79 @@ body{
 
 
         <!-- =================================================
-             08
+             08 — EMPLOYEE 11–16
              ================================================= -->
 
         <section
-            class="scene"
-            data-duration="8500"
+            class="scene photo-scene employee-scene"
+            data-duration="9500"
         >
 
             <div class="scene-content">
 
                 <div class="eyebrow">
-                    ALONG THE WAY
+                    BEHIND THE CALL
                 </div>
 
                 <h2>
-                    Setiap tahun
-                    <span>punya cerita.</span>
+                    The people
+                    <span>behind the voice.</span>
                 </h2>
 
-                <div class="photo-strip">
-
-                    <img
-                        src="foto10.jpg"
-                        alt=""
-                    >
-
-                    <img
-                        src="foto11.jpg"
-                        alt=""
-                    >
-
-                    <img
-                        src="foto12.jpg"
-                        alt=""
-                    >
-
-                    <img
-                        src="foto13.jpg"
-                        alt=""
-                    >
-
+                <div class="gallery-title">
+                    THE TEAM
                 </div>
 
-                <div class="quote">
-                    Ada momen yang sederhana,
-                    tetapi justru paling sulit dilupakan.
+                <div class="employee-gallery">
+
+                    <div class="employee-card">
+                        <img
+                            src="foto11.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto12.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto13.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto14.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto15.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto16.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
                 </div>
 
             </div>
@@ -3091,7 +3524,277 @@ body{
 
 
         <!-- =================================================
-             09
+             09 — EMPLOYEE 17–22
+             ================================================= -->
+
+        <section
+            class="scene photo-scene employee-scene"
+            data-duration="9500"
+        >
+
+            <div class="scene-content">
+
+                <div class="eyebrow">
+                    ONE TEAM
+                </div>
+
+                <h2>
+                    Different faces.
+                    <span>One journey.</span>
+                </h2>
+
+                <div class="employee-gallery">
+
+                    <div class="employee-card">
+                        <img
+                            src="foto17.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto18.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto19.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto20.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto21.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto22.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             10 — EMPLOYEE 23–28
+             ================================================= -->
+
+        <section
+            class="scene photo-scene employee-scene"
+            data-duration="9500"
+        >
+
+            <div class="scene-content">
+
+                <div class="eyebrow">
+                    THE PEOPLE
+                </div>
+
+                <h2>
+                    Behind every
+                    <span>shift.</span>
+                </h2>
+
+                <div class="employee-gallery">
+
+                    <div class="employee-card">
+                        <img
+                            src="foto23.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto24.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto25.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto26.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto27.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto28.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             11 — HUMOR
+             ================================================= -->
+
+        <section
+            class="scene humor"
+            data-duration="6500"
+        >
+
+            <div class="scene-content">
+
+                <div class="eyebrow">
+                    SOME THINGS NEVER CHANGE
+                </div>
+
+                <h2>
+                    10 YEARS
+                    <span>LATER...</span>
+                </h2>
+
+                <div class="humor-box">
+
+                    <div class="humor-card">
+                        “Sebentar lagi selesai shift.”
+                    </div>
+
+                    <div class="humor-card">
+                        Incoming.
+                    </div>
+
+                </div>
+
+                <div class="caption">
+                    Beberapa hal memang berubah.
+                    Beberapa lainnya...
+                    sepertinya memilih untuk tetap sama.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             12 — EMPLOYEE 29–32
+             ================================================= -->
+
+        <section
+            class="scene photo-scene employee-scene"
+            data-duration="8500"
+        >
+
+            <div class="scene-content">
+
+                <div class="eyebrow">
+                    STILL CONNECTED
+                </div>
+
+                <h2>
+                    And the story
+                    <span>continues.</span>
+                </h2>
+
+                <div
+                    class="employee-gallery"
+                    style="
+                        grid-template-columns:
+                        repeat(4,1fr);
+                    "
+                >
+
+                    <div class="employee-card">
+                        <img
+                            src="foto29.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto30.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto31.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="employee-card">
+                        <img
+                            src="foto32.jpg"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="quote">
+                    Banyak wajah.
+                    Banyak cerita.
+                    Satu perjalanan.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             13 — MORE THAN NUMBER
              ================================================= -->
 
         <section
@@ -3160,7 +3863,7 @@ body{
 
 
         <!-- =================================================
-             10
+             14 — BEHIND THE SERVICE
              ================================================= -->
 
         <section
@@ -3214,112 +3917,7 @@ body{
 
 
         <!-- =================================================
-             11
-             ================================================= -->
-
-        <section
-            class="scene"
-            data-duration="8500"
-        >
-
-            <div class="scene-content">
-
-                <div class="eyebrow">
-                    THE PEOPLE
-                </div>
-
-                <h2>
-                    Di balik setiap panggilan,
-                    <span>ada cerita.</span>
-                </h2>
-
-                <div
-                    class="collage"
-                    style="margin-top:35px;margin-left:0;"
-                >
-
-                    <img
-                        class="photo-main"
-                        src="foto14.jpg"
-                        alt=""
-                    >
-
-                    <img
-                        class="photo-small p2"
-                        src="foto15.jpg"
-                        alt=""
-                    >
-
-                    <img
-                        class="photo-small p3"
-                        src="foto16.jpg"
-                        alt=""
-                    >
-
-                    <img
-                        class="photo-small p4"
-                        src="foto17.jpg"
-                        alt=""
-                    >
-
-                    <img
-                        class="photo-small p5"
-                        src="foto18.jpg"
-                        alt=""
-                    >
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             12
-             ================================================= -->
-
-        <section
-            class="scene humor"
-            data-duration="6500"
-        >
-
-            <div class="scene-content">
-
-                <div class="eyebrow">
-                    SOME THINGS NEVER CHANGE
-                </div>
-
-                <h2>
-                    10 YEARS
-                    <span>LATER...</span>
-                </h2>
-
-                <div class="humor-box">
-
-                    <div class="humor-card">
-                        “Sebentar lagi selesai shift.”
-                    </div>
-
-                    <div class="humor-card">
-                        Incoming.
-                    </div>
-
-                </div>
-
-                <div class="caption">
-                    Beberapa hal memang berubah.
-                    Beberapa lainnya...
-                    sepertinya memilih untuk tetap sama.
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             13
+             15 — THANK YOU
              ================================================= -->
 
         <section
@@ -3359,12 +3957,12 @@ body{
 
 
         <!-- =================================================
-             14
+             16 — FINAL MEMORY FEEL
              ================================================= -->
 
         <section
             class="scene"
-            data-duration="8500"
+            data-duration="6500"
         >
 
             <div class="scene-content">
@@ -3378,35 +3976,10 @@ body{
                     <span>adalah kenangan.</span>
                 </h2>
 
-                <div class="photo-strip">
-
-                    <img
-                        src="foto19.jpg"
-                        alt=""
-                    >
-
-                    <img
-                        src="foto20.jpg"
-                        alt=""
-                    >
-
-                    <img
-                        src="foto21.jpg"
-                        alt=""
-                    >
-
-                    <img
-                        src="foto22.jpg"
-                        alt=""
-                    >
-
-                </div>
-
                 <div class="quote">
-                    Dan mungkin,
-                    bertahun-tahun dari sekarang,
-                    kita akan kembali mengingat
-                    momen-momen sederhana ini.
+                    Sepuluh tahun mungkin terdengar panjang.
+                    Tetapi ketika melihat kembali semuanya,
+                    rasanya seperti baru kemarin dimulai.
                 </div>
 
             </div>
@@ -3415,7 +3988,7 @@ body{
 
 
         <!-- =================================================
-             15
+             17 — FINAL NUMBER
              ================================================= -->
 
         <section
@@ -3449,7 +4022,7 @@ body{
 
 
         <!-- =================================================
-             16
+             18 — STILL CONNECTED
              ================================================= -->
 
         <section
@@ -3485,7 +4058,7 @@ body{
 
 
         <!-- =================================================
-             17
+             19 — ANNIVERSARY
              ================================================= -->
 
         <section
@@ -3539,7 +4112,7 @@ body{
         /
 
         <span id="total">
-            17
+            19
         </span>
 
     </div>
@@ -3555,6 +4128,7 @@ body{
             class="control"
             id="prev"
             title="Previous"
+            aria-label="Previous"
         >
             ‹
         </button>
@@ -3563,6 +4137,7 @@ body{
             class="control"
             id="play"
             title="Play / Pause"
+            aria-label="Play / Pause"
         >
             Ⅱ
         </button>
@@ -3571,6 +4146,7 @@ body{
             class="control"
             id="next"
             title="Next"
+            aria-label="Next"
         >
             ›
         </button>
@@ -3579,6 +4155,7 @@ body{
             class="control"
             id="replay"
             title="Replay"
+            aria-label="Replay"
         >
             ↻
         </button>
@@ -3587,6 +4164,7 @@ body{
             class="control"
             id="sound"
             title="Sound"
+            aria-label="Sound"
         >
             🔊
         </button>
@@ -3595,6 +4173,7 @@ body{
             class="control"
             id="fullscreen"
             title="Fullscreen"
+            aria-label="Fullscreen"
         >
             ⛶
         </button>
@@ -3664,9 +4243,14 @@ body{
 <script>
 
 /* =========================================================
+   DRC CC 121
    CINEMATIC PRESENTATION ENGINE
    ========================================================= */
 
+
+/* =========================================================
+   ELEMENTS
+   ========================================================= */
 
 const app =
     document.getElementById("app");
@@ -3748,7 +4332,7 @@ let mouseY = 0;
 
 
 /* =========================================================
-   TOTAL
+   TOTAL SCENES
    ========================================================= */
 
 totalText.textContent =
@@ -3766,9 +4350,14 @@ function createParticles(){
     const fragment =
         document.createDocumentFragment();
 
+    /*
+       Sengaja 45, bukan 70.
+       Tujuannya mengurangi beban GPU.
+    */
+
     for(
         let i = 0;
-        i < 70;
+        i < 45;
         i++
     ){
 
@@ -3779,18 +4368,18 @@ function createParticles(){
             "particle";
 
         p.style.left =
-            Math.random()*100 + "%";
+            Math.random() * 100 + "%";
 
         p.style.top =
-            Math.random()*100 + "%";
+            Math.random() * 100 + "%";
 
         p.style.setProperty(
             "--duration",
-            (5 + Math.random()*8) + "s"
+            (5 + Math.random() * 8) + "s"
         );
 
         p.style.animationDelay =
-            (-Math.random()*10) + "s";
+            (-Math.random() * 10) + "s";
 
         fragment.appendChild(p);
 
@@ -3813,11 +4402,9 @@ function showControls(){
         "show-controls"
     );
 
-
     clearTimeout(
         controlsTimer
     );
-
 
     controlsTimer =
         setTimeout(
@@ -3842,7 +4429,9 @@ function clearSceneTimer(){
 
     if(timer){
 
-        clearTimeout(timer);
+        clearTimeout(
+            timer
+        );
 
         timer = null;
 
@@ -3862,7 +4451,38 @@ function clearSceneTimer(){
 
 
 /* =========================================================
-   SCENE
+   RESET SCENE ANIMATIONS
+   ========================================================= */
+
+function resetSceneAnimations(scene){
+
+    /*
+       Membuat animasi foto bisa dimainkan kembali
+       ketika scene dibuka lagi.
+    */
+
+    const animatedElements =
+        scene.querySelectorAll(
+            ".memory-card, .employee-card, .stat, .person, .humor-card, .timeline-item, .photo-main"
+        );
+
+    animatedElements.forEach(
+        element => {
+
+            element.style.animation = "none";
+
+            void element.offsetWidth;
+
+            element.style.animation = "";
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SHOW SCENE
    ========================================================= */
 
 function showScene(index){
@@ -3870,9 +4490,7 @@ function showScene(index){
     clearSceneTimer();
 
 
-    if(
-        index < 0
-    ){
+    if(index < 0){
 
         index =
             scenes.length - 1;
@@ -3880,9 +4498,7 @@ function showScene(index){
     }
 
 
-    if(
-        index >= scenes.length
-    ){
+    if(index >= scenes.length){
 
         index = 0;
 
@@ -3913,6 +4529,11 @@ function showScene(index){
 
     progress.style.width =
         "0%";
+
+
+    resetSceneAnimations(
+        scenes[currentScene]
+    );
 
 
     startSceneTimer();
@@ -3984,9 +4605,7 @@ function updateProgress(duration){
 
 
     progress.style.width =
-        (
-            percentage * 100
-        ) + "%";
+        (percentage * 100) + "%";
 
 
     if(
@@ -4018,6 +4637,7 @@ function nextScene(){
 
 }
 
+
 function previousScene(){
 
     showScene(
@@ -4028,7 +4648,7 @@ function previousScene(){
 
 
 /* =========================================================
-   PLAY
+   PLAY / PAUSE
    ========================================================= */
 
 function togglePlay(){
@@ -4079,7 +4699,15 @@ function startMusic(){
 
     music.play()
         .catch(
-            () => {}
+            () => {
+
+                /*
+                   Browser bisa menolak autoplay.
+                   Musik akan tetap bisa dimainkan
+                   setelah user melakukan interaksi.
+                */
+
+            }
         );
 
 }
@@ -4242,11 +4870,8 @@ function runOpening(){
     setTimeout(
         () => {
 
-            if(
-                !openingStarted
-            )
+            if(!openingStarted)
                 return;
-
 
             opening.classList.add(
                 "flash"
@@ -4260,9 +4885,7 @@ function runOpening(){
     setTimeout(
         () => {
 
-            if(
-                !openingStarted
-            )
+            if(!openingStarted)
                 return;
 
 
@@ -4404,7 +5027,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   MOUSE CINEMATIC PARALLAX
+   MOUSE PARALLAX
    ========================================================= */
 
 document.addEventListener(
@@ -4495,7 +5118,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   TOUCH IS NOT PRIMARY
+   TOUCH / SWIPE
    ========================================================= */
 
 let touchStartX = 0;
@@ -4623,6 +5246,11 @@ document
                 "error",
                 () => {
 
+                    /*
+                       Foto yang gagal dimuat tidak akan
+                       membuat seluruh presentasi rusak.
+                    */
+
                     img.style.opacity =
                         "0";
 
@@ -4675,3 +5303,4 @@ window.addEventListener(
 
 </body>
 </html>
+```
