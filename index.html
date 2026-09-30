@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>DRC CC 121 — 10 Years</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
->
+<title>DRC CC 121 INBOUND BANDUNG — 10 YEARS</title>
 
 <style>
 
 /* =========================================================
-   DRC CC 121 — 10 YEARS
-   CINEMATIC ANNIVERSARY ENGINE
+   DRC CC 121 INBOUND BANDUNG
+   10 YEARS — CINEMATIC DOCUMENTARY
    ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+:root{
+    --sky-1:#dff4ff;
+    --sky-2:#a9dcf5;
+    --sky-3:#72b9dc;
+
+    --navy:#102a43;
+    --navy-2:#173d59;
+    --white:#ffffff;
+    --soft:#edf8fd;
+
+    --gold:#d7b66c;
+    --gold-light:#ead79f;
+
+    --shadow:rgba(8,38,60,.18);
+
+    --ease:cubic-bezier(.22,.8,.2,1);
+}
 
 
 /* =========================================================
@@ -32,9 +45,9 @@
    ========================================================= */
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html,
@@ -45,30 +58,14 @@ body{
 }
 
 body{
-    font-family:"DM Sans",sans-serif;
-    background:#bde7f7;
-    color:#17384a;
+    font-family:"DM Sans", sans-serif;
+    background:#b8e4f8;
+    color:var(--navy);
+    -webkit-font-smoothing:antialiased;
 }
 
-
-/* =========================================================
-   VARIABLES
-   ========================================================= */
-
-:root{
-
-    --sky-top:#fafdff;
-    --sky-mid:#dff5ff;
-    --sky-bottom:#8fcde7;
-
-    --blue:#1b759b;
-    --blue-dark:#164b63;
-
-    --text:#17384a;
-    --muted:#587686;
-
-    --white:#ffffff;
-
+button{
+    font-family:inherit;
 }
 
 
@@ -78,18 +75,15 @@ body{
 
 #app{
     position:relative;
-
     width:100vw;
     height:100vh;
-
     overflow:hidden;
-
     background:
         linear-gradient(
             180deg,
-            var(--sky-top) 0%,
-            var(--sky-mid) 42%,
-            var(--sky-bottom) 100%
+            #eaf9ff 0%,
+            #bce7fa 43%,
+            #83c3e3 100%
         );
 }
 
@@ -101,24 +95,49 @@ body{
 .sky{
     position:absolute;
     inset:0;
-
+    overflow:hidden;
     background:
-
         radial-gradient(
-            ellipse at 65% 18%,
-            rgba(255,255,255,.95) 0%,
-            rgba(255,255,255,.45) 22%,
-            transparent 50%
+            circle at 75% 20%,
+            rgba(255,255,255,.95) 0,
+            rgba(255,255,255,.35) 12%,
+            transparent 30%
         ),
-
         linear-gradient(
             180deg,
-            #fbfeff 0%,
-            #e4f7ff 45%,
-            #9fd8ed 100%
+            #eafaff 0%,
+            #bce6f8 48%,
+            #8bc7e4 100%
+        );
+}
+
+.sky::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 35%,
+            rgba(255,255,255,.35) 47%,
+            transparent 59%
         );
 
-    z-index:1;
+    opacity:.5;
+    animation:skyLight 13s ease-in-out infinite;
+}
+
+@keyframes skyLight{
+    0%,100%{
+        transform:translateX(-25%);
+        opacity:.15;
+    }
+
+    50%{
+        transform:translateX(25%);
+        opacity:.6;
+    }
 }
 
 
@@ -127,340 +146,139 @@ body{
    ========================================================= */
 
 .sun{
-
     position:absolute;
+    width:28vw;
+    height:28vw;
+    max-width:430px;
+    max-height:430px;
 
-    width:650px;
-    height:650px;
-
-    top:-330px;
-    right:-100px;
+    top:-13vw;
+    right:-7vw;
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.95),
-            rgba(255,255,255,.5) 25%,
-            rgba(255,255,255,.12) 55%,
-            transparent 72%
+            rgba(255,255,255,1) 0%,
+            rgba(255,255,255,.8) 20%,
+            rgba(255,255,255,.25) 47%,
+            transparent 70%
         );
 
-    filter:blur(12px);
-
-    animation:
-        sunDrift 15s ease-in-out infinite alternate;
-}
-
-@keyframes sunDrift{
-
-    from{
-        transform:translate(0,0) scale(1);
-    }
-
-    to{
-        transform:translate(-40px,35px) scale(1.08);
-    }
-
+    filter:blur(2px);
 }
 
 
 /* =========================================================
-   LARGE CLOUD MASS
-   =========================================================
-
-   INI BAGIAN UTAMA.
-
-   BUKAN AWAN KECIL.
-
-   Bentuknya dibuat seperti:
-   - awan cumulonimbus
-   - lautan awan
-   - gumpalan besar dari bawah layar
+   CLOUD OCEAN
    ========================================================= */
 
 .cloud-ocean{
-
     position:absolute;
-
     left:-10%;
     right:-10%;
+    bottom:-8%;
 
-    bottom:-22%;
+    height:43%;
 
-    height:58%;
-
-    z-index:15;
+    z-index:4;
 
     pointer-events:none;
 
-    filter:
-        drop-shadow(
-            0 -20px 40px rgba(30,100,130,.10)
-        );
-
-    animation:
-        oceanDrift 18s ease-in-out infinite alternate;
+    overflow:hidden;
 }
 
-
-/* Base cloud */
-
-.cloud-base{
-
+.cloud-bank{
     position:absolute;
+    left:-10%;
+    width:120%;
+    height:70%;
 
-    left:0;
-    right:0;
-    bottom:0;
+    bottom:-20%;
 
-    height:75%;
-
-    border-radius:
-        50%
-        50%
-        0
-        0;
+    border-radius:50%;
 
     background:
-
         radial-gradient(
-            ellipse at 15% 20%,
-            #ffffff 0%,
-            #eefaff 38%,
-            transparent 68%
+            ellipse at 20% 70%,
+            rgba(255,255,255,.98) 0 16%,
+            transparent 37%
         ),
-
         radial-gradient(
-            ellipse at 50% 10%,
-            #ffffff 0%,
-            #e7f7fd 40%,
-            transparent 70%
+            ellipse at 38% 45%,
+            rgba(255,255,255,.98) 0 19%,
+            transparent 40%
         ),
-
         radial-gradient(
-            ellipse at 85% 20%,
-            #ffffff 0%,
-            #e8f8ff 40%,
-            transparent 70%
+            ellipse at 55% 60%,
+            rgba(255,255,255,.95) 0 18%,
+            transparent 38%
         ),
+        radial-gradient(
+            ellipse at 75% 42%,
+            rgba(255,255,255,.96) 0 20%,
+            transparent 41%
+        ),
+        radial-gradient(
+            ellipse at 92% 65%,
+            rgba(255,255,255,.98) 0 18%,
+            transparent 39%
+        );
 
+    filter:blur(4px);
+
+    animation:
+        cloudFloat 18s ease-in-out infinite alternate;
+}
+
+.cloud-bank::after{
+    content:"";
+
+    position:absolute;
+    inset:30% 0 0;
+
+    background:
         linear-gradient(
             180deg,
-            #ffffff 0%,
-            #e9f8fe 55%,
-            #ccecf8 100%
+            transparent,
+            rgba(255,255,255,.96)
         );
-
-    box-shadow:
-        0 -35px 70px rgba(255,255,255,.7);
 }
 
+.cloud-back{
+    bottom:22%;
+    opacity:.55;
+    transform:scale(1.15);
+    filter:blur(12px);
 
-/* Massive cloud domes */
-
-.cloud-dome{
-
-    position:absolute;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle at 40% 35%,
-            #ffffff 0%,
-            #f8fdff 32%,
-            #dff4fb 70%,
-            #b9e3f1 100%
-        );
-
-    box-shadow:
-        0 -20px 50px rgba(255,255,255,.8);
+    animation-duration:25s;
 }
 
+.cloud-middle{
+    bottom:5%;
+    opacity:.9;
+    transform:scale(1.25);
 
-/* Dome 1 */
-
-.dome-1{
-
-    width:42%;
-    height:120%;
-
-    left:-5%;
-    bottom:20%;
+    animation-duration:20s;
 }
 
+.cloud-front{
+    bottom:-18%;
+    opacity:1;
+    transform:scale(1.35);
 
-/* Dome 2 */
-
-.dome-2{
-
-    width:48%;
-    height:145%;
-
-    left:22%;
-    bottom:25%;
+    animation-duration:16s;
 }
 
-
-/* Dome 3 */
-
-.dome-3{
-
-    width:44%;
-    height:125%;
-
-    right:4%;
-    bottom:20%;
-}
-
-
-/* Dome 4 */
-
-.dome-4{
-
-    width:32%;
-    height:95%;
-
-    left:55%;
-    bottom:38%;
-}
-
-
-/* small top softness */
-
-.cloud-top-glow{
-
-    position:absolute;
-
-    left:5%;
-    right:5%;
-
-    top:10%;
-
-    height:20%;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(255,255,255,.95),
-            transparent 70%
-        );
-
-    filter:blur(18px);
-}
-
-
-/* cloud movement */
-
-@keyframes oceanDrift{
-
+@keyframes cloudFloat{
     from{
-        transform:
-            translateX(-1%)
-            translateY(2%);
+        transform:translateX(-3%) scale(1.25);
     }
 
     to{
-        transform:
-            translateX(2%)
-            translateY(-2%);
+        transform:translateX(3%) scale(1.28);
     }
-
-}
-
-
-/* =========================================================
-   DISTANT CLOUD HORIZON
-   ========================================================= */
-
-.cloud-horizon{
-
-    position:absolute;
-
-    left:-15%;
-    right:-15%;
-
-    bottom:25%;
-
-    height:25%;
-
-    z-index:8;
-
-    opacity:.6;
-
-    filter:blur(8px);
-
-    background:
-
-        radial-gradient(
-            ellipse at 10% 80%,
-            white 0 18%,
-            transparent 45%
-        ),
-
-        radial-gradient(
-            ellipse at 35% 60%,
-            white 0 20%,
-            transparent 48%
-        ),
-
-        radial-gradient(
-            ellipse at 65% 65%,
-            white 0 22%,
-            transparent 50%
-        ),
-
-        radial-gradient(
-            ellipse at 90% 80%,
-            white 0 18%,
-            transparent 45%
-        );
-}
-
-
-/* =========================================================
-   LIGHT RAYS
-   ========================================================= */
-
-.light-rays{
-
-    position:absolute;
-
-    inset:0;
-
-    z-index:6;
-
-    pointer-events:none;
-
-    background:
-
-        linear-gradient(
-            115deg,
-            transparent 35%,
-            rgba(255,255,255,.25),
-            transparent 55%
-        );
-
-    opacity:.5;
-
-    animation:
-        rayMove 12s ease-in-out infinite alternate;
-}
-
-@keyframes rayMove{
-
-    from{
-        transform:translateX(-8%);
-    }
-
-    to{
-        transform:translateX(8%);
-    }
-
 }
 
 
@@ -469,52 +287,41 @@ body{
    ========================================================= */
 
 .particles{
-
     position:absolute;
-
     inset:0;
-
-    z-index:9;
-
+    z-index:2;
     pointer-events:none;
 }
 
 .particle{
-
     position:absolute;
-
-    width:3px;
-    height:3px;
-
+    width:2px;
+    height:2px;
     border-radius:50%;
-
-    background:white;
-
-    opacity:.35;
-
-    box-shadow:
-        0 0 10px white;
+    background:rgba(255,255,255,.7);
 
     animation:
-        particleRise
-        var(--speed)
-        ease-in-out
-        infinite
-        alternate;
+        particleFloat linear infinite;
 }
 
-@keyframes particleRise{
-
+@keyframes particleFloat{
     from{
-        transform:translateY(30px);
-        opacity:.1;
+        transform:translateY(20vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:.8;
+    }
+
+    80%{
+        opacity:.6;
     }
 
     to{
-        transform:translateY(-80px);
-        opacity:.7;
+        transform:translateY(-100vh);
+        opacity:0;
     }
-
 }
 
 
@@ -522,10 +329,8 @@ body{
    OPENING
    ========================================================= */
 
-.opening{
-
+#opening{
     position:absolute;
-
     inset:0;
 
     z-index:100;
@@ -535,299 +340,284 @@ body{
     background:
         linear-gradient(
             180deg,
-            #fbfeff 0%,
-            #dff5ff 48%,
-            #a9ddec 100%
+            #eafaff 0%,
+            #a8d9ef 52%,
+            #76b8d8 100%
         );
 
     transition:
-        opacity 1.4s ease,
-        transform 1.5s cubic-bezier(.16,1,.3,1);
+        opacity 1.3s ease,
+        visibility 1.3s ease;
 }
 
-.opening.hide{
-
+#opening.hide{
     opacity:0;
-
-    transform:scale(1.08);
-
+    visibility:hidden;
     pointer-events:none;
 }
 
 
-/* =========================================================
-   OPENING CAMERA
-   ========================================================= */
+/* Opening camera */
 
 .opening-camera{
-
     position:absolute;
-
-    inset:0;
-
-    perspective:1600px;
+    inset:-8%;
 
     transform-style:preserve-3d;
 
     transition:
-        transform 1s ease;
+        transform 1.2s cubic-bezier(.2,.8,.2,1);
 }
 
 
 /* =========================================================
-   OPENING CLOUD
+   OPENING CLOUDS
    ========================================================= */
+
+.opening-clouds{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+}
 
 .opening-cloud{
-
     position:absolute;
 
-    left:-15%;
-    right:-15%;
+    width:80vw;
+    height:45vh;
 
-    bottom:-30%;
+    bottom:-20vh;
 
-    height:65%;
+    border-radius:50%;
 
-    z-index:25;
-
-    pointer-events:none;
-
-    filter:
-        drop-shadow(
-            0 -20px 45px rgba(30,100,130,.12)
+    background:
+        radial-gradient(
+            ellipse at 20% 65%,
+            #fff 0 18%,
+            transparent 40%
+        ),
+        radial-gradient(
+            ellipse at 40% 40%,
+            #fff 0 22%,
+            transparent 44%
+        ),
+        radial-gradient(
+            ellipse at 62% 55%,
+            #fff 0 20%,
+            transparent 42%
+        ),
+        radial-gradient(
+            ellipse at 82% 35%,
+            #fff 0 23%,
+            transparent 45%
         );
+
+    filter:blur(7px);
+
+    opacity:.95;
 }
 
-.opening-cloud .cloud-base{
+.opening-cloud.c1{
+    left:-15%;
+    transform:scale(1.4);
 
-    height:70%;
+    animation:
+        openingCloud1 9s ease-in-out forwards;
 }
 
-.opening-cloud .dome-1{
+.opening-cloud.c2{
+    right:-20%;
+    transform:scale(1.6);
 
-    width:40%;
-    height:130%;
+    animation:
+        openingCloud2 10s ease-in-out forwards;
 }
 
-.opening-cloud .dome-2{
+.opening-cloud.c3{
+    left:5%;
+    bottom:-30vh;
+    transform:scale(2);
 
-    width:45%;
-    height:160%;
+    animation:
+        openingCloud3 12s ease-in-out forwards;
 }
 
-.opening-cloud .dome-3{
+@keyframes openingCloud1{
+    0%{
+        transform:translateY(20vh) scale(1.4);
+        opacity:0;
+    }
 
-    width:42%;
-    height:140%;
+    45%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-3vh) scale(1.45);
+        opacity:.92;
+    }
+}
+
+@keyframes openingCloud2{
+    0%{
+        transform:translateY(15vh) scale(1.6);
+        opacity:0;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-2vh) scale(1.65);
+        opacity:.9;
+    }
+}
+
+@keyframes openingCloud3{
+    0%{
+        transform:translateY(30vh) scale(2);
+        opacity:0;
+    }
+
+    55%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(4vh) scale(2.1);
+        opacity:.98;
+    }
 }
 
 
 /* =========================================================
-   OPENING LOGO STAGE
+   OPENING LOGOS
    ========================================================= */
 
-.logo-stage{
-
+.opening-logos{
     position:absolute;
-
     inset:0;
 
-    z-index:20;
-
     display:flex;
-
+    justify-content:center;
     align-items:center;
 
-    justify-content:center;
+    z-index:10;
 
-    transform-style:preserve-3d;
+    perspective:1200px;
 }
-
-
-/* =========================================================
-   LOGO MAIN
-   =========================================================
-
-   LOGO UTAMA:
-
-   opening/logo-utama.png
-
-   INILAH LOGO ANNIVERSARY DRC 10 TAHUN.
-
-   Logo ini sengaja dibuat paling besar
-   dan menjadi pusat perhatian.
-   ========================================================= */
 
 .logo-main{
-
     position:absolute;
 
-    width:min(520px,60vw);
-
-    max-height:55vh;
+    width:min(46vw,520px);
+    max-height:42vh;
 
     object-fit:contain;
 
     opacity:0;
 
-    transform:
+    filter:
+        drop-shadow(0 30px 50px rgba(10,55,80,.2))
+        blur(10px);
 
+    transform:
         translateZ(-500px)
-        translateY(100px)
+        translateY(8vh)
         scale(.55);
 
-    filter:
-        blur(18px)
-        drop-shadow(
-            0 35px 60px rgba(20,80,110,.2)
-        );
+    animation:
+        heroLogo 2.7s 1.7s var(--ease) forwards;
+}
 
-    transition:
-        opacity 1.2s ease,
-        transform 2s cubic-bezier(.16,1,.3,1),
-        filter 1.6s ease;
+@keyframes heroLogo{
+
+    0%{
+        opacity:0;
+        filter:
+            drop-shadow(0 30px 50px rgba(10,55,80,.2))
+            blur(10px);
+
+        transform:
+            translateZ(-500px)
+            translateY(8vh)
+            scale(.55);
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:1;
+
+        filter:
+            drop-shadow(0 28px 40px rgba(10,55,80,.22))
+            blur(0);
+
+        transform:
+            translateZ(0)
+            translateY(0)
+            scale(1);
+    }
 }
 
 
-/* main logo appears */
-
-.opening.active .logo-main{
-
-    opacity:1;
-
-    transform:
-        translateZ(100px)
-        translateY(-20px)
-        scale(1);
-
-    filter:
-        blur(0)
-        drop-shadow(
-            0 35px 60px rgba(20,80,110,.2)
-        );
-}
-
-
-/* =========================================================
-   LOGO KAI
-   =========================================================
-
-   opening/logo-kai.png
-
-   Logo kedua.
-   Lebih kecil.
-   ========================================================= */
-
-.logo-kai{
-
+.logo-support{
     position:absolute;
 
-    width:min(145px,18vw);
-
+    width:min(12vw,135px);
     max-height:100px;
 
     object-fit:contain;
 
-    top:22%;
-
-    left:15%;
-
     opacity:0;
 
-    transform:
-        translateZ(-250px)
-        translateX(-100px)
-        rotateY(-20deg)
-        scale(.65);
-
     filter:
-        blur(10px)
-        drop-shadow(
-            0 15px 30px rgba(20,80,110,.15)
-        );
-
-    transition:
-        opacity 1s ease,
-        transform 1.5s cubic-bezier(.16,1,.3,1),
-        filter 1s ease;
-}
-
-.opening.active .logo-kai{
-
-    opacity:1;
-
-    transform:
-        translateZ(20px)
-        translateX(0)
-        rotateY(0)
-        scale(1);
-
-    filter:
-        blur(0)
-        drop-shadow(
-            0 15px 30px rgba(20,80,110,.15)
-        );
-
-    transition-delay:.8s;
-}
-
-
-/* =========================================================
-   LOGO KAI WISATA
-   ========================================================= */
-
-.logo-kai-wisata{
-
-    position:absolute;
-
-    width:min(170px,20vw);
-
-    max-height:100px;
-
-    object-fit:contain;
-
-    top:23%;
-
-    right:14%;
-
-    opacity:0;
+        drop-shadow(0 15px 25px rgba(10,55,80,.18))
+        blur(7px);
 
     transform:
         translateZ(-300px)
-        translateX(120px)
-        rotateY(20deg)
         scale(.65);
-
-    filter:
-        blur(10px)
-        drop-shadow(
-            0 15px 30px rgba(20,80,110,.15)
-        );
-
-    transition:
-        opacity 1s ease,
-        transform 1.5s cubic-bezier(.16,1,.3,1),
-        filter 1s ease;
 }
 
-.opening.active .logo-kai-wisata{
+.logo-kai{
+    left:15%;
+    top:35%;
 
-    opacity:1;
+    animation:
+        supportLogo 1.7s 3.2s var(--ease) forwards;
+}
 
-    transform:
-        translateZ(10px)
-        translateX(0)
-        rotateY(0)
-        scale(1);
+.logo-kai-wisata{
+    right:15%;
+    top:35%;
 
-    filter:
-        blur(0)
-        drop-shadow(
-            0 15px 30px rgba(20,80,110,.15)
-        );
+    animation:
+        supportLogo 1.7s 3.5s var(--ease) forwards;
+}
 
-    transition-delay:1.35s;
+@keyframes supportLogo{
+
+    0%{
+        opacity:0;
+        transform:
+            translateZ(-300px)
+            scale(.65);
+    }
+
+    100%{
+        opacity:.95;
+        filter:
+            drop-shadow(0 15px 25px rgba(10,55,80,.18))
+            blur(0);
+
+        transform:
+            translateZ(0)
+            scale(1);
+    }
 }
 
 
@@ -836,228 +626,145 @@ body{
    ========================================================= */
 
 .opening-copy{
-
     position:absolute;
 
     left:50%;
-    bottom:15%;
+    bottom:10%;
 
-    transform:
-        translateX(-50%)
-        translateY(30px);
+    transform:translateX(-50%);
 
-    z-index:40;
+    z-index:12;
+
+    width:min(90%,900px);
 
     text-align:center;
 
-    width:90%;
+    color:var(--navy);
 
     opacity:0;
 
-    transition:
-        opacity 1.2s ease,
-        transform 1.3s cubic-bezier(.16,1,.3,1);
-
-    transition-delay:2.1s;
+    animation:
+        openingCopy 1.8s 4.4s var(--ease) forwards;
 }
 
-.opening.active .opening-copy{
-
-    opacity:1;
-
-    transform:
-        translateX(-50%)
-        translateY(0);
-}
-
-.opening-copy .small{
-
-    font-size:
-        clamp(10px,1vw,14px);
-
+.opening-eyebrow{
+    font-size:12px;
+    letter-spacing:.28em;
     font-weight:700;
 
-    letter-spacing:.4em;
-
-    color:#456d7c;
-
-    margin-bottom:12px;
+    margin-bottom:18px;
 }
 
-.opening-copy h1{
-
+.opening-title{
     font-family:"Manrope",sans-serif;
 
-    font-size:
-        clamp(38px,6vw,85px);
+    font-size:clamp(38px,6vw,88px);
 
-    line-height:.9;
+    line-height:.95;
 
     font-weight:800;
 
-    letter-spacing:-.06em;
+    letter-spacing:-.055em;
 
-    color:#143f54;
+    margin-bottom:18px;
 }
 
-.opening-copy p{
+.opening-title span{
+    display:block;
+    font-size:.42em;
+
+    font-weight:500;
+
+    letter-spacing:.22em;
 
     margin-top:18px;
+}
 
-    font-size:
-        clamp(12px,1.3vw,17px);
-
+.opening-year{
+    font-size:14px;
     letter-spacing:.32em;
+    font-weight:500;
+}
 
-    color:#527486;
+@keyframes openingCopy{
+    from{
+        opacity:0;
+        transform:
+            translate(-50%,30px);
+    }
 
+    to{
+        opacity:1;
+        transform:
+            translate(-50%,0);
+    }
 }
 
 
 /* =========================================================
-   OPENING LIGHT FLASH
+   OPENING LIGHT SWEEP
    ========================================================= */
 
-.opening-flash{
-
+.opening-light{
     position:absolute;
+    inset:-20%;
 
-    inset:0;
-
-    z-index:80;
-
-    background:white;
-
-    opacity:0;
+    z-index:15;
 
     pointer-events:none;
-}
 
-.opening.flash .opening-flash{
+    background:
+        linear-gradient(
+            105deg,
+            transparent 35%,
+            rgba(255,255,255,.9) 49%,
+            transparent 63%
+        );
+
+    transform:translateX(-100%);
 
     animation:
-        flash 1.3s ease forwards;
+        lightSweep 2s 5.8s ease-in-out forwards;
 }
 
-@keyframes flash{
-
-    0%{
-        opacity:0;
+@keyframes lightSweep{
+    to{
+        transform:translateX(100%);
     }
-
-    35%{
-        opacity:.9;
-    }
-
-    100%{
-        opacity:0;
-    }
-
 }
 
 
 /* =========================================================
-   PRESENTATION
+   SCENE SYSTEM
    ========================================================= */
 
-.presentation{
-
+#scene-stage{
     position:absolute;
-
     inset:0;
 
-    z-index:40;
+    z-index:20;
 
     opacity:0;
 
-    transition:opacity 1s ease;
+    transition:
+        opacity 1.3s ease;
 }
 
-.presentation.active{
-
+#scene-stage.ready{
     opacity:1;
 }
 
-
-/* =========================================================
-   SCENE
-   ========================================================= */
-
 .scene{
-
     position:absolute;
-
     inset:0;
 
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:
-        clamp(40px,7vw,100px);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transform:
-        scale(1.08)
-        translateX(50px);
-
-    filter:blur(12px);
-
-    transition:
-        opacity 1.1s ease,
-        transform 1.5s cubic-bezier(.16,1,.3,1),
-        filter 1.2s ease;
+    display:none;
 
     overflow:hidden;
 }
 
 .scene.active{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:
-        scale(1)
-        translateX(0);
-
-    filter:blur(0);
-}
-
-
-/* =========================================================
-   SCENE LIGHT
-   ========================================================= */
-
-.scene::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    z-index:-5;
-
-    background:
-
-        radial-gradient(
-            ellipse at 72% 22%,
-            rgba(255,255,255,.9),
-            transparent 32%
-        ),
-
-        linear-gradient(
-            150deg,
-            #fbfeff 0%,
-            #e4f7ff 50%,
-            #b8e5f5 100%
-        );
+    display:block;
 }
 
 
@@ -1065,13 +772,16 @@ body{
    SCENE CONTENT
    ========================================================= */
 
-.scene-content{
+.scene-inner{
+    position:absolute;
 
-    width:min(1300px,100%);
+    left:8%;
+    right:8%;
 
-    position:relative;
+    top:8%;
+    bottom:18%;
 
-    z-index:50;
+    z-index:10;
 }
 
 
@@ -1080,445 +790,134 @@ body{
    ========================================================= */
 
 .eyebrow{
+    font-size:11px;
 
-    display:flex;
+    font-weight:700;
 
-    align-items:center;
+    letter-spacing:.28em;
 
-    gap:15px;
+    text-transform:uppercase;
 
-    font-size:
-        clamp(10px,1vw,14px);
-
-    font-weight:800;
-
-    letter-spacing:.3em;
-
-    color:#4c7484;
+    color:rgba(16,42,67,.62);
 
     margin-bottom:22px;
 }
 
-.eyebrow::before{
-
-    content:"";
-
-    width:45px;
-    height:1px;
-
-    background:#2b85aa;
-}
-
-.scene h2{
-
+.big-title{
     font-family:"Manrope",sans-serif;
 
     font-size:
-        clamp(42px,7vw,105px);
+        clamp(
+            42px,
+            7vw,
+            110px
+        );
 
-    line-height:.9;
+    line-height:.94;
 
     letter-spacing:-.065em;
 
     font-weight:800;
 
-    color:#143e53;
+    color:var(--navy);
+
+    max-width:1000px;
 }
 
-.scene h2 span{
-
-    color:#237fa5;
+.big-title span{
+    display:block;
 }
 
-.lead{
-
-    max-width:800px;
-
-    margin-top:30px;
-
-    font-size:
-        clamp(17px,2vw,27px);
-
-    line-height:1.5;
-
-    color:#3e6272;
-}
-
-.caption{
-
-    max-width:700px;
-
+.subtitle{
     margin-top:28px;
 
     font-size:
-        clamp(13px,1.2vw,17px);
+        clamp(
+            15px,
+            1.5vw,
+            22px
+        );
 
-    line-height:1.7;
+    line-height:1.65;
 
-    color:#617d8b;
+    max-width:670px;
+
+    color:rgba(16,42,67,.72);
 }
 
 .quote{
-
-    max-width:800px;
-
-    margin-top:28px;
-
     font-family:"Manrope",sans-serif;
 
     font-size:
-        clamp(18px,2vw,28px);
+        clamp(
+            19px,
+            2.1vw,
+            30px
+        );
 
-    line-height:1.45;
+    line-height:1.4;
 
-    font-weight:600;
+    font-weight:500;
 
-    color:#1e526b;
+    max-width:850px;
+
+    color:var(--navy);
+}
+
+.quote::before{
+    content:"“";
+    color:var(--gold);
+    font-size:2em;
+    line-height:0;
+    vertical-align:-.25em;
+    margin-right:7px;
 }
 
 
 /* =========================================================
-   PHOTO COLLAGE
-   =========================================================
-
-   Kolase dibuat seperti editorial layout.
-   Bukan kartu acak.
+   INTRO SCENES
    ========================================================= */
 
-.collage{
-
-    position:relative;
-
-    width:min(720px,48vw);
-
-    height:min(580px,65vh);
-
-    margin-left:auto;
-
-    perspective:1000px;
+.center-scene{
+    display:none;
 }
 
-
-/* large main image */
-
-.collage .photo-main{
-
-    position:absolute;
-
-    width:62%;
-    height:70%;
-
-    left:5%;
-    top:8%;
-
-    object-fit:cover;
-
-    border-radius:18px;
-
-    box-shadow:
-        0 35px 70px rgba(20,80,110,.22);
-
-    z-index:4;
-
-    transform:
-        rotate(-2deg)
-        scale(1.02);
-
-    transition:
-        transform 1.5s cubic-bezier(.16,1,.3,1);
-}
-
-
-/* secondary images */
-
-.collage .photo-small{
-
-    position:absolute;
-
-    width:34%;
-    height:31%;
-
-    object-fit:cover;
-
-    border-radius:14px;
-
-    box-shadow:
-        0 25px 50px rgba(20,80,110,.18);
-
-    z-index:5;
-
-    transition:
-        transform 1.5s cubic-bezier(.16,1,.3,1);
-}
-
-
-/* positions */
-
-.collage .p2{
-
-    right:2%;
-    top:3%;
-
-    transform:
-        rotate(3deg);
-}
-
-.collage .p3{
-
-    right:0;
-    bottom:3%;
-
-    transform:
-        rotate(-2deg);
-}
-
-.collage .p4{
-
-    left:18%;
-    bottom:0;
-
-    transform:
-        rotate(2deg);
-}
-
-.collage .p5{
-
-    left:0;
-    bottom:18%;
-
-    transform:
-        rotate(-4deg);
-}
-
-
-/* animation */
-
-.scene.active .collage .photo-main{
-
-    animation:
-        collageMain
-        1.5s
-        cubic-bezier(.16,1,.3,1)
-        both;
-}
-
-.scene.active .collage .p2{
-
-    animation:
-        collageP2
-        1.5s
-        .15s
-        cubic-bezier(.16,1,.3,1)
-        both;
-}
-
-.scene.active .collage .p3{
-
-    animation:
-        collageP3
-        1.5s
-        .3s
-        cubic-bezier(.16,1,.3,1)
-        both;
-}
-
-.scene.active .collage .p4{
-
-    animation:
-        collageP4
-        1.5s
-        .45s
-        cubic-bezier(.16,1,.3,1)
-        both;
-}
-
-.scene.active .collage .p5{
-
-    animation:
-        collageP5
-        1.5s
-        .6s
-        cubic-bezier(.16,1,.3,1)
-        both;
-}
-
-
-@keyframes collageMain{
-
-    from{
-        opacity:0;
-        transform:
-            translateY(50px)
-            scale(1.15)
-            rotate(-4deg);
-        filter:blur(10px);
-    }
-
-    to{
-        opacity:1;
-        transform:
-            translateY(0)
-            scale(1.02)
-            rotate(-2deg);
-        filter:blur(0);
-    }
-
-}
-
-@keyframes collageP2{
-
-    from{
-        opacity:0;
-        transform:
-            translate(70px,-50px)
-            rotate(10deg)
-            scale(.8);
-    }
-
-    to{
-        opacity:1;
-        transform:
-            rotate(3deg)
-            scale(1);
-    }
-
-}
-
-@keyframes collageP3{
-
-    from{
-        opacity:0;
-        transform:
-            translate(70px,50px)
-            rotate(-10deg)
-            scale(.8);
-    }
-
-    to{
-        opacity:1;
-        transform:
-            rotate(-2deg)
-            scale(1);
-    }
-
-}
-
-@keyframes collageP4{
-
-    from{
-        opacity:0;
-        transform:
-            translate(-30px,60px)
-            rotate(10deg)
-            scale(.8);
-    }
-
-    to{
-        opacity:1;
-        transform:
-            rotate(2deg)
-            scale(1);
-    }
-
-}
-
-@keyframes collageP5{
-
-    from{
-        opacity:0;
-        transform:
-            translate(-50px,30px)
-            rotate(-10deg)
-            scale(.8);
-    }
-
-    to{
-        opacity:1;
-        transform:
-            rotate(-4deg)
-            scale(1);
-    }
-
-}
-
-
-/* =========================================================
-   TWO COLUMN
-   ========================================================= */
-
-.two-column{
-
-    display:grid;
-
-    grid-template-columns:
-        .9fr 1.1fr;
-
-    gap:
-        clamp(40px,7vw,110px);
-
+.center-scene.active{
+    display:flex;
     align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.center-scene .scene-inner{
+    position:relative;
+    inset:auto;
+    max-width:1100px;
+}
+
+.center-scene .big-title{
+    margin:auto;
 }
 
 
 /* =========================================================
-   PHOTO STRIP
+   GIANT NUMBER
    ========================================================= */
 
-.photo-strip{
-
-    display:grid;
-
-    grid-template-columns:
-        1.4fr 1fr 1fr 1fr;
-
-    gap:12px;
-
-    margin-top:45px;
-
-    align-items:stretch;
-}
-
-.photo-strip img{
-
-    width:100%;
-
-    height:
-        clamp(180px,27vw,330px);
-
-    object-fit:cover;
-
-    border-radius:15px;
-
-    box-shadow:
-        0 25px 50px rgba(20,90,115,.15);
-
-    transition:
-        transform .8s ease;
-}
-
-.photo-strip img:nth-child(2),
-.photo-strip img:nth-child(4){
-
-    transform:
-        translateY(30px);
-}
-
-
-/* =========================================================
-   BIG NUMBER
-   ========================================================= */
-
-.big-number{
-
+.giant-number{
     position:absolute;
 
-    right:-5%;
-    bottom:-10%;
+    right:-4vw;
+    bottom:-15vh;
 
     font-family:"Manrope",sans-serif;
 
     font-size:
-        clamp(250px,38vw,600px);
+        clamp(
+            260px,
+            40vw,
+            680px
+        );
 
     line-height:.7;
 
@@ -1526,77 +925,181 @@ body{
 
     letter-spacing:-.1em;
 
-    color:
-        rgba(255,255,255,.65);
+    color:rgba(255,255,255,.55);
 
     z-index:-1;
 
-    text-shadow:
-        0 30px 80px rgba(30,100,130,.12);
+    pointer-events:none;
 }
 
 
 /* =========================================================
-   STATS
+   EDITORIAL PHOTO LAYOUT
    ========================================================= */
 
-.stats{
-
+.editorial{
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        1.35fr
+        .65fr;
 
-    gap:18px;
+    gap:32px;
 
-    max-width:900px;
-
-    margin-top:45px;
+    height:100%;
 }
 
-.stat{
+.editorial-main{
+    position:relative;
 
-    padding:35px;
+    overflow:hidden;
 
-    border-radius:22px;
-
-    background:
-        rgba(255,255,255,.55);
-
-    border:
-        1px solid rgba(255,255,255,.9);
+    border-radius:26px;
 
     box-shadow:
-        0 25px 60px rgba(30,100,130,.1);
+        0 25px 70px rgba(15,55,78,.18);
 
-    backdrop-filter:blur(15px);
+    background:#d5edf8;
 }
 
-.stat strong{
+.editorial-main img{
+    width:100%;
+    height:100%;
 
-    font-family:"Manrope",sans-serif;
-
-    font-size:
-        clamp(45px,5vw,75px);
-
-    color:#19759c;
-
-    line-height:1;
-}
-
-.stat span{
+    object-fit:cover;
 
     display:block;
 
-    margin-top:10px;
+    transition:
+        transform 8s var(--ease);
+}
 
+.scene.active .editorial-main img{
+    transform:scale(1.06);
+}
+
+.editorial-main::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 50%,
+            rgba(5,35,55,.42)
+        );
+}
+
+.editorial-main-caption{
+    position:absolute;
+
+    left:30px;
+    bottom:28px;
+
+    z-index:3;
+
+    color:white;
+}
+
+.editorial-main-caption strong{
+    display:block;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:24px;
+
+    margin-bottom:6px;
+}
+
+.editorial-main-caption span{
     font-size:12px;
-
+    letter-spacing:.18em;
     text-transform:uppercase;
 
-    letter-spacing:.2em;
+    opacity:.82;
+}
 
-    color:#63808e;
+
+/* =========================================================
+   SIDE PHOTO GRID
+   ========================================================= */
+
+.editorial-side{
+    display:grid;
+
+    grid-template-rows:
+        1fr
+        1fr;
+
+    gap:32px;
+}
+
+.photo{
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 20px 55px rgba(15,55,78,.16);
+
+    background:#d5edf8;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:
+        transform 7s var(--ease);
+}
+
+.scene.active .photo img{
+    transform:scale(1.05);
+}
+
+.photo::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 55%,
+            rgba(8,38,58,.35)
+        );
+}
+
+
+/* =========================================================
+   FOUR PHOTO GRID
+   ========================================================= */
+
+.four-grid{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    grid-template-rows:
+        1fr 1fr;
+
+    gap:20px;
+
+    height:100%;
+}
+
+.four-grid .photo{
+    border-radius:20px;
 }
 
 
@@ -1605,189 +1108,456 @@ body{
    ========================================================= */
 
 .timeline{
-
     display:grid;
 
     grid-template-columns:
         repeat(4,1fr);
 
-    gap:15px;
+    gap:16px;
 
-    margin-top:50px;
+    margin-top:55px;
+
+    max-width:1100px;
 }
 
 .timeline-item{
+    padding:24px;
 
     border-top:
-        1px solid rgba(30,120,155,.4);
-
-    padding-top:22px;
+        1px solid rgba(16,42,67,.25);
 }
 
-.timeline-item strong{
-
+.timeline-year{
     font-family:"Manrope",sans-serif;
 
-    font-size:32px;
-
-    color:#19769c;
-}
-
-.timeline-item p{
-
-    margin-top:10px;
-
-    font-size:14px;
-
-    line-height:1.55;
-
-    color:#607b89;
-}
-
-
-/* =========================================================
-   PEOPLE
-   ========================================================= */
-
-.people{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:12px;
-
-    margin-top:35px;
-}
-
-.person{
-
-    padding:
-        13px 21px;
-
-    border-radius:999px;
-
-    background:
-        rgba(255,255,255,.6);
-
-    border:
-        1px solid rgba(255,255,255,.9);
-
-    color:#245c73;
-
-    font-size:12px;
-
-    font-weight:700;
-
-    letter-spacing:.1em;
-
-    box-shadow:
-        0 12px 30px rgba(30,100,130,.08);
-}
-
-
-/* =========================================================
-   HUMOR
-   ========================================================= */
-
-.humor{
-
-    text-align:center;
-}
-
-.humor .eyebrow{
-
-    justify-content:center;
-}
-
-.humor-box{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-
-    margin-top:45px;
-}
-
-.humor-card{
-
-    padding:
-        28px 38px;
-
-    border-radius:22px;
-
-    background:
-        rgba(255,255,255,.55);
-
-    border:
-        1px solid rgba(255,255,255,.9);
-
-    box-shadow:
-        0 25px 60px rgba(30,100,130,.1);
-
-    font-family:"Manrope",sans-serif;
-
-    font-size:
-        clamp(18px,2vw,27px);
-
-    font-weight:700;
-
-    color:#20566d;
-}
-
-
-/* =========================================================
-   FINAL
-   ========================================================= */
-
-.final{
-
-    text-align:center;
-}
-
-.final h2{
-
-    font-size:
-        clamp(45px,8vw,120px);
-}
-
-.final-ten{
-
-    font-family:"Manrope",sans-serif;
-
-    font-size:
-        clamp(180px,30vw,450px);
-
-    line-height:.7;
+    font-size:clamp(30px,4vw,55px);
 
     font-weight:800;
 
-    letter-spacing:-.1em;
+    letter-spacing:-.06em;
 
-    color:#177aa4;
-
-    text-shadow:
-        0 35px 80px rgba(20,100,140,.18);
+    margin-bottom:14px;
 }
 
-.final-sub{
+.timeline-text{
+    font-size:13px;
 
-    margin-top:30px;
+    line-height:1.6;
 
-    font-family:"Manrope",sans-serif;
+    color:rgba(16,42,67,.67);
+}
 
-    font-size:
-        clamp(16px,2vw,27px);
 
-    font-weight:700;
+/* =========================================================
+   PEOPLE CHIPS
+   ========================================================= */
+
+.people-list{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:40px;
+
+    max-width:700px;
+}
+
+.people-chip{
+    padding:12px 17px;
+
+    border:
+        1px solid rgba(16,42,67,.16);
+
+    border-radius:100px;
+
+    background:
+        rgba(255,255,255,.35);
+
+    backdrop-filter:blur(8px);
+
+    font-size:12px;
 
     letter-spacing:.12em;
 
-    color:#285b70;
+    font-weight:600;
+}
+
+
+/* =========================================================
+   TEXT SPLIT
+   ========================================================= */
+
+.text-split{
+    display:grid;
+
+    grid-template-columns:
+        .8fr
+        1.2fr;
+
+    gap:80px;
+
+    align-items:center;
+
+    height:100%;
+}
+
+.text-split .left{
+    align-self:center;
+}
+
+.text-split .right{
+    padding-top:5%;
+}
+
+
+/* =========================================================
+   FULL BLEED PHOTO
+   ========================================================= */
+
+.full-photo{
+    position:absolute;
+    inset:0;
+
+    overflow:hidden;
+}
+
+.full-photo img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transform:scale(1.03);
+
+    transition:
+        transform 10s var(--ease);
+}
+
+.scene.active .full-photo img{
+    transform:scale(1.1);
+}
+
+.full-photo::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,32,48,.76),
+            rgba(8,32,48,.25) 50%,
+            rgba(8,32,48,.05)
+        );
+}
+
+.full-photo-content{
+    position:absolute;
+
+    left:8%;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    z-index:3;
+
+    color:white;
+
+    max-width:700px;
+}
+
+.full-photo-content .eyebrow{
+    color:rgba(255,255,255,.7);
+}
+
+.full-photo-content .big-title{
+    color:white;
+}
+
+.full-photo-content .subtitle{
+    color:rgba(255,255,255,.82);
+}
+
+
+/* =========================================================
+   MEMORY WALL
+   ========================================================= */
+
+.memory-wall{
+    display:grid;
+
+    grid-template-columns:
+        1.1fr .9fr .9fr;
+
+    grid-template-rows:
+        1fr 1fr;
+
+    gap:18px;
+
+    height:100%;
+}
+
+.memory-wall .photo:nth-child(1){
+    grid-row:span 2;
+}
+
+.memory-wall .photo:nth-child(4){
+    grid-column:span 2;
+}
+
+
+/* =========================================================
+   CLOSING
+   ========================================================= */
+
+.closing{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.closing .scene-inner{
+    position:relative;
+    inset:auto;
+}
+
+.closing-title{
+    font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(
+            38px,
+            6vw,
+            90px
+        );
+
+    line-height:.95;
+
+    letter-spacing:-.065em;
+
+    font-weight:800;
+}
+
+.closing-title small{
+    display:block;
+
+    font-size:.22em;
+
+    letter-spacing:.3em;
+
+    margin-top:25px;
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   EMPLOYEE SECTION
+   ========================================================= */
+
+.employee-scene{
+    background:
+        linear-gradient(
+            180deg,
+            rgba(239,250,255,.96),
+            rgba(203,235,249,.96)
+        );
+}
+
+.employee-header{
+    margin-bottom:28px;
+}
+
+.employee-header .big-title{
+    font-size:
+        clamp(
+            34px,
+            5vw,
+            72px
+        );
+}
+
+.employee-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:18px;
+
+    height:calc(100% - 155px);
+}
+
+.employee-card{
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:#d5edf8;
+
+    box-shadow:
+        0 18px 45px rgba(15,55,78,.14);
+}
+
+.employee-card img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:
+        transform .8s var(--ease);
+}
+
+.employee-card:hover img{
+    transform:scale(1.05);
+}
+
+.employee-info{
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding:28px 20px 20px;
+
+    color:white;
+
+    z-index:2;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(5,30,48,.86)
+        );
+}
+
+.employee-name{
+    font-family:"Manrope",sans-serif;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    line-height:1.2;
+}
+
+.employee-role{
+    margin-top:5px;
+
+    font-size:10px;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+
+    opacity:.78;
+}
+
+
+/* =========================================================
+   FINAL LOGO
+   ========================================================= */
+
+.final-logo-stage{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.final-logo-stage .scene-inner{
+    position:relative;
+    inset:auto;
+}
+
+.final-logo{
+    width:min(48vw,500px);
+
+    max-height:42vh;
+
+    object-fit:contain;
+
+    margin-bottom:30px;
+
+    filter:
+        drop-shadow(
+            0 25px 45px
+            rgba(15,55,78,.18)
+        );
+}
+
+.final-support{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:45px;
+
+    margin-top:20px;
+}
+
+.final-support img{
+    width:100px;
+    max-height:70px;
+
+    object-fit:contain;
+
+    opacity:.88;
+}
+
+.final-tagline{
+    margin-top:38px;
+
+    font-size:13px;
+
+    letter-spacing:.3em;
+
+    font-weight:600;
+
+    color:rgba(16,42,67,.65);
+}
+
+
+/* =========================================================
+   CAMERA / SCENE TRANSITION
+   ========================================================= */
+
+.scene.active .scene-inner{
+    animation:
+        sceneIn 1.1s var(--ease) both;
+}
+
+@keyframes sceneIn{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(28px)
+            scale(.985);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
 }
 
 
@@ -1796,126 +1566,108 @@ body{
    ========================================================= */
 
 .controls{
-
     position:absolute;
 
-    z-index:300;
-
-    bottom:
-        max(18px,env(safe-area-inset-bottom));
-
     left:50%;
+    bottom:25px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
+
+    z-index:80;
 
     display:flex;
 
     align-items:center;
 
-    gap:7px;
+    gap:8px;
 
-    padding:8px;
-
-    border-radius:999px;
-
-    background:
-        rgba(255,255,255,.55);
+    padding:7px 9px;
 
     border:
-        1px solid rgba(255,255,255,.8);
+        1px solid rgba(255,255,255,.55);
+
+    border-radius:100px;
+
+    background:
+        rgba(255,255,255,.32);
 
     backdrop-filter:blur(18px);
 
     box-shadow:
-        0 15px 40px rgba(30,100,130,.13);
+        0 10px 30px rgba(10,45,65,.1);
 }
 
-.control{
-
-    width:39px;
-    height:39px;
+.control-btn{
+    width:35px;
+    height:35px;
 
     border:0;
 
     border-radius:50%;
 
     background:
-        rgba(255,255,255,.7);
+        rgba(255,255,255,.65);
 
-    color:#245e75;
+    color:var(--navy);
 
     cursor:pointer;
 
-    font-size:15px;
+    font-size:14px;
 
-    transition:.2s;
+    transition:.25s ease;
 }
 
-.control:hover{
-
-    transform:
-        translateY(-2px);
+.control-btn:hover{
+    transform:scale(1.08);
 
     background:white;
 }
 
 .progress{
+    position:absolute;
 
-    width:
-        clamp(80px,14vw,180px);
+    left:0;
+    right:0;
+    bottom:0;
 
     height:3px;
 
     background:
-        rgba(30,100,130,.15);
+        rgba(255,255,255,.35);
 
-    border-radius:10px;
-
-    overflow:hidden;
+    z-index:90;
 }
 
 .progress-bar{
-
-    width:0%;
-
+    width:0;
     height:100%;
 
-    background:#287fa2;
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            #fff
+        );
+
+    transition:
+        width .2s linear;
 }
 
-
-/* =========================================================
-   COUNTER
-   ========================================================= */
-
 .counter{
-
     position:absolute;
 
-    top:25px;
+    right:28px;
+    bottom:29px;
 
-    right:25px;
-
-    z-index:300;
-
-    padding:
-        9px 14px;
-
-    border-radius:999px;
-
-    background:
-        rgba(255,255,255,.45);
-
-    backdrop-filter:blur(12px);
-
-    color:#537583;
+    z-index:80;
 
     font-size:11px;
 
-    letter-spacing:.2em;
+    letter-spacing:.18em;
 
-    font-weight:700;
+    font-weight:600;
+
+    color:rgba(16,42,67,.55);
 }
 
 
@@ -1923,267 +1675,234 @@ body{
    LOADING
    ========================================================= */
 
-.loading{
-
-    position:absolute;
-
+#loading{
+    position:fixed;
     inset:0;
 
-    z-index:500;
+    z-index:999;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
-    background:#fafdff;
+    background:#eafaff;
 
     transition:
-        opacity 1s ease;
+        opacity 1s ease,
+        visibility 1s ease;
 }
 
-.loading.hide{
-
+#loading.hide{
     opacity:0;
-
-    pointer-events:none;
+    visibility:hidden;
 }
 
-.loading-title{
+.loader{
+    width:38px;
+    height:38px;
 
-    font-family:"Manrope",sans-serif;
+    border:
+        2px solid rgba(16,42,67,.12);
 
-    font-size:
-        clamp(25px,4vw,50px);
+    border-top-color:
+        var(--navy);
 
-    font-weight:800;
-
-    color:#17475d;
-
-    text-align:center;
-}
-
-.loading-line{
-
-    width:150px;
-
-    height:2px;
-
-    margin:25px auto;
-
-    background:#d4e9f2;
-
-    overflow:hidden;
-}
-
-.loading-line span{
-
-    display:block;
-
-    width:40%;
-
-    height:100%;
-
-    background:#277da1;
+    border-radius:50%;
 
     animation:
-        loading 1.2s infinite;
+        spin 1s linear infinite;
 }
 
-@keyframes loading{
-
-    from{
-        transform:translateX(-150%);
-    }
-
+@keyframes spin{
     to{
-        transform:translateX(400%);
+        transform:rotate(360deg);
     }
-
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   MOBILE
    ========================================================= */
 
-@media(max-width:850px){
+@media(max-width:800px){
 
-    .two-column{
+    .scene-inner{
+        left:6%;
+        right:6%;
 
+        top:7%;
+        bottom:14%;
+    }
+
+    .opening-title{
+        font-size:clamp(34px,10vw,60px);
+    }
+
+    .logo-main{
+        width:min(68vw,380px);
+    }
+
+    .logo-kai{
+        left:8%;
+        top:32%;
+    }
+
+    .logo-kai-wisata{
+        right:8%;
+        top:32%;
+    }
+
+    .logo-support{
+        width:80px;
+    }
+
+    .opening-copy{
+        bottom:9%;
+    }
+
+    .editorial{
+        grid-template-columns:1fr;
+
+        grid-template-rows:
+            1.3fr .7fr;
+
+        gap:14px;
+    }
+
+    .editorial-side{
+        grid-template-columns:
+            1fr 1fr;
+
+        grid-template-rows:1fr;
+        gap:14px;
+    }
+
+    .four-grid{
+        gap:10px;
+    }
+
+    .timeline{
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:8px;
+
+        margin-top:30px;
+    }
+
+    .timeline-item{
+        padding:15px 10px;
+    }
+
+    .text-split{
         grid-template-columns:1fr;
 
         gap:30px;
     }
 
-    .collage{
-
-        width:100%;
-
-        height:420px;
-
-        max-width:650px;
-
-        margin:auto;
+    .memory-wall{
+        gap:9px;
     }
 
-    .timeline{
-
+    .employee-grid{
         grid-template-columns:
             repeat(2,1fr);
+
+        overflow-y:auto;
+
+        padding-right:4px;
+
+        height:calc(100% - 130px);
     }
 
-    .logo-main{
-
-        width:62vw;
+    .employee-card{
+        min-height:230px;
     }
 
-    .logo-kai{
-
-        width:110px;
-
-        top:16%;
-
-        left:7%;
+    .final-logo{
+        width:70vw;
     }
 
-    .logo-kai-wisata{
-
-        width:125px;
-
-        top:17%;
-
-        right:7%;
+    .final-support{
+        gap:25px;
     }
 
-}
-
-
-@media(max-width:600px){
-
-    .scene{
-
-        padding:
-            55px 20px 85px;
+    .final-support img{
+        width:75px;
     }
 
-    .scene h2{
-
-        font-size:
-            clamp(37px,11vw,60px);
-    }
-
-    .lead{
-
-        font-size:16px;
-    }
-
-    .caption{
-
-        font-size:13px;
-    }
-
-    .collage{
-
-        height:310px;
-    }
-
-    .photo-strip{
-
-        grid-template-columns:
-            1.5fr 1fr;
-
-        gap:8px;
-    }
-
-    .photo-strip img{
-
-        height:170px;
-    }
-
-    .photo-strip img:nth-child(3),
-    .photo-strip img:nth-child(4){
-
+    .counter{
         display:none;
     }
 
-    .stats{
-
-        grid-template-columns:1fr;
-    }
-
-    .timeline{
-
-        grid-template-columns:1fr 1fr;
-
-        margin-top:30px;
-    }
-
-    .timeline-item strong{
-
-        font-size:24px;
-    }
-
     .controls{
-
-        bottom:12px;
+        bottom:13px;
     }
-
-    .control{
-
-        width:35px;
-        height:35px;
-    }
-
-    .progress{
-
-        width:65px;
-    }
-
-    .opening-copy{
-
-        bottom:12%;
-    }
-
-    .opening-copy h1{
-
-        font-size:
-            clamp(38px,12vw,65px);
-    }
-
-    .opening-copy p{
-
-        letter-spacing:.18em;
-    }
-
-    .opening-cloud{
-
-        bottom:-18%;
-
-        height:52%;
-    }
-
 }
 
 
 /* =========================================================
-   REDUCED MOTION
+   SMALL PHONE
    ========================================================= */
 
-@media(prefers-reduced-motion:reduce){
+@media(max-width:480px){
 
-    *,
-    *::before,
-    *::after{
-
-        animation-duration:.01ms !important;
-
-        animation-iteration-count:1 !important;
-
-        transition-duration:.01ms !important;
+    .opening-eyebrow{
+        font-size:9px;
     }
 
+    .opening-year{
+        font-size:10px;
+    }
+
+    .eyebrow{
+        font-size:9px;
+        margin-bottom:13px;
+    }
+
+    .big-title{
+        font-size:
+            clamp(
+                34px,
+                10vw,
+                52px
+            );
+    }
+
+    .subtitle{
+        font-size:13px;
+        line-height:1.5;
+        margin-top:18px;
+    }
+
+    .quote{
+        font-size:18px;
+    }
+
+    .employee-grid{
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:9px;
+    }
+
+    .employee-card{
+        min-height:210px;
+    }
+
+    .employee-name{
+        font-size:14px;
+    }
+
+    .employee-role{
+        font-size:8px;
+    }
+
+    .control-btn{
+        width:31px;
+        height:31px;
+    }
 }
 
 </style>
@@ -2192,200 +1911,132 @@ body{
 
 <body>
 
+
+<!-- =======================================================
+     LOADING
+     ======================================================= -->
+
+<div id="loading">
+    <div class="loader"></div>
+</div>
+
+
+<!-- =======================================================
+     APP
+     ======================================================= -->
+
 <div id="app">
 
 
-    <!-- =====================================================
-         SKY
-         ===================================================== -->
+    <!-- SKY -->
 
-    <div class="sky">
+    <div class="sky"></div>
 
-        <div class="sun"></div>
+    <div class="sun"></div>
 
-    </div>
+    <div class="particles" id="particles"></div>
 
 
-    <!-- =====================================================
-         DISTANT CLOUD
-         ===================================================== -->
+    <!-- ===================================================
+         OPENING CINEMATIC
+         =================================================== -->
 
-    <div class="cloud-horizon"></div>
+    <section id="opening">
 
+        <div class="opening-camera" id="openingCamera">
 
-    <!-- =====================================================
-         LIGHT
-         ===================================================== -->
+            <div class="opening-clouds">
 
-    <div class="light-rays"></div>
+                <div class="opening-cloud c1"></div>
+                <div class="opening-cloud c2"></div>
+                <div class="opening-cloud c3"></div>
 
-
-    <!-- =====================================================
-         PARTICLES
-         ===================================================== -->
-
-    <div
-        class="particles"
-        id="particles"
-    ></div>
+            </div>
 
 
-    <!-- =====================================================
-         OPENING
-         ===================================================== -->
+            <!-- LOGOS -->
 
-    <section
-        class="opening"
-        id="opening"
-    >
+            <div class="opening-logos">
 
-        <div
-            class="opening-camera"
-            id="openingCamera"
-        >
-
-
-            <!-- =================================================
-                 LOGO STAGE
-                 ================================================= -->
-
-            <div class="logo-stage">
-
-
-                <!-- =============================================
-                     LOGO UTAMA
-                     =============================================
-
-                     WAJIB DI SINI:
-
-                     opening/logo-utama.png
-
-                     ISINYA:
-                     LOGO ANNIVERSARY DRC
-                     YANG ADA TULISAN 10 TAHUN
-
-                     LOGO INI ADALAH HERO LOGO.
-                     ============================================= -->
-
+                <!-- LOGO UTAMA -->
                 <img
                     class="logo-main"
                     src="opening/logo-utama.png"
-                    alt="Logo Anniversary DRC 10 Tahun"
+                    alt="DRC 10 Tahun"
                 >
 
-
-                <!-- =============================================
-                     LOGO KAI
-                     ============================================= -->
-
+                <!-- LOGO KAI -->
                 <img
-                    class="logo-kai"
+                    class="logo-support logo-kai"
                     src="opening/logo-kai.png"
-                    alt="Logo KAI"
+                    alt="KAI"
                 >
 
-
-                <!-- =============================================
-                     LOGO KAI WISATA
-                     ============================================= -->
-
+                <!-- LOGO KAI WISATA -->
                 <img
-                    class="logo-kai-wisata"
+                    class="logo-support logo-kai-wisata"
                     src="opening/logo-kai-wisata.png"
-                    alt="Logo KAI Wisata"
+                    alt="KAI Wisata"
                 >
 
+            </div>
 
-                <!-- =============================================
-                     OPENING COPY
-                     ============================================= -->
 
-                <div class="opening-copy">
+            <!-- OPENING TEXT -->
 
-                    <div class="small">
-                        DRC CC 121 · INBOUND BANDUNG
-                    </div>
+            <div class="opening-copy">
 
-                    <h1>
-                        A DECADE
-                        <br>
-                        IN MOTION
-                    </h1>
+                <div class="opening-eyebrow">
+                    DRC CC 121 · INBOUND BANDUNG
+                </div>
 
-                    <p>
-                        2016 — 2026
-                    </p>
+                <div class="opening-title">
+                    A DECADE
+                    <span>IN MOTION</span>
+                </div>
 
+                <div class="opening-year">
+                    2016 — 2026
                 </div>
 
             </div>
 
 
-            <!-- =================================================
-                 OPENING CLOUD
-                 ================================================= -->
+            <!-- LIGHT -->
 
-            <div class="opening-cloud">
-
-                <div class="cloud-base"></div>
-
-                <div class="cloud-dome dome-1"></div>
-
-                <div class="cloud-dome dome-2"></div>
-
-                <div class="cloud-dome dome-3"></div>
-
-                <div class="cloud-dome dome-4"></div>
-
-                <div class="cloud-top-glow"></div>
-
-            </div>
+            <div class="opening-light"></div>
 
         </div>
-
-
-        <div class="opening-flash"></div>
 
     </section>
 
 
-    <!-- =====================================================
-         PRESENTATION
-         ===================================================== -->
 
-    <main
-        class="presentation"
-        id="presentation"
-    >
+    <!-- ===================================================
+         SCENE STAGE
+         =================================================== -->
+
+    <main id="scene-stage">
 
 
         <!-- =================================================
-             01
+             01 — OPENING
              ================================================= -->
 
-        <section
-            class="scene"
-            data-duration="6500"
-        >
+        <section class="scene center-scene active">
 
-            <div class="scene-content">
+            <div class="scene-inner">
 
                 <div class="eyebrow">
                     DRC CC 121 · INBOUND BANDUNG
                 </div>
 
-                <h2>
+                <div class="big-title">
                     A DECADE
-                    <span>IN MOTION.</span>
-                </h2>
-
-                <div class="lead">
-                    Sepuluh tahun bukan sekadar angka.
-                    Ini tentang perjalanan, manusia,
-                    dan cerita yang terus bergerak.
+                    <span>IN MOTION</span>
                 </div>
 
-                <div class="caption">
+                <div class="subtitle">
                     2016 — 2026
                 </div>
 
@@ -2394,37 +2045,30 @@ body{
         </section>
 
 
+
         <!-- =================================================
-             02
+             02 — TEN YEARS
              ================================================= -->
 
-        <section
-            class="scene"
-            data-duration="6000"
-        >
+        <section class="scene center-scene">
 
-            <div class="big-number">
-                10
-            </div>
+            <div class="scene-inner">
 
-            <div class="scene-content">
+                <div class="giant-number">
+                    10
+                </div>
 
                 <div class="eyebrow">
-                    ONE DECADE
+                    TEN YEARS
                 </div>
 
-                <h2>
-                    TEN
-                    <span>YEARS.</span>
-                </h2>
-
-                <div class="lead">
-                    DRC CC 121 INBOUND BANDUNG
+                <div class="big-title">
+                    DRC CC 121
+                    <span>INBOUND BANDUNG</span>
                 </div>
 
-                <div class="quote">
-                    ONE DECADE.
-                    COUNTLESS STORIES.
+                <div class="subtitle">
+                    ONE DECADE. COUNTLESS STORIES.
                 </div>
 
             </div>
@@ -2432,69 +2076,99 @@ body{
         </section>
 
 
+
         <!-- =================================================
-             03
+             03 — THE BEGINNING
              ================================================= -->
 
-        <section
-            class="scene"
-            data-duration="8500"
-        >
+        <section class="scene">
 
-            <div class="scene-content">
+            <div class="scene-inner">
 
-                <div class="two-column">
+                <div class="editorial">
 
-                    <div>
+                    <div class="editorial-main">
+
+                        <img src="foto1.jpg">
+
+                        <div class="editorial-main-caption">
+
+                            <strong>THE BEGINNING</strong>
+
+                            <span>
+                                Sepuluh tahun, banyak cerita.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="editorial-side">
+
+                        <div class="photo">
+                            <img src="foto2.jpg">
+                        </div>
+
+                        <div class="photo">
+                            <img src="foto3.jpg">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             04 — STORY
+             ================================================= -->
+
+        <section class="scene">
+
+            <div class="scene-inner">
+
+                <div class="text-split">
+
+                    <div class="left">
 
                         <div class="eyebrow">
                             THE BEGINNING
                         </div>
 
-                        <h2>
+                        <div class="big-title">
                             Sepuluh tahun,
                             <span>banyak cerita.</span>
-                        </h2>
-
-                        <div class="quote">
-                            Dari hari pertama hingga hari ini,
-                            setiap momen punya ceritanya sendiri.
                         </div>
 
                     </div>
 
 
-                    <div class="collage">
+                    <div class="right">
 
-                        <img
-                            class="photo-main"
-                            src="foto1.jpg"
-                            alt=""
-                        >
+                        <div class="four-grid">
 
-                        <img
-                            class="photo-small p2"
-                            src="foto2.jpg"
-                            alt=""
-                        >
+                            <div class="photo">
+                                <img src="foto2.jpg">
+                            </div>
 
-                        <img
-                            class="photo-small p3"
-                            src="foto3.jpg"
-                            alt=""
-                        >
+                            <div class="photo">
+                                <img src="foto3.jpg">
+                            </div>
 
-                        <img
-                            class="photo-small p4"
-                            src="foto4.jpg"
-                            alt=""
-                        >
+                            <div class="photo">
+                                <img src="foto4.jpg">
+                            </div>
 
-                        <img
-                            class="photo-small p5"
-                            src="foto5.jpg"
-                            alt=""
-                        >
+                            <div class="photo">
+                                <img src="foto5.jpg">
+                            </div>
+
+                        </div>
 
                     </div>
 
@@ -2505,45 +2179,63 @@ body{
         </section>
 
 
+
         <!-- =================================================
-             04
+             05 — MOMENTS WE KEEP
              ================================================= -->
 
-        <section
-            class="scene"
-            data-duration="8500"
-        >
+        <section class="scene">
 
-            <div class="scene-content">
+            <div class="scene-inner">
 
-                <div class="eyebrow">
-                    MOMENTS WE KEEP
-                </div>
+                <div class="text-split">
 
-                <h2>
-                    Bukan cuma
-                    <span>pekerjaan.</span>
-                </h2>
+                    <div class="left">
 
-                <div class="lead">
-                    Ada briefing. Ada tawa.
-                    Ada shift. Ada kopi.
-                    Ada cerita yang mungkin
-                    tidak pernah masuk laporan.
-                </div>
+                        <div class="eyebrow">
+                            MOMENTS WE KEEP
+                        </div>
 
-                <div class="photo-strip">
+                        <div class="big-title">
+                            Bukan cuma
+                            <span>pekerjaan.</span>
+                        </div>
 
-                    <img src="foto6.jpg" alt="">
-                    <img src="foto7.jpg" alt="">
-                    <img src="foto8.jpg" alt="">
-                    <img src="foto9.jpg" alt="">
+                        <div class="subtitle">
 
-                </div>
+                            Briefing, tawa, shift, kopi,
+                            dan semua momen kecil
+                            yang akhirnya menjadi cerita.
 
-                <div class="quote">
-                    Karena pada akhirnya,
-                    yang paling kita ingat adalah orang-orangnya.
+                        </div>
+
+                    </div>
+
+
+                    <div class="right">
+
+                        <div class="four-grid">
+
+                            <div class="photo">
+                                <img src="foto6.jpg">
+                            </div>
+
+                            <div class="photo">
+                                <img src="foto7.jpg">
+                            </div>
+
+                            <div class="photo">
+                                <img src="foto8.jpg">
+                            </div>
+
+                            <div class="photo">
+                                <img src="foto9.jpg">
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -2551,49 +2243,35 @@ body{
         </section>
 
 
+
         <!-- =================================================
-             05
+             06 — REALITY CHECK
              ================================================= -->
 
-        <section
-            class="scene humor"
-            data-duration="6500"
-        >
+        <section class="scene full-photo">
 
-            <div class="scene-content">
+            <div class="full-photo">
+
+                <img src="foto10.jpg">
+
+            </div>
+
+            <div class="full-photo-content">
 
                 <div class="eyebrow">
                     REALITY CHECK
                 </div>
 
-                <h2>
+                <div class="big-title">
                     10 YEARS.
                     <span>STILL ANSWERING.</span>
-                </h2>
-
-                <div class="humor-box">
-
-                    <div class="humor-card">
-                        Incoming.
-                    </div>
-
-                    <div class="humor-card">
-                        Komplain.
-                    </div>
-
-                    <div class="humor-card">
-                        Pertanyaan yang sama.
-                    </div>
-
                 </div>
 
-                <div class="caption"
-                     style="margin-left:auto;margin-right:auto">
-
-                    Setiap panggilan mungkin berbeda.
-                    Tapi satu hal tetap sama:
-                    selalu ada seseorang di ujung sana
-                    yang siap membantu.
+                <div class="subtitle">
+                    Incoming. Komplain.
+                    Pertanyaan yang sama berulang kali.
+                    Dan tetap ada seseorang di ujung telepon
+                    yang menjawab.
 
                 </div>
 
@@ -2602,38 +2280,30 @@ body{
         </section>
 
 
+
         <!-- =================================================
-             06
+             07 — THE JOURNEY
              ================================================= -->
 
-        <section
-            class="scene"
-            data-duration="7000"
-        >
+        <section class="scene center-scene">
 
-            <div class="scene-content">
+            <div class="scene-inner">
 
                 <div class="eyebrow">
                     THE JOURNEY
                 </div>
 
-                <h2>
+                <div class="big-title">
                     FROM 2016
-                    <span>TO 2026.</span>
-                </h2>
+                    <span>TO 2026</span>
+                </div>
 
-                <div class="lead">
+                <div class="subtitle">
+
                     Banyak yang berubah.
                     Tapi satu hal tetap:
                     tetap terhubung.
-                </div>
 
-                <div class="caption">
-                    Teknologi berubah.
-                    Sistem berkembang.
-                    Cara bekerja bergerak maju.
-                    Tetapi tujuan untuk memberikan pelayanan
-                    tetap menjadi bagian dari perjalanan.
                 </div>
 
             </div>
@@ -2641,73 +2311,81 @@ body{
         </section>
 
 
+
         <!-- =================================================
-             07
+             08 — TIMELINE
              ================================================= -->
 
-        <section
-            class="scene"
-            data-duration="8500"
-        >
+        <section class="scene">
 
-            <div class="scene-content">
+            <div class="scene-inner">
 
                 <div class="eyebrow">
                     A DECADE OF JOURNEY
                 </div>
 
-                <h2>
+                <div class="big-title">
                     10 YEARS.
                     <span>MANY CHAPTERS.</span>
-                </h2>
+                </div>
+
 
                 <div class="timeline">
 
                     <div class="timeline-item">
 
-                        <strong>2016</strong>
+                        <div class="timeline-year">
+                            2016
+                        </div>
 
-                        <p>
+                        <div class="timeline-text">
                             Awal perjalanan.
-                            Membuka bab pertama
-                            dari cerita DRC CC 121.
-                        </p>
+                            Sebuah tim mulai membangun
+                            cerita bersama.
+                        </div>
 
                     </div>
 
+
                     <div class="timeline-item">
 
-                        <strong>2019</strong>
+                        <div class="timeline-year">
+                            2019
+                        </div>
 
-                        <p>
+                        <div class="timeline-text">
                             Bertumbuh,
-                            belajar, dan menghadapi
+                            belajar dan menghadapi
                             tantangan baru.
-                        </p>
+                        </div>
 
                     </div>
 
+
                     <div class="timeline-item">
 
-                        <strong>2022</strong>
+                        <div class="timeline-year">
+                            2022
+                        </div>
 
-                        <p>
-                            Beradaptasi dengan
-                            perubahan dan terus
-                            memberikan pelayanan.
-                        </p>
+                        <div class="timeline-text">
+                            Beradaptasi dengan perubahan
+                            dan terus bergerak.
+                        </div>
 
                     </div>
 
+
                     <div class="timeline-item">
 
-                        <strong>2026</strong>
+                        <div class="timeline-year">
+                            2026
+                        </div>
 
-                        <p>
-                            Sepuluh tahun.
-                            Dan perjalanan
-                            masih terus berjalan.
-                        </p>
+                        <div class="timeline-text">
+                            Sepuluh tahun perjalanan.
+                            Dan cerita masih berlanjut.
+                        </div>
 
                     </div>
 
@@ -2718,38 +2396,46 @@ body{
         </section>
 
 
+
         <!-- =================================================
-             08
+             09 — ALONG THE WAY
              ================================================= -->
 
-        <section
-            class="scene"
-            data-duration="8500"
-        >
+        <section class="scene">
 
-            <div class="scene-content">
+            <div class="scene-inner">
 
-                <div class="eyebrow">
-                    ALONG THE WAY
-                </div>
+                <div class="editorial">
 
-                <h2>
-                    Setiap tahun
-                    <span>punya cerita.</span>
-                </h2>
+                    <div class="editorial-main">
 
-                <div class="photo-strip">
+                        <img src="foto11.jpg">
 
-                    <img src="foto10.jpg" alt="">
-                    <img src="foto11.jpg" alt="">
-                    <img src="foto12.jpg" alt="">
-                    <img src="foto13.jpg" alt="">
+                        <div class="editorial-main-caption">
 
-                </div>
+                            <strong>ALONG THE WAY</strong>
 
-                <div class="quote">
-                    Ada momen yang sederhana,
-                    tetapi justru paling sulit dilupakan.
+                            <span>
+                                Setiap tahun punya cerita.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="editorial-side">
+
+                        <div class="photo">
+                            <img src="foto12.jpg">
+                        </div>
+
+                        <div class="photo">
+                            <img src="foto13.jpg">
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -2757,120 +2443,60 @@ body{
         </section>
 
 
+
         <!-- =================================================
-             09
+             10 — ONE DECADE
              ================================================= -->
 
-        <section
-            class="scene"
-            data-duration="6500"
-        >
+        <section class="scene center-scene">
 
-            <div class="big-number">
-                10
-            </div>
-
-            <div class="scene-content">
+            <div class="scene-inner">
 
                 <div class="eyebrow">
                     ONE DECADE
                 </div>
 
-                <h2>
+                <div class="big-title">
                     MORE THAN
                     <span>JUST A NUMBER.</span>
-                </h2>
-
-                <div class="stats">
-
-                    <div class="stat">
-
-                        <strong>10</strong>
-
-                        <span>
-                            Years
-                        </span>
-
-                    </div>
-
-                    <div class="stat">
-
-                        <strong>1</strong>
-
-                        <span>
-                            Team
-                        </span>
-
-                    </div>
-
-                    <div class="stat">
-
-                        <strong>∞</strong>
-
-                        <span>
-                            Stories
-                        </span>
-
-                    </div>
-
                 </div>
 
-                <div class="caption">
-                    Karena sepuluh tahun tidak pernah
-                    benar-benar bisa dirangkum
-                    hanya dengan satu angka.
-                </div>
+                <div class="timeline">
 
-            </div>
+                    <div class="timeline-item">
 
-        </section>
+                        <div class="timeline-year">
+                            10
+                        </div>
 
+                        <div class="timeline-text">
+                            YEARS
+                        </div>
 
-        <!-- =================================================
-             10
-             ================================================= -->
-
-        <section
-            class="scene"
-            data-duration="7000"
-        >
-
-            <div class="scene-content">
-
-                <div class="eyebrow">
-                    BEHIND THE CALL
-                </div>
-
-                <h2>
-                    THE VOICE
-                    <span>BEHIND THE SERVICE.</span>
-                </h2>
-
-                <div class="lead">
-                    Karena setiap suara yang terdengar
-                    di telepon, berasal dari manusia.
-                </div>
-
-                <div class="people">
-
-                    <div class="person">
-                        AGENT
                     </div>
 
-                    <div class="person">
-                        TEAM LEADER
+                    <div class="timeline-item">
+
+                        <div class="timeline-year">
+                            1
+                        </div>
+
+                        <div class="timeline-text">
+                            TEAM
+                        </div>
+
                     </div>
 
-                    <div class="person">
-                        SUPPORT
-                    </div>
+                    <div class="timeline-item">
 
-                    <div class="person">
-                        QUALITY
-                    </div>
+                        <div class="timeline-year">
+                            ∞
+                        </div>
 
-                    <div class="person">
-                        MANAGEMENT
+                        <div class="timeline-text">
+                            STORIES
+                        </div>
+
                     </div>
 
                 </div>
@@ -2880,63 +2506,66 @@ body{
         </section>
 
 
+
         <!-- =================================================
-             11
+             11 — BEHIND THE CALL
              ================================================= -->
 
-        <section
-            class="scene"
-            data-duration="8500"
-        >
+        <section class="scene">
 
-            <div class="scene-content">
+            <div class="scene-inner">
 
-                <div class="eyebrow">
-                    THE PEOPLE
-                </div>
+                <div class="text-split">
 
-                <h2>
-                    Di balik setiap panggilan,
-                    <span>ada cerita.</span>
-                </h2>
+                    <div class="left">
 
-                <div
-                    class="collage"
-                    style="
-                        margin-top:35px;
-                        margin-left:0;
-                    "
-                >
+                        <div class="eyebrow">
+                            BEHIND THE CALL
+                        </div>
 
-                    <img
-                        class="photo-main"
-                        src="foto14.jpg"
-                        alt=""
-                    >
+                        <div class="big-title">
+                            THE VOICE
+                            <span>BEHIND THE SERVICE.</span>
+                        </div>
 
-                    <img
-                        class="photo-small p2"
-                        src="foto15.jpg"
-                        alt=""
-                    >
+                    </div>
 
-                    <img
-                        class="photo-small p3"
-                        src="foto16.jpg"
-                        alt=""
-                    >
 
-                    <img
-                        class="photo-small p4"
-                        src="foto17.jpg"
-                        alt=""
-                    >
+                    <div class="right">
 
-                    <img
-                        class="photo-small p5"
-                        src="foto18.jpg"
-                        alt=""
-                    >
+                        <div class="quote">
+
+                            Karena setiap suara yang terdengar
+                            di telepon, berasal dari manusia.
+
+                        </div>
+
+
+                        <div class="people-list">
+
+                            <div class="people-chip">
+                                AGENT
+                            </div>
+
+                            <div class="people-chip">
+                                TEAM LEADER
+                            </div>
+
+                            <div class="people-chip">
+                                SUPPORT
+                            </div>
+
+                            <div class="people-chip">
+                                QUALITY
+                            </div>
+
+                            <div class="people-chip">
+                                MANAGEMENT
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -2945,44 +2574,79 @@ body{
         </section>
 
 
+
         <!-- =================================================
-             12
+             12 — THE PEOPLE
              ================================================= -->
 
-        <section
-            class="scene humor"
-            data-duration="6500"
-        >
+        <section class="scene">
 
-            <div class="scene-content">
+            <div class="scene-inner">
+
+                <div class="editorial">
+
+                    <div class="editorial-main">
+
+                        <img src="foto14.jpg">
+
+                        <div class="editorial-main-caption">
+
+                            <strong>THE PEOPLE</strong>
+
+                            <span>
+                                Di balik setiap panggilan,
+                                ada cerita.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="editorial-side">
+
+                        <div class="photo">
+                            <img src="foto15.jpg">
+                        </div>
+
+                        <div class="photo">
+                            <img src="foto16.jpg">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             13 — SOME THINGS NEVER CHANGE
+             ================================================= -->
+
+        <section class="scene center-scene">
+
+            <div class="scene-inner">
 
                 <div class="eyebrow">
                     SOME THINGS NEVER CHANGE
                 </div>
 
-                <h2>
+                <div class="big-title">
                     10 YEARS
                     <span>LATER...</span>
-                </h2>
-
-                <div class="humor-box">
-
-                    <div class="humor-card">
-                        “Sebentar lagi selesai shift.”
-                    </div>
-
-                    <div class="humor-card">
-                        Incoming.
-                    </div>
-
                 </div>
 
-                <div class="caption"
-                     style="margin-left:auto;margin-right:auto">
+                <div class="subtitle">
 
-                    Beberapa hal memang berubah.
-                    Beberapa lainnya...
-                    sepertinya memilih untuk tetap sama.
+                    "Sebentar lagi selesai shift."
+
+                    <br><br>
+
+                    "Incoming."
 
                 </div>
 
@@ -2991,39 +2655,30 @@ body{
         </section>
 
 
+
         <!-- =================================================
-             13
+             14 — GRATITUDE
              ================================================= -->
 
-        <section
-            class="scene"
-            data-duration="7000"
-        >
+        <section class="scene center-scene">
 
-            <div class="scene-content">
+            <div class="scene-inner">
 
                 <div class="eyebrow">
                     WITH GRATITUDE
                 </div>
 
-                <h2>
+                <div class="big-title">
                     THANK YOU
                     <span>FOR THE JOURNEY.</span>
-                </h2>
-
-                <div class="lead">
-                    Untuk setiap shift.
-                    Setiap panggilan.
-                    Setiap masalah.
-                    Dan setiap orang yang
-                    pernah menjadi bagian
-                    dari perjalanan ini.
                 </div>
 
-                <div class="caption">
-                    Terima kasih telah menjadi bagian
-                    dari sepuluh tahun perjalanan
-                    DRC CC 121 Inbound Bandung.
+                <div class="subtitle">
+
+                    Untuk setiap shift.
+                    Untuk setiap panggilan.
+                    Untuk setiap masalah yang berhasil dilewati.
+
                 </div>
 
             </div>
@@ -3031,80 +2686,64 @@ body{
         </section>
 
 
+
         <!-- =================================================
-             14
+             15 — MEMORIES
              ================================================= -->
 
-        <section
-            class="scene"
-            data-duration="8500"
-        >
+        <section class="scene">
 
-            <div class="scene-content">
+            <div class="scene-inner">
+
+                <div class="memory-wall">
+
+                    <div class="photo">
+                        <img src="foto19.jpg">
+                    </div>
+
+                    <div class="photo">
+                        <img src="foto20.jpg">
+                    </div>
+
+                    <div class="photo">
+                        <img src="foto21.jpg">
+                    </div>
+
+                    <div class="photo">
+                        <img src="foto22.jpg">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             16 — TEN YEARS
+             ================================================= -->
+
+        <section class="scene center-scene">
+
+            <div class="scene-inner">
+
+                <div class="giant-number">
+                    10
+                </div>
 
                 <div class="eyebrow">
-                    MEMORIES
-                </div>
-
-                <h2>
-                    Yang tersisa
-                    <span>adalah kenangan.</span>
-                </h2>
-
-                <div class="photo-strip">
-
-                    <img src="foto19.jpg" alt="">
-                    <img src="foto20.jpg" alt="">
-                    <img src="foto21.jpg" alt="">
-                    <img src="foto22.jpg" alt="">
-
-                </div>
-
-                <div class="quote">
-                    Dan mungkin,
-                    bertahun-tahun dari sekarang,
-                    kita akan kembali mengingat
-                    momen-momen sederhana ini.
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             15
-             ================================================= -->
-
-        <section
-            class="scene final"
-            data-duration="6500"
-        >
-
-            <div class="scene-content">
-
-                <div class="eyebrow"
-                     style="justify-content:center">
-
                     2016 — 2026
-
                 </div>
 
-                <div class="final-ten">
-                    10
+                <div class="big-title">
+                    YEARS OF
+                    <span>CONNECTION</span>
                 </div>
 
-                <div class="final-sub">
-                    YEARS OF CONNECTION
-                </div>
-
-                <div class="quote"
-                     style="margin-left:auto;margin-right:auto">
-
-                    ONE TEAM.
-                    ONE JOURNEY.
-                    COUNTLESS STORIES.
-
+                <div class="subtitle">
+                    ONE TEAM. ONE JOURNEY. COUNTLESS STORIES.
                 </div>
 
             </div>
@@ -3112,92 +2751,137 @@ body{
         </section>
 
 
-        <!-- =================================================
-             16
-             ================================================= -->
-
-        <section
-            class="scene final"
-            data-duration="7500"
-        >
-
-            <div class="scene-content">
-
-                <div class="eyebrow"
-                     style="justify-content:center">
-
-                    DRC CC 121 · INBOUND BANDUNG
-
-                </div>
-
-                <h2>
-                    10 YEARS
-                    <span>STILL CONNECTED.</span>
-                </h2>
-
-                <div
-                    class="lead"
-                    style="margin-left:auto;margin-right:auto"
-                >
-
-                    Satu dekade telah berlalu.
-                    Tetapi perjalanan ini belum selesai.
-
-                </div>
-
-                <div
-                    class="caption"
-                    style="margin-left:auto;margin-right:auto"
-                >
-
-                    Masih ada panggilan berikutnya.
-                    Tantangan berikutnya.
-                    Dan cerita berikutnya.
-
-                </div>
-
-            </div>
-
-        </section>
-
 
         <!-- =================================================
-             17
+             17 — STILL CONNECTED
              ================================================= -->
 
-        <section
-            class="scene final"
-            data-duration="10000"
-        >
+        <section class="scene center-scene">
 
-            <div class="scene-content">
+            <div class="scene-inner">
 
-                <div class="eyebrow"
-                     style="justify-content:center">
-
-                    2016 — 2026
-
-                </div>
-
-                <h2>
-                    HAPPY
-                    <span>10TH ANNIVERSARY.</span>
-                </h2>
-
-                <div class="final-ten">
-                    10
-                </div>
-
-                <div class="final-sub">
+                <div class="eyebrow">
                     DRC CC 121 INBOUND BANDUNG
                 </div>
 
-                <div class="quote"
-                     style="margin-left:auto;margin-right:auto">
+                <div class="big-title">
+                    10 YEARS
+                    <span>STILL CONNECTED.</span>
+                </div>
 
-                    STILL CONNECTED.
-                    <br>
-                    STILL MOVING.
+                <div class="subtitle">
+
+                    Satu dekade telah berlalu.
+                    Tapi perjalanan ini belum selesai.
+
+                    <br><br>
+
+                    Masih ada panggilan berikutnya.
+                    Masih ada tantangan berikutnya.
+                    Masih ada cerita berikutnya.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             18 — EMPLOYEE INTRO
+             ================================================= -->
+
+        <section class="scene employee-scene">
+
+            <div class="scene-inner">
+
+                <div class="employee-header">
+
+                    <div class="eyebrow">
+                        THE PEOPLE TODAY
+                    </div>
+
+                    <div class="big-title">
+                        THE TEAM
+                        <span>TODAY.</span>
+                    </div>
+
+                </div>
+
+
+                <div class="employee-grid" id="employeeGrid">
+
+                    <!--
+                    DATA KARYAWAN AKAN DIBUAT OTOMATIS
+                    DARI JAVASCRIPT DI BAWAH
+                    -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             19 — HAPPY ANNIVERSARY
+             ================================================= -->
+
+        <section class="scene center-scene closing">
+
+            <div class="scene-inner">
+
+                <div class="eyebrow">
+                    2016 — 2026
+                </div>
+
+                <div class="closing-title">
+                    HAPPY 10TH
+                    <span>ANNIVERSARY</span>
+
+                    <small>
+                        DRC CC 121 INBOUND BANDUNG
+                    </small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             20 — FINAL LOGO
+             ================================================= -->
+
+        <section class="scene center-scene final-logo-stage">
+
+            <div class="scene-inner">
+
+                <img
+                    class="final-logo"
+                    src="opening/logo-utama.png"
+                    alt="DRC 10 Tahun"
+                >
+
+                <div class="final-support">
+
+                    <img
+                        src="opening/logo-kai.png"
+                        alt="KAI"
+                    >
+
+                    <img
+                        src="opening/logo-kai-wisata.png"
+                        alt="KAI Wisata"
+                    >
+
+                </div>
+
+                <div class="final-tagline">
+                    STILL CONNECTED · STILL MOVING
 
                 </div>
 
@@ -3209,302 +2893,277 @@ body{
     </main>
 
 
-    <!-- =====================================================
-         COUNTER
-         ===================================================== -->
 
-    <div class="counter">
-
-        <span id="current">
-            01
-        </span>
-
-        /
-
-        <span id="total">
-            17
-        </span>
-
-    </div>
-
-
-    <!-- =====================================================
+    <!-- ===================================================
          CONTROLS
-         ===================================================== -->
+         =================================================== -->
 
     <div class="controls">
 
         <button
-            class="control"
-            id="prev"
+            class="control-btn"
+            id="prevBtn"
+            aria-label="Previous"
         >
             ‹
         </button>
 
         <button
-            class="control"
-            id="play"
+            class="control-btn"
+            id="playBtn"
+            aria-label="Play"
         >
-            Ⅱ
+            ❚❚
         </button>
 
         <button
-            class="control"
-            id="next"
+            class="control-btn"
+            id="nextBtn"
+            aria-label="Next"
         >
             ›
         </button>
 
         <button
-            class="control"
-            id="replay"
+            class="control-btn"
+            id="soundBtn"
+            aria-label="Sound"
         >
-            ↻
+            ♪
         </button>
 
         <button
-            class="control"
-            id="sound"
-        >
-            🔊
-        </button>
-
-        <button
-            class="control"
-            id="full"
+            class="control-btn"
+            id="fullBtn"
+            aria-label="Fullscreen"
         >
             ⛶
         </button>
 
-        <div class="progress">
-
-            <div
-                class="progress-bar"
-                id="progress"
-            ></div>
-
-        </div>
-
     </div>
 
 
-    <!-- =====================================================
-         LOADING
-         ===================================================== -->
-
-    <div
-        class="loading"
-        id="loading"
-    >
-
-        <div>
-
-            <div class="loading-title">
-                DRC CC 121
-            </div>
-
-            <div class="loading-line">
-
-                <span></span>
-
-            </div>
-
-        </div>
-
+    <div class="counter" id="counter">
+        01 / 20
     </div>
 
 
-    <!-- =====================================================
-         MUSIC
-         ===================================================== -->
+    <div class="progress">
+        <div
+            class="progress-bar"
+            id="progressBar"
+        ></div>
+    </div>
+
+
+    <!-- MUSIC -->
 
     <audio
         id="music"
         src="music.mp3"
-        preload="auto"
         loop
+        preload="auto"
     ></audio>
 
 
 </div>
 
 
+
 <script>
-
-/* =========================================================
-   CINEMATIC ENGINE
-   ========================================================= */
-
-const opening =
-    document.getElementById("opening");
-
-const presentation =
-    document.getElementById("presentation");
-
-const music =
-    document.getElementById("music");
-
-const scenes =
-    [...document.querySelectorAll(".scene")];
-
-const playBtn =
-    document.getElementById("play");
-
-const prevBtn =
-    document.getElementById("prev");
-
-const nextBtn =
-    document.getElementById("next");
-
-const replayBtn =
-    document.getElementById("replay");
-
-const soundBtn =
-    document.getElementById("sound");
-
-const fullBtn =
-    document.getElementById("full");
-
-const progress =
-    document.getElementById("progress");
-
-const currentText =
-    document.getElementById("current");
-
-const totalText =
-    document.getElementById("total");
-
-let currentScene = 0;
-
-let playing = true;
-
-let muted = false;
-
-let timer = null;
-
-let startTime = 0;
-
-let animation = null;
-
 
 /* =========================================================
    PARTICLES
    ========================================================= */
 
-const particles =
+const particleContainer =
     document.getElementById("particles");
 
-for(
-    let i = 0;
-    i < 45;
-    i++
-){
+for(let i = 0; i < 35; i++){
 
-    const particle =
-        document.createElement("div");
+    const p =
+        document.createElement("span");
 
-    particle.className =
-        "particle";
+    p.className = "particle";
 
-    particle.style.left =
+    p.style.left =
         Math.random() * 100 + "%";
 
-    particle.style.top =
-        35 +
-        Math.random() * 55 +
-        "%";
+    p.style.top =
+        (30 + Math.random() * 70) + "%";
 
-    particle.style.setProperty(
-        "--speed",
-        5 +
-        Math.random() * 7 +
-        "s"
-    );
+    p.style.animationDuration =
+        (8 + Math.random() * 14) + "s";
 
-    particle.style.animationDelay =
-        -Math.random() * 10 +
-        "s";
+    p.style.animationDelay =
+        (-Math.random() * 15) + "s";
 
-    particles.appendChild(
-        particle
-    );
-
+    particleContainer.appendChild(p);
 }
 
 
 /* =========================================================
-   TOTAL
+   EMPLOYEE DATA
+   =========================================================
+
+   CARA MENAMBAHKAN KARYAWAN:
+
+   {
+       name: "Nama Karyawan",
+       role: "AGENT",
+       photo: "employees/employee1.jpg"
+   }
+
+   Tinggal tambah baris baru.
    ========================================================= */
 
-totalText.textContent =
-    String(scenes.length).padStart(2,"0");
+const employees = [
 
+    {
+        name: "NAMA KARYAWAN 01",
+        role: "AGENT",
+        photo: "employees/employee1.jpg"
+    },
 
-/* =========================================================
-   OPENING
-   ========================================================= */
+    {
+        name: "NAMA KARYAWAN 02",
+        role: "AGENT",
+        photo: "employees/employee2.jpg"
+    },
 
-function runOpening(){
+    {
+        name: "NAMA KARYAWAN 03",
+        role: "AGENT",
+        photo: "employees/employee3.jpg"
+    },
 
-    opening.classList.add(
-        "active"
-    );
+    {
+        name: "NAMA KARYAWAN 04",
+        role: "AGENT",
+        photo: "employees/employee4.jpg"
+    },
 
-    setTimeout(
-        () => {
+    {
+        name: "NAMA KARYAWAN 05",
+        role: "AGENT",
+        photo: "employees/employee5.jpg"
+    },
 
-            opening.classList.add(
-                "flash"
-            );
+    {
+        name: "NAMA KARYAWAN 06",
+        role: "AGENT",
+        photo: "employees/employee6.jpg"
+    },
 
-        },
-        4700
-    );
+    {
+        name: "NAMA KARYAWAN 07",
+        role: "AGENT",
+        photo: "employees/employee7.jpg"
+    },
 
-    setTimeout(
-        () => {
-
-            opening.classList.add(
-                "hide"
-            );
-
-            presentation.classList.add(
-                "active"
-            );
-
-            showScene(0);
-
-            playMusic();
-
-        },
-        6000
-    );
-
-}
-
-
-/* =========================================================
-   MUSIC
-   ========================================================= */
-
-async function playMusic(){
-
-    if(muted)
-        return;
-
-    try{
-
-        await music.play();
-
-    }catch(e){
-
-        console.log(
-            "Autoplay menunggu interaksi."
-        );
-
+    {
+        name: "NAMA KARYAWAN 08",
+        role: "AGENT",
+        photo: "employees/employee8.jpg"
     }
 
-}
+];
+
+
+/* =========================================================
+   GENERATE EMPLOYEE CARDS
+   ========================================================= */
+
+const employeeGrid =
+    document.getElementById("employeeGrid");
+
+employees.forEach(person => {
+
+    const card =
+        document.createElement("div");
+
+    card.className =
+        "employee-card";
+
+    card.innerHTML = `
+
+        <img
+            src="${person.photo}"
+            alt="${person.name}"
+            loading="lazy"
+        >
+
+        <div class="employee-info">
+
+            <div class="employee-name">
+                ${person.name}
+            </div>
+
+            <div class="employee-role">
+                ${person.role}
+            </div>
+
+        </div>
+
+    `;
+
+    employeeGrid.appendChild(card);
+
+});
+
+
+/* =========================================================
+   SCENES
+   ========================================================= */
+
+const scenes =
+    [...document.querySelectorAll(".scene")];
+
+let currentScene = 0;
+
+let playing = true;
+
+let elapsed = 0;
+
+let timer = null;
+
+let progressTimer = null;
+
+
+/* =========================================================
+   SCENE DURATIONS
+   ========================================================= */
+
+const durations = [
+
+    7000,
+    6500,
+    8500,
+    8000,
+    8500,
+    8500,
+    6500,
+    8500,
+    8500,
+    7000,
+    8000,
+    8500,
+    7000,
+    8000,
+    8500,
+    7000,
+    8500,
+
+    // EMPLOYEE
+    14000,
+
+    // HAPPY ANNIVERSARY
+    7000,
+
+    // FINAL LOGO
+    10000
+
+];
 
 
 /* =========================================================
@@ -3514,46 +3173,53 @@ async function playMusic(){
 function showScene(index){
 
     if(index < 0){
-
-        index =
-            scenes.length - 1;
-
+        index = scenes.length - 1;
     }
 
     if(index >= scenes.length){
-
         index = 0;
-
     }
 
-    scenes.forEach(
-        (scene,i) => {
+    currentScene = index;
 
-            scene.classList.remove(
-                "active"
-            );
+    scenes.forEach((scene, i) => {
 
-            if(i === index){
+        scene.classList.toggle(
+            "active",
+            i === currentScene
+        );
 
-                scene.classList.add(
-                    "active"
-                );
+    });
 
-            }
+    elapsed = 0;
 
-        }
-    );
+    updateCounter();
 
-    currentScene =
-        index;
+    resetProgress();
 
-    currentText.textContent =
-        String(
-            index + 1
-        ).padStart(2,"0");
+    if(playing){
+        startTimer();
+    }
+}
 
-    startTimer();
 
+/* =========================================================
+   COUNTER
+   ========================================================= */
+
+function updateCounter(){
+
+    const number =
+        String(currentScene + 1)
+        .padStart(2,"0");
+
+    const total =
+        String(scenes.length)
+        .padStart(2,"0");
+
+    document.getElementById("counter")
+        .textContent =
+        `${number} / ${total}`;
 }
 
 
@@ -3565,65 +3231,54 @@ function startTimer(){
 
     clearTimeout(timer);
 
-    cancelAnimationFrame(
-        animation
-    );
-
-    startTime =
-        performance.now();
-
-    updateProgress();
-
-    if(!playing)
-        return;
+    clearInterval(progressTimer);
 
     const duration =
-        Number(
-            scenes[currentScene]
-                .dataset.duration
-        );
+        durations[currentScene] ||
+        7000;
+
+    const startedAt =
+        Date.now();
+
+    progressTimer =
+        setInterval(() => {
+
+            elapsed =
+                Date.now() - startedAt;
+
+            const percentage =
+                Math.min(
+                    100,
+                    (elapsed / duration) * 100
+                );
+
+            document.getElementById(
+                "progressBar"
+            ).style.width =
+                percentage + "%";
+
+        },100);
+
 
     timer =
-        setTimeout(
-            nextScene,
-            duration
-        );
+        setTimeout(() => {
+
+            nextScene();
+
+        }, duration);
 
 }
 
 
 /* =========================================================
-   PROGRESS
+   RESET PROGRESS
    ========================================================= */
 
-function updateProgress(){
+function resetProgress(){
 
-    if(!playing)
-        return;
-
-    const duration =
-        Number(
-            scenes[currentScene]
-                .dataset.duration
-        );
-
-    const elapsed =
-        performance.now()
-        - startTime;
-
-    const percent =
-        Math.min(
-            100,
-            (elapsed / duration) * 100
-        );
-
-    progress.style.width =
-        percent + "%";
-
-    animation =
-        requestAnimationFrame(
-            updateProgress
-        );
+    document.getElementById(
+        "progressBar"
+    ).style.width = "0%";
 
 }
 
@@ -3635,8 +3290,8 @@ function updateProgress(){
 function nextScene(){
 
     showScene(
-        (currentScene + 1)
-        % scenes.length
+        (currentScene + 1) %
+        scenes.length
     );
 
 }
@@ -3649,45 +3304,59 @@ function nextScene(){
 function previousScene(){
 
     showScene(
-        (currentScene - 1 + scenes.length)
-        % scenes.length
+        currentScene - 1
     );
 
 }
 
 
 /* =========================================================
-   PLAY
+   PLAY / PAUSE
    ========================================================= */
 
 function togglePlay(){
 
-    playing =
-        !playing;
+    playing = !playing;
+
+    document.getElementById(
+        "playBtn"
+    ).textContent =
+        playing ? "❚❚" : "▶";
 
     if(playing){
-
-        playBtn.textContent =
-            "Ⅱ";
-
-        playMusic();
 
         startTimer();
 
     }else{
 
-        playBtn.textContent =
-            "▶";
-
         clearTimeout(timer);
-
-        cancelAnimationFrame(
-            animation
-        );
-
-        music.pause();
+        clearInterval(progressTimer);
 
     }
+
+}
+
+
+/* =========================================================
+   MUSIC
+   ========================================================= */
+
+const music =
+    document.getElementById("music");
+
+let soundOn = true;
+
+
+/* Browser usually requires interaction */
+
+function startMusic(){
+
+    if(!soundOn) return;
+
+    music.volume = .45;
+
+    music.play()
+        .catch(() => {});
 
 }
 
@@ -3698,54 +3367,21 @@ function togglePlay(){
 
 function toggleSound(){
 
-    muted =
-        !muted;
+    soundOn = !soundOn;
 
     music.muted =
-        muted;
+        !soundOn;
 
-    soundBtn.textContent =
-        muted
-        ? "🔇"
-        : "🔊";
+    document.getElementById(
+        "soundBtn"
+    ).textContent =
+        soundOn ? "♪" : "×";
 
-    if(!muted){
+    if(soundOn){
 
-        playMusic();
+        startMusic();
 
     }
-
-}
-
-
-/* =========================================================
-   REPLAY
-   ========================================================= */
-
-function replay(){
-
-    clearTimeout(timer);
-
-    opening.classList.remove(
-        "hide",
-        "flash",
-        "active"
-    );
-
-    presentation.classList.remove(
-        "active"
-    );
-
-    music.currentTime = 0;
-
-    setTimeout(
-        () => {
-
-            runOpening();
-
-        },
-        100
-    );
 
 }
 
@@ -3754,58 +3390,77 @@ function replay(){
    FULLSCREEN
    ========================================================= */
 
-fullBtn.addEventListener(
-    "click",
-    async () => {
+function fullscreen(){
 
-        try{
+    if(!document.fullscreenElement){
 
-            if(!document.fullscreenElement){
+        document.documentElement
+            .requestFullscreen()
+            .catch(() => {});
 
-                await document
-                    .documentElement
-                    .requestFullscreen();
+    }else{
 
-            }else{
-
-                await document
-                    .exitFullscreen();
-
-            }
-
-        }catch(e){}
+        document.exitFullscreen();
 
     }
-);
+
+}
 
 
 /* =========================================================
    BUTTONS
    ========================================================= */
 
-nextBtn.addEventListener(
+document.getElementById(
+    "nextBtn"
+).addEventListener(
     "click",
-    nextScene
+    () => {
+        nextScene();
+        startMusic();
+    }
 );
 
-prevBtn.addEventListener(
+
+document.getElementById(
+    "prevBtn"
+).addEventListener(
     "click",
-    previousScene
+    () => {
+        previousScene();
+        startMusic();
+    }
 );
 
-playBtn.addEventListener(
+
+document.getElementById(
+    "playBtn"
+).addEventListener(
     "click",
-    togglePlay
+    () => {
+        togglePlay();
+        startMusic();
+    }
 );
 
-replayBtn.addEventListener(
+
+document.getElementById(
+    "soundBtn"
+).addEventListener(
     "click",
-    replay
+    () => {
+        toggleSound();
+    }
 );
 
-soundBtn.addEventListener(
+
+document.getElementById(
+    "fullBtn"
+).addEventListener(
     "click",
-    toggleSound
+    () => {
+        fullscreen();
+    }
 );
 
 
@@ -3817,159 +3472,168 @@ document.addEventListener(
     "keydown",
     e => {
 
-        if(e.key === "ArrowRight")
+        if(e.key === "ArrowRight"){
             nextScene();
+            startMusic();
+        }
 
-        if(e.key === "ArrowLeft")
+        if(e.key === "ArrowLeft"){
             previousScene();
+            startMusic();
+        }
 
-        if(e.key === " ")
+        if(e.key === " "){
+            e.preventDefault();
+
             togglePlay();
+            startMusic();
+        }
 
-        if(e.key.toLowerCase() === "m")
+        if(
+            e.key.toLowerCase()
+            === "m"
+        ){
+
             toggleSound();
+
+        }
 
     }
 );
 
 
 /* =========================================================
-   SWIPE
+   TOUCH SWIPE
    ========================================================= */
 
-let touchStart = 0;
+let touchStartX = 0;
 
 document.addEventListener(
     "touchstart",
     e => {
 
-        touchStart =
+        touchStartX =
             e.changedTouches[0].screenX;
 
     },
-    {
-        passive:true
-    }
+    {passive:true}
 );
+
 
 document.addEventListener(
     "touchend",
     e => {
 
-        const touchEnd =
+        const touchEndX =
             e.changedTouches[0].screenX;
 
         const distance =
-            touchEnd - touchStart;
+            touchEndX - touchStartX;
 
-        if(
-            Math.abs(distance)
-            < 50
-        )
+        if(Math.abs(distance) < 50)
             return;
 
         if(distance < 0){
-
             nextScene();
-
         }else{
-
             previousScene();
-
         }
 
+        startMusic();
+
     },
-    {
-        passive:true
-    }
+    {passive:true}
 );
 
 
 /* =========================================================
-   MOUSE PARALLAX OPENING
+   OPENING CAMERA PARALLAX
    ========================================================= */
 
+const openingCamera =
+    document.getElementById(
+        "openingCamera"
+    );
+
 document.addEventListener(
-    "pointermove",
+    "mousemove",
     e => {
 
-        const camera =
-            document.getElementById(
-                "openingCamera"
-            );
+        if(
+            document
+                .getElementById("opening")
+                .classList
+                .contains("hide")
+        ){
+            return;
+        }
 
         const x =
-            e.clientX /
-            window.innerWidth -
-            .5;
+            (e.clientX / window.innerWidth - .5);
 
         const y =
-            e.clientY /
-            window.innerHeight -
-            .5;
+            (e.clientY / window.innerHeight - .5);
 
-        camera.style.transform =
-            `
-            translate3d(
-                ${x * -18}px,
-                ${y * -12}px,
+        openingCamera.style.transform =
+            `translate3d(
+                ${x * -14}px,
+                ${y * -10}px,
                 0
-            )
-            rotateY(${x * 2}deg)
-            rotateX(${y * -2}deg)
-            `;
+            )`;
 
     }
 );
 
 
 /* =========================================================
-   FIRST INTERACTION
+   OPENING → PRESENTATION
    ========================================================= */
 
-document.addEventListener(
-    "pointerdown",
-    () => {
+setTimeout(() => {
 
-        playMusic();
+    document
+        .getElementById("opening")
+        .classList
+        .add("hide");
 
-    },
-    {
-        once:true
-    }
-);
+    document
+        .getElementById("scene-stage")
+        .classList
+        .add("ready");
+
+    startMusic();
+
+    showScene(0);
+
+}, 7600);
 
 
 /* =========================================================
-   LOAD
+   LOADING
    ========================================================= */
 
 window.addEventListener(
     "load",
     () => {
 
-        setTimeout(
-            () => {
+        setTimeout(() => {
 
-                document
-                    .getElementById("loading")
-                    .classList.add("hide");
+            document
+                .getElementById("loading")
+                .classList
+                .add("hide");
 
-                runOpening();
-
-            },
-            900
-        );
+        },500);
 
     }
 );
 
 
 /* =========================================================
-   LOOP
+   INITIALIZE
    ========================================================= */
 
-showScene(0);
+updateCounter();
 
 </script>
 
