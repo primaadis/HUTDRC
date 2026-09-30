@@ -9,6 +9,11 @@
     content="width=device-width, initial-scale=1.0"
 >
 
+<meta
+    name="theme-color"
+    content="#e9f8ff"
+>
+
 <title>DRC CC 121 — 10 Years</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,8 +29,8 @@
 
 /* =========================================================
    DRC CC 121 — 10 YEARS
-   PC CINEMATIC EDITION
-   1920 × 1080 MASTER
+   CINEMATIC PC PRESENTATION
+   MASTER TARGET : 1920 × 1080
    ========================================================= */
 
 
@@ -36,28 +41,40 @@
 *,
 *::before,
 *::after{
+
     box-sizing:border-box;
+
     margin:0;
     padding:0;
+
 }
 
 html,
 body{
+
     width:100%;
     height:100%;
+
     overflow:hidden;
+
 }
 
 body{
+
     font-family:"DM Sans",sans-serif;
 
-    color:#183d50;
+    background:#eaf8ff;
 
-    background:#dff5ff;
+    color:#173e52;
 
     -webkit-font-smoothing:antialiased;
 
     text-rendering:optimizeLegibility;
+
+    user-select:none;
+
+    -webkit-user-select:none;
+
 }
 
 
@@ -67,16 +84,10 @@ body{
 
 :root{
 
-    --sky-1:#fbfeff;
-    --sky-2:#e4f7ff;
-    --sky-3:#9ed7eb;
-
-    --blue:#1d789f;
-    --blue-light:#58a8c5;
-    --blue-dark:#153f53;
-
-    --text:#183d50;
-    --muted:#64808e;
+    --blue:#1c789e;
+    --blue2:#4aa2c2;
+    --dark:#153e52;
+    --muted:#65818f;
 
     --white:#ffffff;
 
@@ -86,7 +97,7 @@ body{
 
 
 /* =========================================================
-   MAIN STAGE
+   APP
    ========================================================= */
 
 #app{
@@ -101,36 +112,36 @@ body{
     background:
 
         radial-gradient(
-            ellipse at 72% 12%,
-            rgba(255,255,255,.98) 0%,
-            rgba(255,255,255,.55) 18%,
-            transparent 43%
+            ellipse at 73% 8%,
+            rgba(255,255,255,.98),
+            rgba(255,255,255,.5) 22%,
+            transparent 48%
         ),
 
         linear-gradient(
             180deg,
-            var(--sky-1) 0%,
-            var(--sky-2) 48%,
-            var(--sky-3) 100%
+            #fbfeff 0%,
+            #e7f8ff 47%,
+            #b5e1ef 100%
         );
 
 }
 
 
 /* =========================================================
-   ATMOSPHERE
+   CINEMATIC BACKGROUND
    ========================================================= */
 
-.atmosphere{
+.background{
+
     position:absolute;
 
     inset:0;
 
-    z-index:1;
+    overflow:hidden;
 
     pointer-events:none;
 
-    overflow:hidden;
 }
 
 
@@ -145,8 +156,8 @@ body{
     width:850px;
     height:850px;
 
-    right:-180px;
-    top:-470px;
+    right:-230px;
+    top:-520px;
 
     border-radius:50%;
 
@@ -155,68 +166,58 @@ body{
         radial-gradient(
             circle,
             rgba(255,255,255,1) 0%,
-            rgba(255,255,255,.72) 28%,
-            rgba(255,255,255,.2) 58%,
+            rgba(255,255,255,.75) 28%,
+            rgba(255,255,255,.22) 60%,
             transparent 74%
         );
 
-    filter:blur(10px);
+    filter:blur(8px);
 
-    animation:
-        sunFloat
-        20s
-        ease-in-out
-        infinite
-        alternate;
+    transform:
+        translate3d(0,0,0)
+        scale(1);
 
-}
-
-@keyframes sunFloat{
-
-    from{
-        transform:translate3d(0,0,0) scale(1);
-    }
-
-    to{
-        transform:translate3d(-40px,30px,0) scale(1.06);
-    }
+    transition:
+        transform 2s var(--ease);
 
 }
 
 
 /* =========================================================
-   LIGHT
+   LIGHT RAYS
    ========================================================= */
 
-.light{
+.rays{
 
     position:absolute;
 
-    inset:-20%;
+    inset:-40%;
+
+    opacity:.4;
 
     background:
 
         conic-gradient(
-            from 245deg at 75% 15%,
+            from 225deg at 74% 16%,
             transparent 0deg,
-            rgba(255,255,255,.2) 15deg,
-            transparent 28deg,
-            rgba(255,255,255,.14) 42deg,
-            transparent 55deg
+            rgba(255,255,255,.25) 13deg,
+            transparent 27deg,
+            rgba(255,255,255,.14) 41deg,
+            transparent 57deg,
+            rgba(255,255,255,.18) 74deg,
+            transparent 91deg
         );
 
-    opacity:.55;
-
     animation:
-        lightMove
-        18s
+        raysMove
+        24s
         ease-in-out
         infinite
         alternate;
 
 }
 
-@keyframes lightMove{
+@keyframes raysMove{
 
     from{
         transform:rotate(-2deg) scale(1);
@@ -230,7 +231,7 @@ body{
 
 
 /* =========================================================
-   DISTANT CLOUD
+   HORIZON
    ========================================================= */
 
 .horizon{
@@ -240,69 +241,67 @@ body{
     left:-10%;
     right:-10%;
 
-    bottom:17%;
+    bottom:18%;
 
-    height:30%;
+    height:28%;
 
-    opacity:.48;
+    opacity:.55;
 
-    filter:blur(8px);
+    filter:blur(7px);
 
     background:
 
         radial-gradient(
-            ellipse at 12% 70%,
-            white 0 20%,
-            transparent 48%
+            ellipse at 10% 70%,
+            white 0 18%,
+            transparent 47%
         ),
 
         radial-gradient(
-            ellipse at 34% 50%,
-            white 0 22%,
-            transparent 50%
-        ),
-
-        radial-gradient(
-            ellipse at 57% 62%,
+            ellipse at 34% 55%,
             white 0 23%,
+            transparent 51%
+        ),
+
+        radial-gradient(
+            ellipse at 58% 66%,
+            white 0 21%,
             transparent 50%
         ),
 
         radial-gradient(
-            ellipse at 82% 50%,
+            ellipse at 84% 55%,
             white 0 22%,
-            transparent 48%
+            transparent 49%
         );
 
 }
 
 
 /* =========================================================
-   CLOUD OCEAN
+   CLOUD FLOOR
    ========================================================= */
 
-.cloud-ocean{
+.cloud-floor{
 
     position:absolute;
 
-    left:-8%;
-    right:-8%;
+    left:-10%;
+    right:-10%;
 
-    bottom:-30%;
+    bottom:-35%;
 
-    height:65%;
+    height:68%;
 
-    z-index:15;
-
-    pointer-events:none;
+    z-index:20;
 
     filter:
         drop-shadow(
-            0 -20px 50px rgba(35,100,125,.08)
+            0 -20px 50px rgba(30,100,125,.08)
         );
 
     animation:
-        cloudDrift
+        cloudMove
         22s
         ease-in-out
         infinite
@@ -326,35 +325,35 @@ body{
 
         radial-gradient(
             ellipse at 15% 15%,
-            #ffffff 0%,
-            #f0fbff 45%,
+            #fff,
+            #eefaff 48%,
             transparent 70%
         ),
 
         radial-gradient(
-            ellipse at 48% 5%,
-            #ffffff 0%,
-            #edfaff 48%,
-            transparent 72%
+            ellipse at 50% 4%,
+            #fff,
+            #edf9fe 50%,
+            transparent 73%
         ),
 
         radial-gradient(
-            ellipse at 82% 18%,
-            #ffffff 0%,
-            #edfaff 44%,
+            ellipse at 83% 17%,
+            #fff,
+            #edf9fe 47%,
             transparent 70%
         ),
 
         linear-gradient(
             180deg,
-            #ffffff 0%,
+            #fff,
             #e9f8fe 55%,
-            #c9eaf6 100%
+            #c5e8f4
         );
 
 }
 
-.cloud-dome{
+.cloud{
 
     position:absolute;
 
@@ -363,19 +362,19 @@ body{
     background:
 
         radial-gradient(
-            circle at 40% 32%,
-            #ffffff 0%,
-            #f8fdff 30%,
-            #dff4fb 70%,
-            #b7e1ef 100%
+            circle at 40% 30%,
+            #fff 0%,
+            #f8fdff 34%,
+            #dff3fa 72%,
+            #b9dfec 100%
         );
 
     box-shadow:
-        0 -20px 45px rgba(255,255,255,.7);
+        0 -20px 45px rgba(255,255,255,.65);
 
 }
 
-.cloud-1{
+.cloud.a{
 
     width:42%;
     height:135%;
@@ -385,7 +384,7 @@ body{
 
 }
 
-.cloud-2{
+.cloud.b{
 
     width:50%;
     height:155%;
@@ -395,17 +394,17 @@ body{
 
 }
 
-.cloud-3{
+.cloud.c{
 
     width:44%;
     height:135%;
 
-    right:1%;
+    right:0;
     bottom:18%;
 
 }
 
-.cloud-4{
+.cloud.d{
 
     width:30%;
     height:105%;
@@ -415,7 +414,7 @@ body{
 
 }
 
-@keyframes cloudDrift{
+@keyframes cloudMove{
 
     from{
         transform:translate3d(-1%,1%,0);
@@ -438,9 +437,7 @@ body{
 
     inset:0;
 
-    z-index:20;
-
-    pointer-events:none;
+    z-index:25;
 
 }
 
@@ -453,15 +450,15 @@ body{
 
     border-radius:50%;
 
-    background:white;
+    background:#fff;
+
+    opacity:.3;
 
     box-shadow:
-        0 0 10px rgba(255,255,255,.9);
-
-    opacity:.35;
+        0 0 9px rgba(255,255,255,.9);
 
     animation:
-        particleFloat
+        floatParticle
         var(--duration)
         ease-in-out
         infinite
@@ -469,16 +466,24 @@ body{
 
 }
 
-@keyframes particleFloat{
+@keyframes floatParticle{
 
     from{
-        transform:translate3d(0,30px,0);
+
+        transform:
+            translate3d(0,30px,0);
+
         opacity:.1;
+
     }
 
     to{
-        transform:translate3d(0,-100px,0);
-        opacity:.65;
+
+        transform:
+            translate3d(0,-100px,0);
+
+        opacity:.7;
+
     }
 
 }
@@ -494,7 +499,7 @@ body{
 
     inset:0;
 
-    z-index:200;
+    z-index:300;
 
     overflow:hidden;
 
@@ -502,14 +507,18 @@ body{
 
         radial-gradient(
             ellipse at 50% 35%,
-            #ffffff 0%,
+            #fff 0%,
             #eaf9ff 45%,
-            #b9e4f2 100%
+            #b8e4f2 100%
         );
+
+    opacity:1;
+
+    transform:scale(1);
 
     transition:
 
-        opacity 1.4s ease,
+        opacity 1.5s ease,
 
         transform 1.8s var(--ease);
 
@@ -519,7 +528,7 @@ body{
 
     opacity:0;
 
-    transform:scale(1.035);
+    transform:scale(1.04);
 
     pointer-events:none;
 
@@ -536,12 +545,11 @@ body{
 
     inset:0;
 
-    perspective:1600px;
+    perspective:1800px;
 
     transform-style:preserve-3d;
 
-    transition:
-        transform .2s ease-out;
+    will-change:transform;
 
 }
 
@@ -555,9 +563,9 @@ body{
     position:absolute;
 
     left:50%;
-    top:47%;
+    top:45%;
 
-    width:590px;
+    width:600px;
 
     max-height:52vh;
 
@@ -570,31 +578,26 @@ body{
         translate3d(
             -50%,
             -50%,
-            -500px
+            -650px
         )
 
-        scale(.48);
+        scale(.4);
 
     filter:
 
-        blur(15px)
+        blur(18px)
 
         drop-shadow(
-            0 30px 60px rgba(20,80,110,.18)
+            0 35px 70px rgba(20,80,110,.16)
         );
-
-    will-change:
-        transform,
-        opacity,
-        filter;
 
     transition:
 
-        opacity 1.2s ease,
+        opacity 1.1s ease,
 
-        transform 2s var(--ease),
+        transform 2.2s var(--ease),
 
-        filter 1.5s ease;
+        filter 1.6s ease;
 
 }
 
@@ -607,7 +610,7 @@ body{
         translate3d(
             -50%,
             -50%,
-            80px
+            100px
         )
 
         scale(1);
@@ -627,148 +630,95 @@ body{
    SIDE LOGOS
    ========================================================= */
 
-.logo-kai{
+.logo-kai,
+.logo-wisata{
 
     position:absolute;
 
-    left:12%;
-
-    top:23%;
-
-    width:155px;
-
-    max-height:110px;
+    top:22%;
 
     object-fit:contain;
 
     opacity:0;
 
-    transform:
-
-        translate3d(-100px,0,-250px)
-
-        rotateY(-18deg)
-
-        scale(.7);
-
-    filter:
-        blur(8px)
-
-        drop-shadow(
-            0 15px 30px rgba(20,80,110,.12)
-        );
-
     transition:
 
-        opacity .9s ease,
+        opacity 1s ease,
 
-        transform 1.5s var(--ease),
+        transform 1.6s var(--ease),
 
-        filter 1s ease;
+        filter 1.2s ease;
+
+    filter:
+        blur(9px);
+
+}
+
+.logo-kai{
+
+    left:11%;
+
+    width:170px;
+
+    transform:
+        translate3d(-130px,0,-250px)
+        rotateY(-18deg)
+        scale(.75);
+
+}
+
+.logo-wisata{
+
+    right:11%;
+
+    width:190px;
+
+    transform:
+        translate3d(130px,0,-250px)
+        rotateY(18deg)
+        scale(.75);
+
+}
+
+.opening.active .logo-kai,
+.opening.active .logo-wisata{
+
+    opacity:1;
+
+    filter:
+        blur(0);
+
+    transform:
+
+        translate3d(0,0,40px)
+        rotateY(0)
+        scale(1);
 
 }
 
 .opening.active .logo-kai{
 
-    opacity:1;
-
-    transform:
-
-        translate3d(0,0,30px)
-
-        rotateY(0)
-
-        scale(1);
-
-    filter:
-
-        blur(0)
-
-        drop-shadow(
-            0 15px 30px rgba(20,80,110,.12)
-        );
-
-    transition-delay:.8s;
+    transition-delay:.7s;
 
 }
 
+.opening.active .logo-wisata{
 
-.logo-kai-wisata{
-
-    position:absolute;
-
-    right:12%;
-
-    top:24%;
-
-    width:180px;
-
-    max-height:110px;
-
-    object-fit:contain;
-
-    opacity:0;
-
-    transform:
-
-        translate3d(100px,0,-250px)
-
-        rotateY(18deg)
-
-        scale(.7);
-
-    filter:
-        blur(8px)
-
-        drop-shadow(
-            0 15px 30px rgba(20,80,110,.12)
-        );
-
-    transition:
-
-        opacity .9s ease,
-
-        transform 1.5s var(--ease),
-
-        filter 1s ease;
-
-}
-
-.opening.active .logo-kai-wisata{
-
-    opacity:1;
-
-    transform:
-
-        translate3d(0,0,30px)
-
-        rotateY(0)
-
-        scale(1);
-
-    filter:
-
-        blur(0)
-
-        drop-shadow(
-            0 15px 30px rgba(20,80,110,.12)
-        );
-
-    transition-delay:1.15s;
+    transition-delay:1s;
 
 }
 
 
 /* =========================================================
-   OPENING COPY
+   OPENING TEXT
    ========================================================= */
 
-.opening-copy{
+.opening-text{
 
     position:absolute;
 
     left:50%;
-    bottom:13%;
+    bottom:12%;
 
     width:1000px;
 
@@ -779,19 +729,19 @@ body{
     opacity:0;
 
     transform:
-        translate3d(-50%,30px,0);
+        translate3d(-50%,40px,0);
 
     transition:
 
         opacity 1s ease,
 
-        transform 1.3s var(--ease);
+        transform 1.2s var(--ease);
 
     transition-delay:2s;
 
 }
 
-.opening.active .opening-copy{
+.opening.active .opening-text{
 
     opacity:1;
 
@@ -800,45 +750,47 @@ body{
 
 }
 
-.opening-copy .small{
+.opening-text .small{
 
-    font-size:14px;
-
-    font-weight:700;
-
-    letter-spacing:.42em;
-
-    color:#4c7180;
-
-    margin-bottom:17px;
-
-}
-
-.opening-copy h1{
-
-    font-family:"Manrope",sans-serif;
-
-    font-size:82px;
-
-    line-height:.88;
+    font-size:13px;
 
     font-weight:800;
 
-    letter-spacing:-.065em;
+    letter-spacing:.42em;
 
-    color:#143f54;
+    color:#527583;
+
+    margin-bottom:18px;
 
 }
 
-.opening-copy p{
+.opening-text h1{
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:86px;
+
+    line-height:.86;
+
+    font-weight:800;
+
+    letter-spacing:-.07em;
+
+    color:#153f54;
+
+}
+
+.opening-text p{
 
     margin-top:22px;
 
-    font-size:15px;
+    font-size:14px;
 
-    letter-spacing:.42em;
+    font-weight:600;
 
-    color:#5d7d8b;
+    letter-spacing:.45em;
+
+    color:#66808d;
 
 }
 
@@ -858,9 +810,7 @@ body{
 
     height:68%;
 
-    z-index:25;
-
-    pointer-events:none;
+    z-index:20;
 
 }
 
@@ -869,7 +819,7 @@ body{
    FLASH
    ========================================================= */
 
-.opening-flash{
+.flash{
 
     position:absolute;
 
@@ -877,7 +827,7 @@ body{
 
     z-index:100;
 
-    background:white;
+    background:#fff;
 
     opacity:0;
 
@@ -885,24 +835,24 @@ body{
 
 }
 
-.opening.flash .opening-flash{
+.opening.flash .flash{
 
     animation:
-        cinematicFlash
-        1s
+        flashEffect
+        1.1s
         ease
         forwards;
 
 }
 
-@keyframes cinematicFlash{
+@keyframes flashEffect{
 
     0%{
         opacity:0;
     }
 
-    22%{
-        opacity:.8;
+    20%{
+        opacity:.82;
     }
 
     100%{
@@ -922,7 +872,7 @@ body{
 
     inset:0;
 
-    z-index:50;
+    z-index:100;
 
     opacity:0;
 
@@ -943,7 +893,7 @@ body{
 
 
 /* =========================================================
-   SCENES
+   SCENE
    ========================================================= */
 
 .scene{
@@ -960,7 +910,7 @@ body{
 
     padding:
         80px
-        110px
+        100px
         110px;
 
     opacity:0;
@@ -968,24 +918,18 @@ body{
     visibility:hidden;
 
     transform:
+        translate3d(80px,0,0)
+        scale(1.035);
 
-        translate3d(
-            70px,
-            0,
-            0
-        )
-
-        scale(1.025);
-
-    filter:blur(12px);
+    filter:blur(10px);
 
     transition:
 
-        opacity .8s ease,
+        opacity .85s ease,
 
-        transform 1.1s var(--ease),
+        transform 1.2s var(--ease),
 
-        filter .9s ease;
+        filter 1s ease;
 
 }
 
@@ -996,9 +940,7 @@ body{
     visibility:visible;
 
     transform:
-
         translate3d(0,0,0)
-
         scale(1);
 
     filter:blur(0);
@@ -1010,9 +952,7 @@ body{
    SCENE BACKGROUND
    ========================================================= */
 
-.scene::before{
-
-    content:"";
+.scene-bg{
 
     position:absolute;
 
@@ -1020,67 +960,29 @@ body{
 
     z-index:-10;
 
-    background:
-
-        radial-gradient(
-            ellipse at 75% 15%,
-            rgba(255,255,255,.92),
-            transparent 34%
-        ),
-
-        linear-gradient(
-            150deg,
-            #fbfeff 0%,
-            #e4f7ff 52%,
-            #b7e3f2 100%
-        );
-
-}
-
-.scene::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:800px;
-    height:800px;
-
-    left:-500px;
-    bottom:-600px;
-
-    border-radius:50%;
-
-    background:
-        rgba(255,255,255,.35);
-
-    filter:blur(100px);
-
-    z-index:-5;
-
 }
 
 
 /* =========================================================
-   CONTENT
+   SCENE CONTENT
    ========================================================= */
 
 .scene-content{
 
     position:relative;
 
-    width:
-        min(1500px,100%);
+    width:min(1550px,100%);
 
-    max-height:calc(100vh - 150px);
+    max-height:
+        calc(100vh - 150px);
 
-    z-index:60;
+    z-index:50;
 
 }
 
 
 /* =========================================================
-   TYPOGRAPHY
+   TEXT
    ========================================================= */
 
 .eyebrow{
@@ -1093,29 +995,18 @@ body{
 
     margin-bottom:25px;
 
-    font-size:13px;
+    font-size:12px;
 
     font-weight:800;
 
-    letter-spacing:.38em;
+    letter-spacing:.4em;
 
-    color:#557987;
+    color:#547583;
 
     opacity:0;
 
     transform:
-        translateY(25px);
-
-}
-
-.scene.active .eyebrow{
-
-    animation:
-        textIn
-        .8s
-        .15s
-        var(--ease)
-        forwards;
+        translate3d(0,30px,0);
 
 }
 
@@ -1126,7 +1017,18 @@ body{
     width:55px;
     height:1px;
 
-    background:#3186a7;
+    background:#2b83a5;
+
+}
+
+.scene.active .eyebrow{
+
+    animation:
+        textEnter
+        .8s
+        .1s
+        var(--ease)
+        forwards;
 
 }
 
@@ -1136,31 +1038,31 @@ body{
     font-family:"Manrope",sans-serif;
 
     font-size:
-        clamp(60px,6vw,112px);
+        clamp(62px,6.2vw,118px);
 
-    line-height:.9;
-
-    letter-spacing:-.07em;
+    line-height:.88;
 
     font-weight:800;
 
-    color:#143e53;
+    letter-spacing:-.075em;
 
-    max-width:1300px;
+    color:#153f54;
+
+    max-width:1350px;
 
     opacity:0;
 
     transform:
-        translateY(35px);
+        translate3d(0,45px,0);
 
 }
 
 .scene.active h2{
 
     animation:
-        textIn
+        textEnter
         1s
-        .25s
+        .23s
         var(--ease)
         forwards;
 
@@ -1168,14 +1070,14 @@ body{
 
 .scene h2 span{
 
-    color:#217fa5;
+    color:#217ea3;
 
 }
 
 
 .lead{
 
-    max-width:950px;
+    max-width:1000px;
 
     margin-top:34px;
 
@@ -1183,21 +1085,21 @@ body{
 
     line-height:1.5;
 
-    color:#3e6272;
+    color:#3f6373;
 
     opacity:0;
 
     transform:
-        translateY(25px);
+        translate3d(0,30px,0);
 
 }
 
 .scene.active .lead{
 
     animation:
-        textIn
+        textEnter
         .9s
-        .42s
+        .4s
         var(--ease)
         forwards;
 
@@ -1206,29 +1108,29 @@ body{
 
 .caption{
 
-    max-width:850px;
+    max-width:1000px;
 
-    margin-top:25px;
+    margin-top:24px;
 
     font-size:16px;
 
-    line-height:1.7;
+    line-height:1.75;
 
-    color:#65808e;
+    color:#66808d;
 
     opacity:0;
 
     transform:
-        translateY(20px);
+        translate3d(0,25px,0);
 
 }
 
 .scene.active .caption{
 
     animation:
-        textIn
+        textEnter
         .9s
-        .56s
+        .55s
         var(--ease)
         forwards;
 
@@ -1237,31 +1139,31 @@ body{
 
 .quote{
 
-    max-width:950px;
+    max-width:1000px;
 
     margin-top:30px;
 
     font-family:"Manrope",sans-serif;
 
-    font-size:27px;
+    font-size:26px;
 
     line-height:1.45;
 
     font-weight:600;
 
-    color:#20546b;
+    color:#20566c;
 
     opacity:0;
 
     transform:
-        translateY(25px);
+        translate3d(0,25px,0);
 
 }
 
 .scene.active .quote{
 
     animation:
-        textIn
+        textEnter
         .9s
         .65s
         var(--ease)
@@ -1269,14 +1171,14 @@ body{
 
 }
 
-@keyframes textIn{
+@keyframes textEnter{
 
     to{
 
         opacity:1;
 
         transform:
-            translateY(0);
+            translate3d(0,0,0);
 
     }
 
@@ -1292,8 +1194,8 @@ body{
     display:grid;
 
     grid-template-columns:
-        .82fr
-        1.18fr;
+        .84fr
+        1.16fr;
 
     gap:90px;
 
@@ -1311,14 +1213,13 @@ body{
     position:relative;
 
     width:700px;
-
     height:520px;
 
     max-width:100%;
 
-    margin-left:auto;
+    perspective:1400px;
 
-    perspective:1200px;
+    margin-left:auto;
 
 }
 
@@ -1336,7 +1237,7 @@ body{
 
 
 /* =========================================================
-   MAIN IMAGE
+   MAIN PHOTO
    ========================================================= */
 
 .photo-main{
@@ -1351,40 +1252,43 @@ body{
 
     border-radius:18px;
 
-    box-shadow:
-        0 30px 70px rgba(20,80,110,.18);
+    object-fit:cover;
 
-    z-index:4;
-
-    transform:
-        rotate(-2deg)
-        scale(1.05);
+    z-index:5;
 
     opacity:0;
+
+    transform:
+        translate3d(0,0,0)
+        rotate(-2deg)
+        scale(1.04);
+
+    box-shadow:
+        0 35px 80px rgba(20,80,110,.2);
 
 }
 
 .scene.active .photo-main{
 
     animation:
-        photoMainIn
+        photoMain
         1.2s
-        .25s
+        .2s
         var(--ease)
         forwards;
 
 }
 
-@keyframes photoMainIn{
+@keyframes photoMain{
 
     from{
 
         opacity:0;
 
         transform:
-            translate3d(-50px,40px,0)
+            translate3d(-70px,50px,0)
             rotate(-8deg)
-            scale(1.12);
+            scale(1.15);
 
     }
 
@@ -1395,7 +1299,42 @@ body{
         transform:
             translate3d(0,0,0)
             rotate(-2deg)
-            scale(1.05);
+            scale(1.04);
+
+    }
+
+}
+
+
+/* =========================================================
+   KEN BURNS
+   ========================================================= */
+
+.scene.active .photo-main{
+
+    animation:
+        photoMain 1.2s .2s var(--ease) forwards,
+        kenBurnsMain 8s 1.3s ease-in-out forwards;
+
+}
+
+@keyframes kenBurnsMain{
+
+    from{
+
+        transform:
+            translate3d(0,0,0)
+            rotate(-2deg)
+            scale(1.04);
+
+    }
+
+    to{
+
+        transform:
+            translate3d(-8px,-6px,0)
+            rotate(-1deg)
+            scale(1.10);
 
     }
 
@@ -1413,14 +1352,14 @@ body{
     width:35%;
     height:32%;
 
-    border-radius:14px;
+    border-radius:15px;
 
-    box-shadow:
-        0 25px 50px rgba(20,80,110,.15);
-
-    z-index:6;
+    z-index:7;
 
     opacity:0;
+
+    box-shadow:
+        0 25px 60px rgba(20,80,110,.16);
 
 }
 
@@ -1429,16 +1368,12 @@ body{
     top:2%;
     right:2%;
 
-    transform:rotate(5deg);
-
 }
 
 .p3{
 
     right:0;
     bottom:3%;
-
-    transform:rotate(-4deg);
 
 }
 
@@ -1447,8 +1382,6 @@ body{
     left:20%;
     bottom:0;
 
-    transform:rotate(3deg);
-
 }
 
 .p5{
@@ -1456,21 +1389,15 @@ body{
     left:0;
     bottom:18%;
 
-    transform:rotate(-5deg);
-
 }
 
-
-/* =========================================================
-   PHOTO ENTRY
-   ========================================================= */
 
 .scene.active .p2{
 
     animation:
-        photoP2
+        small2
         1s
-        .45s
+        .42s
         var(--ease)
         forwards;
 
@@ -1479,9 +1406,9 @@ body{
 .scene.active .p3{
 
     animation:
-        photoP3
+        small3
         1s
-        .55s
+        .52s
         var(--ease)
         forwards;
 
@@ -1490,9 +1417,9 @@ body{
 .scene.active .p4{
 
     animation:
-        photoP4
+        small4
         1s
-        .65s
+        .62s
         var(--ease)
         forwards;
 
@@ -1501,23 +1428,24 @@ body{
 .scene.active .p5{
 
     animation:
-        photoP5
+        small5
         1s
-        .75s
+        .72s
         var(--ease)
         forwards;
 
 }
 
-@keyframes photoP2{
+
+@keyframes small2{
 
     from{
 
         opacity:0;
 
         transform:
-            translate3d(80px,-50px,0)
-            rotate(14deg)
+            translate3d(100px,-70px,0)
+            rotate(15deg)
             scale(.8);
 
     }
@@ -1534,15 +1462,15 @@ body{
 
 }
 
-@keyframes photoP3{
+@keyframes small3{
 
     from{
 
         opacity:0;
 
         transform:
-            translate3d(80px,50px,0)
-            rotate(-13deg)
+            translate3d(100px,70px,0)
+            rotate(-15deg)
             scale(.8);
 
     }
@@ -1559,15 +1487,15 @@ body{
 
 }
 
-@keyframes photoP4{
+@keyframes small4{
 
     from{
 
         opacity:0;
 
         transform:
-            translate3d(-40px,60px,0)
-            rotate(12deg)
+            translate3d(-50px,70px,0)
+            rotate(15deg)
             scale(.8);
 
     }
@@ -1584,15 +1512,15 @@ body{
 
 }
 
-@keyframes photoP5{
+@keyframes small5{
 
     from{
 
         opacity:0;
 
         transform:
-            translate3d(-60px,30px,0)
-            rotate(-14deg)
+            translate3d(-70px,30px,0)
+            rotate(-15deg)
             scale(.8);
 
     }
@@ -1624,7 +1552,7 @@ body{
         1fr
         1fr;
 
-    gap:15px;
+    gap:16px;
 
     margin-top:45px;
 
@@ -1633,28 +1561,27 @@ body{
 .photo-strip img{
 
     width:100%;
-
     height:300px;
 
     object-fit:cover;
 
     border-radius:16px;
 
-    box-shadow:
-        0 25px 55px rgba(20,80,110,.14);
-
     opacity:0;
 
     transform:
-        translateY(35px)
+        translate3d(0,45px,0)
         scale(.97);
+
+    box-shadow:
+        0 28px 60px rgba(20,80,110,.14);
 
 }
 
 .scene.active .photo-strip img{
 
     animation:
-        stripIn
+        stripEnter
         .9s
         var(--delay)
         var(--ease)
@@ -1667,25 +1594,25 @@ body{
 }
 
 .photo-strip img:nth-child(2){
-    --delay:.32s;
+    --delay:.34s;
 }
 
 .photo-strip img:nth-child(3){
-    --delay:.44s;
+    --delay:.48s;
 }
 
 .photo-strip img:nth-child(4){
-    --delay:.56s;
+    --delay:.62s;
 }
 
-@keyframes stripIn{
+@keyframes stripEnter{
 
     to{
 
         opacity:1;
 
         transform:
-            translateY(0)
+            translate3d(0,0,0)
             scale(1);
 
     }
@@ -1694,76 +1621,72 @@ body{
 
 .photo-strip img:nth-child(even){
 
-    margin-top:25px;
+    transform:
+        translate3d(0,70px,0)
+        scale(.96);
 
 }
 
 
 /* =========================================================
-   BIG NUMBER
+   HUGE 10
    ========================================================= */
 
 .big-number{
 
     position:absolute;
 
-    right:-5%;
+    right:-4%;
 
-    bottom:-16%;
+    bottom:-18%;
+
+    z-index:-2;
 
     font-family:"Manrope",sans-serif;
 
-    font-size:600px;
+    font-size:620px;
 
-    line-height:.7;
+    line-height:.65;
 
     font-weight:800;
 
-    letter-spacing:-.12em;
+    letter-spacing:-.13em;
 
     color:
-        rgba(255,255,255,.68);
+        rgba(255,255,255,.66);
 
     text-shadow:
-        0 35px 80px rgba(30,100,130,.08);
-
-    pointer-events:none;
-
-    z-index:-1;
+        0 40px 100px rgba(30,100,130,.08);
 
     opacity:0;
+
+    transform:
+        translate3d(100px,0,0)
+        scale(1.08);
+
+    pointer-events:none;
 
 }
 
 .scene.active .big-number{
 
     animation:
-        numberIn
-        1.6s
+        giantNumber
+        1.5s
         .1s
         var(--ease)
         forwards;
 
 }
 
-@keyframes numberIn{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateX(80px)
-            scale(1.1);
-
-    }
+@keyframes giantNumber{
 
     to{
 
         opacity:1;
 
         transform:
-            translateX(0)
+            translate3d(0,0,0)
             scale(1);
 
     }
@@ -1782,9 +1705,9 @@ body{
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:20px;
+    gap:22px;
 
-    max-width:1000px;
+    max-width:1050px;
 
     margin-top:45px;
 
@@ -1807,24 +1730,21 @@ body{
         1px solid rgba(255,255,255,.9);
 
     box-shadow:
-
-        0 25px 60px rgba(25,95,120,.09),
-
-        inset 0 1px 0 rgba(255,255,255,.9);
+        0 25px 60px rgba(25,95,120,.09);
 
     opacity:0;
 
     transform:
-        translateY(40px)
-        scale(.97);
+        translate3d(0,45px,0)
+        scale(.96);
 
 }
 
 .scene.active .stat{
 
     animation:
-        statIn
-        .8s
+        statEnter
+        .85s
         var(--delay)
         var(--ease)
         forwards;
@@ -1843,14 +1763,14 @@ body{
     --delay:.55s;
 }
 
-@keyframes statIn{
+@keyframes statEnter{
 
     to{
 
         opacity:1;
 
         transform:
-            translateY(0)
+            translate3d(0,0,0)
             scale(1);
 
     }
@@ -1863,11 +1783,11 @@ body{
 
     font-family:"Manrope",sans-serif;
 
-    font-size:80px;
+    font-size:82px;
 
     line-height:1;
 
-    color:#1d789f;
+    color:#1e7ca2;
 
 }
 
@@ -1877,15 +1797,15 @@ body{
 
     margin-top:12px;
 
-    font-size:13px;
+    font-size:12px;
 
-    font-weight:700;
+    font-weight:800;
+
+    letter-spacing:.28em;
 
     text-transform:uppercase;
 
-    letter-spacing:.25em;
-
-    color:#66808e;
+    color:#66808d;
 
 }
 
@@ -1901,7 +1821,7 @@ body{
     grid-template-columns:
         repeat(4,1fr);
 
-    gap:20px;
+    gap:25px;
 
     margin-top:50px;
 
@@ -1912,19 +1832,19 @@ body{
     padding-top:25px;
 
     border-top:
-        1px solid rgba(30,120,155,.45);
+        1px solid rgba(30,120,155,.4);
 
     opacity:0;
 
     transform:
-        translateY(30px);
+        translate3d(0,35px,0);
 
 }
 
 .scene.active .timeline-item{
 
     animation:
-        textIn
+        textEnter
         .8s
         var(--delay)
         var(--ease)
@@ -1952,23 +1872,23 @@ body{
 
     font-family:"Manrope",sans-serif;
 
-    font-size:40px;
+    font-size:42px;
 
-    color:#1d789f;
+    color:#207da3;
 
 }
 
 .timeline-item p{
 
-    max-width:250px;
-
     margin-top:12px;
+
+    max-width:260px;
 
     font-size:15px;
 
     line-height:1.6;
 
-    color:#607c8a;
+    color:#607c89;
 
 }
 
@@ -1985,19 +1905,19 @@ body{
 
     gap:15px;
 
-    margin-top:38px;
+    margin-top:40px;
 
 }
 
 .person{
 
     padding:
-        15px 24px;
+        15px 25px;
 
     border-radius:999px;
 
     background:
-        rgba(255,255,255,.62);
+        rgba(255,255,255,.65);
 
     border:
         1px solid rgba(255,255,255,.9);
@@ -2005,25 +1925,25 @@ body{
     box-shadow:
         0 15px 35px rgba(25,95,120,.07);
 
-    color:#245c73;
-
     font-size:12px;
 
     font-weight:800;
 
-    letter-spacing:.15em;
+    letter-spacing:.16em;
+
+    color:#245d74;
 
     opacity:0;
 
     transform:
-        translateY(20px);
+        translate3d(0,25px,0);
 
 }
 
 .scene.active .person{
 
     animation:
-        textIn
+        textEnter
         .7s
         var(--delay)
         var(--ease)
@@ -2032,23 +1952,23 @@ body{
 }
 
 .person:nth-child(1){
-    --delay:.25s;
+    --delay:.2s;
 }
 
 .person:nth-child(2){
-    --delay:.35s;
+    --delay:.32s;
 }
 
 .person:nth-child(3){
-    --delay:.45s;
+    --delay:.44s;
 }
 
 .person:nth-child(4){
-    --delay:.55s;
+    --delay:.56s;
 }
 
 .person:nth-child(5){
-    --delay:.65s;
+    --delay:.68s;
 }
 
 
@@ -2092,12 +2012,12 @@ body{
 .humor-card{
 
     padding:
-        32px 45px;
+        34px 48px;
 
-    border-radius:25px;
+    border-radius:26px;
 
     background:
-        rgba(255,255,255,.58);
+        rgba(255,255,255,.62);
 
     border:
         1px solid rgba(255,255,255,.9);
@@ -2111,12 +2031,12 @@ body{
 
     font-weight:700;
 
-    color:#20566e;
+    color:#20566d;
 
     opacity:0;
 
     transform:
-        translateY(40px)
+        translate3d(0,45px,0)
         scale(.96);
 
 }
@@ -2124,7 +2044,7 @@ body{
 .scene.active .humor-card{
 
     animation:
-        humorIn
+        humorEnter
         .9s
         var(--delay)
         var(--ease)
@@ -2144,14 +2064,14 @@ body{
     --delay:.6s;
 }
 
-@keyframes humorIn{
+@keyframes humorEnter{
 
     to{
 
         opacity:1;
 
         transform:
-            translateY(0)
+            translate3d(0,0,0)
             scale(1);
 
     }
@@ -2177,45 +2097,45 @@ body{
 
 .final h2{
 
-    font-size:
-        clamp(65px,7vw,125px);
-
     margin-left:auto;
     margin-right:auto;
 
+    font-size:
+        clamp(70px,7vw,128px);
+
 }
 
-.final-ten{
+.final-number{
 
     margin-top:25px;
 
     font-family:"Manrope",sans-serif;
 
-    font-size:330px;
+    font-size:340px;
 
-    line-height:.62;
+    line-height:.58;
 
     font-weight:800;
 
-    letter-spacing:-.13em;
+    letter-spacing:-.14em;
 
-    color:#187aa4;
+    color:#1d7da4;
 
     text-shadow:
-        0 30px 80px rgba(20,100,140,.13);
+        0 35px 90px rgba(20,100,140,.14);
 
     opacity:0;
 
     transform:
-        scale(.8);
+        scale(.78);
 
 }
 
-.scene.active .final-ten{
+.scene.active .final-number{
 
     animation:
         finalNumber
-        1.2s
+        1.25s
         .25s
         var(--ease)
         forwards;
@@ -2237,7 +2157,7 @@ body{
 
 .final-sub{
 
-    margin-top:40px;
+    margin-top:42px;
 
     font-family:"Manrope",sans-serif;
 
@@ -2245,23 +2165,23 @@ body{
 
     font-weight:800;
 
-    letter-spacing:.2em;
+    letter-spacing:.22em;
 
-    color:#285b70;
+    color:#285c70;
 
     opacity:0;
 
     transform:
-        translateY(20px);
+        translate3d(0,25px,0);
 
 }
 
 .scene.active .final-sub{
 
     animation:
-        textIn
+        textEnter
         .8s
-        .6s
+        .65s
         var(--ease)
         forwards;
 
@@ -2269,7 +2189,7 @@ body{
 
 
 /* =========================================================
-   CONTROLS
+   CINEMATIC CONTROLS
    ========================================================= */
 
 .controls{
@@ -2277,31 +2197,29 @@ body{
     position:absolute;
 
     left:50%;
-    bottom:28px;
 
-    z-index:500;
+    bottom:25px;
 
-    transform:
-        translateX(-50%);
+    z-index:700;
 
     display:flex;
 
     align-items:center;
 
-    gap:8px;
+    gap:7px;
 
-    padding:9px;
+    padding:8px;
 
     border-radius:999px;
 
     background:
-        rgba(255,255,255,.62);
+        rgba(255,255,255,.55);
 
     border:
-        1px solid rgba(255,255,255,.9);
+        1px solid rgba(255,255,255,.85);
 
     box-shadow:
-        0 20px 50px rgba(25,90,115,.12);
+        0 20px 55px rgba(25,90,115,.13);
 
     backdrop-filter:
         blur(18px);
@@ -2309,12 +2227,34 @@ body{
     -webkit-backdrop-filter:
         blur(18px);
 
+    transform:
+        translate(-50%,30px);
+
+    opacity:0;
+
+    transition:
+
+        opacity .45s ease,
+
+        transform .45s var(--ease);
+
 }
+
+#app.show-controls .controls,
+.controls:hover{
+
+    opacity:1;
+
+    transform:
+        translate(-50%,0);
+
+}
+
 
 .control{
 
-    width:42px;
-    height:42px;
+    width:41px;
+    height:41px;
 
     border:0;
 
@@ -2325,8 +2265,6 @@ body{
 
     color:#245e75;
 
-    font-size:17px;
-
     cursor:pointer;
 
     display:flex;
@@ -2334,26 +2272,23 @@ body{
     align-items:center;
     justify-content:center;
 
+    font-size:17px;
+
     transition:
 
         transform .25s var(--ease),
 
-        background .25s ease,
-
-        box-shadow .25s ease;
+        background .2s ease;
 
 }
 
 .control:hover{
 
     transform:
-        translateY(-3px)
-        scale(1.04);
+        translateY(-2px)
+        scale(1.05);
 
-    background:#ffffff;
-
-    box-shadow:
-        0 8px 20px rgba(25,90,115,.12);
+    background:#fff;
 
 }
 
@@ -2372,10 +2307,10 @@ body{
 
     margin-left:6px;
 
+    border-radius:999px;
+
     background:
         rgba(30,100,130,.15);
-
-    border-radius:20px;
 
     overflow:hidden;
 
@@ -2387,7 +2322,7 @@ body{
 
     height:100%;
 
-    background:#277fa3;
+    background:#247fa3;
 
     transform-origin:left center;
 
@@ -2402,10 +2337,10 @@ body{
 
     position:absolute;
 
-    top:30px;
-    right:38px;
+    top:28px;
+    right:35px;
 
-    z-index:500;
+    z-index:700;
 
     padding:
         10px 17px;
@@ -2413,21 +2348,43 @@ body{
     border-radius:999px;
 
     background:
-        rgba(255,255,255,.52);
+        rgba(255,255,255,.5);
 
     border:
         1px solid rgba(255,255,255,.7);
 
     backdrop-filter:
-        blur(15px);
+        blur(14px);
 
-    color:#557583;
+    color:#5b7785;
 
     font-size:11px;
 
     font-weight:800;
 
     letter-spacing:.25em;
+
+    opacity:.8;
+
+}
+
+
+/* =========================================================
+   CINEMATIC VIGNETTE
+   ========================================================= */
+
+.vignette{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:600;
+
+    pointer-events:none;
+
+    box-shadow:
+        inset 0 0 180px rgba(20,70,90,.08);
 
 }
 
@@ -2447,6 +2404,7 @@ body{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     background:#fafdff;
@@ -2464,6 +2422,12 @@ body{
 
 }
 
+.loading-inner{
+
+    text-align:center;
+
+}
+
 .loading-title{
 
     font-family:"Manrope",sans-serif;
@@ -2472,23 +2436,35 @@ body{
 
     font-weight:800;
 
-    color:#17475d;
+    color:#16465b;
 
-    text-align:center;
+}
+
+.loading-sub{
+
+    margin-top:10px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:.35em;
+
+    color:#6a8490;
 
 }
 
 .loading-line{
 
-    width:180px;
+    width:200px;
 
     height:2px;
 
-    margin:25px auto;
-
-    background:#d5e9f2;
+    margin:25px auto 0;
 
     overflow:hidden;
+
+    background:#d6eaf2;
 
 }
 
@@ -2503,13 +2479,13 @@ body{
     background:#287fa3;
 
     animation:
-        loadingBar
+        loading
         1.2s
         infinite;
 
 }
 
-@keyframes loadingBar{
+@keyframes loading{
 
     from{
         transform:translateX(-150%);
@@ -2523,157 +2499,18 @@ body{
 
 
 /* =========================================================
-   DESKTOP 1440
+   FULLSCREEN MODE
    ========================================================= */
 
-@media(max-width:1500px){
+:fullscreen .counter{
 
-    .scene{
-
-        padding:
-            70px
-            80px
-            100px;
-
-    }
-
-    .scene h2{
-
-        font-size:
-            clamp(55px,6vw,95px);
-
-    }
-
-    .collage{
-
-        width:620px;
-
-        height:470px;
-
-    }
-
-    .final-ten{
-
-        font-size:290px;
-
-    }
+    top:25px;
 
 }
 
+:fullscreen .controls{
 
-/* =========================================================
-   DESKTOP SMALL
-   ========================================================= */
-
-@media(max-width:1200px){
-
-    .scene{
-
-        padding:
-            65px
-            60px
-            100px;
-
-    }
-
-    .two-column{
-
-        gap:55px;
-
-    }
-
-    .collage{
-
-        width:530px;
-
-        height:410px;
-
-    }
-
-    .photo-strip img{
-
-        height:240px;
-
-    }
-
-    .opening-copy h1{
-
-        font-size:70px;
-
-    }
-
-    .logo-main{
-
-        width:510px;
-
-    }
-
-    .final-ten{
-
-        font-size:240px;
-
-    }
-
-}
-
-
-/* =========================================================
-   SMALLER LAPTOP
-   ========================================================= */
-
-@media(max-width:1000px){
-
-    .two-column{
-
-        grid-template-columns:
-            1fr
-            1fr;
-
-    }
-
-    .collage{
-
-        width:460px;
-
-        height:360px;
-
-    }
-
-    .scene h2{
-
-        font-size:58px;
-
-    }
-
-    .lead{
-
-        font-size:20px;
-
-    }
-
-    .stats{
-
-        gap:12px;
-
-    }
-
-    .stat{
-
-        padding:28px;
-
-    }
-
-    .stat strong{
-
-        font-size:60px;
-
-    }
-
-    .timeline-item strong{
-
-        font-size:32px;
-
-    }
+    bottom:22px;
 
 }
 
@@ -2699,6 +2536,7 @@ body{
 }
 
 </style>
+
 </head>
 
 
@@ -2709,30 +2547,34 @@ body{
 
 
     <!-- =====================================================
-         ATMOSPHERE
+         BACKGROUND
          ===================================================== -->
 
-    <div class="atmosphere">
+    <div class="background">
 
         <div class="sun"></div>
 
-        <div class="light"></div>
+        <div class="rays"></div>
 
         <div class="horizon"></div>
 
-        <div class="particles" id="particles"></div>
+        <div
+            class="particles"
+            id="particles"
+        ></div>
 
-        <div class="cloud-ocean">
+
+        <div class="cloud-floor">
 
             <div class="cloud-base"></div>
 
-            <div class="cloud-dome cloud-1"></div>
+            <div class="cloud a"></div>
 
-            <div class="cloud-dome cloud-2"></div>
+            <div class="cloud b"></div>
 
-            <div class="cloud-dome cloud-3"></div>
+            <div class="cloud c"></div>
 
-            <div class="cloud-dome cloud-4"></div>
+            <div class="cloud d"></div>
 
         </div>
 
@@ -2756,7 +2598,7 @@ body{
             <img
                 class="logo-main"
                 src="opening/logo-utama.png"
-                alt="DRC CC 121 10 Years"
+                alt="DRC CC 121"
             >
 
             <img
@@ -2766,13 +2608,13 @@ body{
             >
 
             <img
-                class="logo-kai-wisata"
+                class="logo-wisata"
                 src="opening/logo-kai-wisata.png"
                 alt="KAI Wisata"
             >
 
 
-            <div class="opening-copy">
+            <div class="opening-text">
 
                 <div class="small">
                     DRC CC 121 · INBOUND BANDUNG
@@ -2795,21 +2637,20 @@ body{
 
                 <div class="cloud-base"></div>
 
-                <div class="cloud-dome cloud-1"></div>
+                <div class="cloud a"></div>
 
-                <div class="cloud-dome cloud-2"></div>
+                <div class="cloud b"></div>
 
-                <div class="cloud-dome cloud-3"></div>
+                <div class="cloud c"></div>
 
-                <div class="cloud-dome cloud-4"></div>
+                <div class="cloud d"></div>
 
             </div>
-
 
         </div>
 
 
-        <div class="opening-flash"></div>
+        <div class="flash"></div>
 
     </section>
 
@@ -2825,7 +2666,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 01
+             01
              ================================================= -->
 
         <section
@@ -2860,7 +2701,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 02
+             02
              ================================================= -->
 
         <section
@@ -2898,7 +2739,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 03
+             03
              ================================================= -->
 
         <section
@@ -2971,7 +2812,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 04
+             04
              ================================================= -->
 
         <section
@@ -3032,7 +2873,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 05
+             05
              ================================================= -->
 
         <section
@@ -3080,7 +2921,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 06
+             06
              ================================================= -->
 
         <section
@@ -3119,7 +2960,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 07
+             07
              ================================================= -->
 
         <section
@@ -3196,7 +3037,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 08
+             08
              ================================================= -->
 
         <section
@@ -3250,7 +3091,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 09
+             09
              ================================================= -->
 
         <section
@@ -3319,7 +3160,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 10
+             10
              ================================================= -->
 
         <section
@@ -3373,7 +3214,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 11
+             11
              ================================================= -->
 
         <section
@@ -3435,7 +3276,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 12
+             12
              ================================================= -->
 
         <section
@@ -3478,7 +3319,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 13
+             13
              ================================================= -->
 
         <section
@@ -3518,7 +3359,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 14
+             14
              ================================================= -->
 
         <section
@@ -3574,7 +3415,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 15
+             15
              ================================================= -->
 
         <section
@@ -3588,7 +3429,7 @@ body{
                     2016 — 2026
                 </div>
 
-                <div class="final-ten">
+                <div class="final-number">
                     10
                 </div>
 
@@ -3608,7 +3449,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 16
+             16
              ================================================= -->
 
         <section
@@ -3644,7 +3485,7 @@ body{
 
 
         <!-- =================================================
-             SCENE 17
+             17
              ================================================= -->
 
         <section
@@ -3663,7 +3504,7 @@ body{
                     <span>10TH ANNIVERSARY.</span>
                 </h2>
 
-                <div class="final-ten">
+                <div class="final-number">
                     10
                 </div>
 
@@ -3752,7 +3593,7 @@ body{
 
         <button
             class="control"
-            id="full"
+            id="fullscreen"
             title="Fullscreen"
         >
             ⛶
@@ -3771,6 +3612,13 @@ body{
 
 
     <!-- =====================================================
+         VIGNETTE
+         ===================================================== -->
+
+    <div class="vignette"></div>
+
+
+    <!-- =====================================================
          LOADING
          ===================================================== -->
 
@@ -3779,10 +3627,14 @@ body{
         id="loading"
     >
 
-        <div>
+        <div class="loading-inner">
 
             <div class="loading-title">
                 DRC CC 121
+            </div>
+
+            <div class="loading-sub">
+                10 YEARS · INBOUND BANDUNG
             </div>
 
             <div class="loading-line">
@@ -3812,9 +3664,12 @@ body{
 <script>
 
 /* =========================================================
-   CINEMATIC ENGINE
+   CINEMATIC PRESENTATION ENGINE
    ========================================================= */
 
+
+const app =
+    document.getElementById("app");
 
 const opening =
     document.getElementById("opening");
@@ -3830,9 +3685,6 @@ const loading =
 
 const music =
     document.getElementById("music");
-
-const scenes =
-    [...document.querySelectorAll(".scene")];
 
 const particles =
     document.getElementById("particles");
@@ -3861,8 +3713,11 @@ const replayBtn =
 const soundBtn =
     document.getElementById("sound");
 
-const fullBtn =
-    document.getElementById("full");
+const fullscreenBtn =
+    document.getElementById("fullscreen");
+
+const scenes =
+    [...document.querySelectorAll(".scene")];
 
 
 /* =========================================================
@@ -3879,11 +3734,17 @@ let timer = null;
 
 let raf = null;
 
-let sceneStartedAt = 0;
+let sceneStart = 0;
 
-let openingRunning = false;
+let openingStarted = false;
 
-let firstInteraction = false;
+let controlsTimer = null;
+
+let mouseFrame = null;
+
+let mouseX = 0;
+
+let mouseY = 0;
 
 
 /* =========================================================
@@ -3891,7 +3752,9 @@ let firstInteraction = false;
    ========================================================= */
 
 totalText.textContent =
-    String(scenes.length).padStart(2,"0");
+    String(
+        scenes.length
+    ).padStart(2,"0");
 
 
 /* =========================================================
@@ -3900,12 +3763,14 @@ totalText.textContent =
 
 function createParticles(){
 
-    const count = 70;
-
     const fragment =
         document.createDocumentFragment();
 
-    for(let i=0;i<count;i++){
+    for(
+        let i = 0;
+        i < 70;
+        i++
+    ){
 
         const p =
             document.createElement("div");
@@ -3931,7 +3796,40 @@ function createParticles(){
 
     }
 
-    particles.appendChild(fragment);
+    particles.appendChild(
+        fragment
+    );
+
+}
+
+
+/* =========================================================
+   SHOW CONTROLS
+   ========================================================= */
+
+function showControls(){
+
+    app.classList.add(
+        "show-controls"
+    );
+
+
+    clearTimeout(
+        controlsTimer
+    );
+
+
+    controlsTimer =
+        setTimeout(
+            () => {
+
+                app.classList.remove(
+                    "show-controls"
+                );
+
+            },
+            2800
+        );
 
 }
 
@@ -3940,7 +3838,7 @@ function createParticles(){
    CLEAR TIMER
    ========================================================= */
 
-function clearTimer(){
+function clearSceneTimer(){
 
     if(timer){
 
@@ -3952,7 +3850,9 @@ function clearTimer(){
 
     if(raf){
 
-        cancelAnimationFrame(raf);
+        cancelAnimationFrame(
+            raf
+        );
 
         raf = null;
 
@@ -3962,22 +3862,27 @@ function clearTimer(){
 
 
 /* =========================================================
-   SHOW SCENE
+   SCENE
    ========================================================= */
 
 function showScene(index){
 
-    clearTimer();
+    clearSceneTimer();
 
 
-    if(index < 0){
+    if(
+        index < 0
+    ){
 
         index =
             scenes.length - 1;
 
     }
 
-    if(index >= scenes.length){
+
+    if(
+        index >= scenes.length
+    ){
 
         index = 0;
 
@@ -4002,7 +3907,7 @@ function showScene(index){
 
     currentText.textContent =
         String(
-            currentScene + 1
+            index + 1
         ).padStart(2,"0");
 
 
@@ -4010,7 +3915,7 @@ function showScene(index){
         "0%";
 
 
-    startTimer();
+    startSceneTimer();
 
 }
 
@@ -4019,9 +3924,9 @@ function showScene(index){
    TIMER
    ========================================================= */
 
-function startTimer(){
+function startSceneTimer(){
 
-    clearTimer();
+    clearSceneTimer();
 
 
     if(!playing)
@@ -4038,7 +3943,7 @@ function startTimer(){
         ) || 6000;
 
 
-    sceneStartedAt =
+    sceneStart =
         performance.now();
 
 
@@ -4068,10 +3973,10 @@ function updateProgress(duration){
 
     const elapsed =
         performance.now()
-        - sceneStartedAt;
+        - sceneStart;
 
 
-    const value =
+    const percentage =
         Math.min(
             elapsed / duration,
             1
@@ -4079,15 +3984,21 @@ function updateProgress(duration){
 
 
     progress.style.width =
-        (value * 100) + "%";
+        (
+            percentage * 100
+        ) + "%";
 
 
-    if(value < 1){
+    if(
+        percentage < 1
+    ){
 
         raf =
             requestAnimationFrame(
                 () =>
-                    updateProgress(duration)
+                    updateProgress(
+                        duration
+                    )
             );
 
     }
@@ -4117,27 +4028,7 @@ function previousScene(){
 
 
 /* =========================================================
-   MUSIC
-   ========================================================= */
-
-function startMusic(){
-
-    if(muted)
-        return;
-
-    music.muted =
-        false;
-
-    music.play()
-        .catch(
-            () => {}
-        );
-
-}
-
-
-/* =========================================================
-   PLAY / PAUSE
+   PLAY
    ========================================================= */
 
 function togglePlay(){
@@ -4153,18 +4044,43 @@ function togglePlay(){
 
         startMusic();
 
-        startTimer();
+        startSceneTimer();
 
     }else{
 
         playBtn.textContent =
             "▶";
 
-        clearTimer();
+        clearSceneTimer();
 
         music.pause();
 
     }
+
+
+    showControls();
+
+}
+
+
+/* =========================================================
+   MUSIC
+   ========================================================= */
+
+function startMusic(){
+
+    if(muted)
+        return;
+
+
+    music.muted =
+        false;
+
+
+    music.play()
+        .catch(
+            () => {}
+        );
 
 }
 
@@ -4199,6 +4115,9 @@ function toggleSound(){
 
     }
 
+
+    showControls();
+
 }
 
 
@@ -4206,20 +4125,34 @@ function toggleSound(){
    FULLSCREEN
    ========================================================= */
 
-function fullscreen(){
+async function enterFullscreen(){
 
-    if(
-        !document.fullscreenElement
-    ){
+    try{
 
-        document.documentElement
-            .requestFullscreen?.();
+        if(
+            !document.fullscreenElement
+        ){
 
-    }else{
+            await document.documentElement
+                .requestFullscreen();
 
-        document.exitFullscreen?.();
+        }else{
+
+            await document.exitFullscreen();
+
+        }
+
+    }catch(error){
+
+        console.log(
+            "Fullscreen:",
+            error
+        );
 
     }
+
+
+    showControls();
 
 }
 
@@ -4230,22 +4163,22 @@ function fullscreen(){
 
 function replay(){
 
-    clearTimer();
+    clearSceneTimer();
 
 
-    openingRunning =
+    openingStarted =
         false;
+
+
+    presentation.classList.remove(
+        "active"
+    );
 
 
     opening.classList.remove(
         "active",
         "hide",
         "flash"
-    );
-
-
-    presentation.classList.remove(
-        "active"
     );
 
 
@@ -4281,6 +4214,9 @@ function replay(){
         }
     );
 
+
+    showControls();
+
 }
 
 
@@ -4290,11 +4226,11 @@ function replay(){
 
 function runOpening(){
 
-    if(openingRunning)
+    if(openingStarted)
         return;
 
 
-    openingRunning =
+    openingStarted =
         true;
 
 
@@ -4305,6 +4241,12 @@ function runOpening(){
 
     setTimeout(
         () => {
+
+            if(
+                !openingStarted
+            )
+                return;
+
 
             opening.classList.add(
                 "flash"
@@ -4318,6 +4260,12 @@ function runOpening(){
     setTimeout(
         () => {
 
+            if(
+                !openingStarted
+            )
+                return;
+
+
             opening.classList.add(
                 "hide"
             );
@@ -4328,7 +4276,7 @@ function runOpening(){
             );
 
 
-            openingRunning =
+            openingStarted =
                 false;
 
 
@@ -4348,23 +4296,35 @@ function runOpening(){
    BUTTONS
    ========================================================= */
 
-nextBtn.onclick =
-    nextScene;
+nextBtn.addEventListener(
+    "click",
+    nextScene
+);
 
-prevBtn.onclick =
-    previousScene;
+prevBtn.addEventListener(
+    "click",
+    previousScene
+);
 
-playBtn.onclick =
-    togglePlay;
+playBtn.addEventListener(
+    "click",
+    togglePlay
+);
 
-replayBtn.onclick =
-    replay;
+replayBtn.addEventListener(
+    "click",
+    replay
+);
 
-soundBtn.onclick =
-    toggleSound;
+soundBtn.addEventListener(
+    "click",
+    toggleSound
+);
 
-fullBtn.onclick =
-    fullscreen;
+fullscreenBtn.addEventListener(
+    "click",
+    enterFullscreen
+);
 
 
 /* =========================================================
@@ -4375,7 +4335,12 @@ document.addEventListener(
     "keydown",
     event => {
 
-        if(event.key === "ArrowRight"){
+        showControls();
+
+
+        if(
+            event.key === "ArrowRight"
+        ){
 
             event.preventDefault();
 
@@ -4383,7 +4348,10 @@ document.addEventListener(
 
         }
 
-        else if(event.key === "ArrowLeft"){
+
+        else if(
+            event.key === "ArrowLeft"
+        ){
 
             event.preventDefault();
 
@@ -4391,13 +4359,17 @@ document.addEventListener(
 
         }
 
-        else if(event.code === "Space"){
+
+        else if(
+            event.code === "Space"
+        ){
 
             event.preventDefault();
 
             togglePlay();
 
         }
+
 
         else if(
             event.key.toLowerCase()
@@ -4408,12 +4380,22 @@ document.addEventListener(
 
         }
 
+
         else if(
             event.key.toLowerCase()
             === "f"
         ){
 
-            fullscreen();
+            enterFullscreen();
+
+        }
+
+
+        else if(
+            event.key === "Escape"
+        ){
+
+            showControls();
 
         }
 
@@ -4422,15 +4404,8 @@ document.addEventListener(
 
 
 /* =========================================================
-   MOUSE PARALLAX
+   MOUSE CINEMATIC PARALLAX
    ========================================================= */
-
-let mouseX = 0;
-
-let mouseY = 0;
-
-let parallaxFrame = null;
-
 
 document.addEventListener(
     "mousemove",
@@ -4443,15 +4418,18 @@ document.addEventListener(
             event.clientY;
 
 
-        if(parallaxFrame)
+        showControls();
+
+
+        if(mouseFrame)
             return;
 
 
-        parallaxFrame =
+        mouseFrame =
             requestAnimationFrame(
                 () => {
 
-                    parallaxFrame =
+                    mouseFrame =
                         null;
 
 
@@ -4472,12 +4450,16 @@ document.addEventListener(
                     openingCamera.style.transform =
                         `
                         translate3d(
-                            ${x * -16}px,
-                            ${y * -10}px,
+                            ${x * -18}px,
+                            ${y * -12}px,
                             0
                         )
-                        rotateY(${x * 2}deg)
-                        rotateX(${y * -2}deg)
+                        rotateY(
+                            ${x * 2.2}deg
+                        )
+                        rotateX(
+                            ${y * -2.2}deg
+                        )
                         `;
 
                 }
@@ -4491,26 +4473,103 @@ document.addEventListener(
 
 
 /* =========================================================
-   FIRST INTERACTION
+   CLICK SCREEN
    ========================================================= */
 
 document.addEventListener(
     "click",
-    () => {
+    event => {
 
-        if(firstInteraction)
+        if(
+            !event.target.closest(
+                ".controls"
+            )
+        ){
+
+            showControls();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   TOUCH IS NOT PRIMARY
+   ========================================================= */
+
+let touchStartX = 0;
+
+let touchStartY = 0;
+
+
+document.addEventListener(
+    "touchstart",
+    event => {
+
+        if(
+            event.touches.length !== 1
+        )
             return;
 
 
-        firstInteraction =
-            true;
+        touchStartX =
+            event.touches[0].clientX;
 
-
-        startMusic();
+        touchStartY =
+            event.touches[0].clientY;
 
     },
     {
-        once:true
+        passive:true
+    }
+);
+
+
+document.addEventListener(
+    "touchend",
+    event => {
+
+        if(
+            event.changedTouches.length !== 1
+        )
+            return;
+
+
+        const endX =
+            event.changedTouches[0].clientX;
+
+        const endY =
+            event.changedTouches[0].clientY;
+
+
+        const dx =
+            endX - touchStartX;
+
+        const dy =
+            endY - touchStartY;
+
+
+        if(
+            Math.abs(dx) > 80 &&
+            Math.abs(dx) > Math.abs(dy)
+        ){
+
+            if(dx < 0){
+
+                nextScene();
+
+            }else{
+
+                previousScene();
+
+            }
+
+        }
+
+    },
+    {
+        passive:true
     }
 );
 
@@ -4523,11 +4582,13 @@ document.addEventListener(
     "visibilitychange",
     () => {
 
-        if(document.hidden){
+        if(
+            document.hidden
+        ){
 
             if(playing){
 
-                clearTimer();
+                clearSceneTimer();
 
                 music.pause();
 
@@ -4539,7 +4600,7 @@ document.addEventListener(
 
                 startMusic();
 
-                startTimer();
+                startSceneTimer();
 
             }
 
@@ -4550,7 +4611,30 @@ document.addEventListener(
 
 
 /* =========================================================
-   START
+   IMAGE FALLBACK
+   ========================================================= */
+
+document
+    .querySelectorAll("img")
+    .forEach(
+        img => {
+
+            img.addEventListener(
+                "error",
+                () => {
+
+                    img.style.opacity =
+                        "0";
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   INITIAL LOAD
    ========================================================= */
 
 window.addEventListener(
@@ -4567,10 +4651,21 @@ window.addEventListener(
                     "hide"
                 );
 
+
                 runOpening();
 
+
+                setTimeout(
+                    () => {
+
+                        showControls();
+
+                    },
+                    1000
+                );
+
             },
-            600
+            700
         );
 
     }
