@@ -1,2817 +1,2692 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
 <meta charset="UTF-8">
 
 <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 >
 
-<title>
-DRC CC 121 INBOUND BANDUNG — 10 YEARS
-</title>
+<title>DRC CC 121 — 10 Years</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
 >
 
 <style>
 
-/* =====================================================
-   RESET
-   ===================================================== */
+/* =========================================================
+   DRC CC 121 — 10 YEARS
+   CINEMATIC ANNIVERSARY PRESENTATION
+   ========================================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+/* =========================================================
+   01. RESET
+   ========================================================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
-
 
 html,
-body {
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
 
-    width: 100%;
-    height: 100%;
-
-    overflow: hidden;
-
-    background:
-        #07111d;
-
-    color:
-        #ffffff;
-
-    font-family:
-        "DM Sans",
-        sans-serif;
-
+body{
+    background:#dff4ff;
+    color:#102638;
+    font-family:"DM Sans",sans-serif;
+    user-select:none;
 }
 
 
-/* =====================================================
-   COLOR SYSTEM
-   ===================================================== */
+/* =========================================================
+   02. ROOT
+   ========================================================= */
 
-:root {
+:root{
 
-    --navy:
-        #07111d;
+    --sky-1:#f8fdff;
+    --sky-2:#dff5ff;
+    --sky-3:#b9e8fa;
+    --sky-4:#86cde9;
 
-    --navy2:
-        #0c1b2b;
+    --blue:#1677a8;
+    --blue-dark:#0d4969;
 
-    --blue:
-        #173a58;
+    --white:#ffffff;
 
-    --cyan:
-        #72c6d8;
+    --ink:#102638;
+    --muted:#587083;
 
-    --gold:
-        #e8cb83;
+    --gold:#d7aa54;
 
-    --gold-soft:
-        #f0dca5;
-
-    --white:
-        #ffffff;
-
-    --text-soft:
-        rgba(255,255,255,.72);
-
-    --text-muted:
-        rgba(255,255,255,.48);
-
+    --shadow:
+        0 25px 70px rgba(13,73,105,.18);
 }
 
 
-/* =====================================================
-   MAIN APP
-   ===================================================== */
-
-#app {
-
-    position:
-        relative;
-
-    width:
-        100vw;
-
-    height:
-        100vh;
-
-    overflow:
-        hidden;
-
-    background:
-        radial-gradient(
-            circle at 50% 45%,
-            #173651 0%,
-            #0c1b2b 35%,
-            #07111d 75%
-        );
-
-}
-
-
-/* =====================================================
-   SCENE CONTAINER
-   ===================================================== */
-
-#scenes {
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    width:
-        100%;
-
-    height:
-        100%;
-
-}
-
-
-/* =====================================================
-   EACH SCENE
-   ===================================================== */
-
-.scene {
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    width:
-        100%;
-
-    height:
-        100%;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    text-align:
-        center;
-
-    padding:
-        60px;
-
-    opacity:
-        0;
-
-    visibility:
-        hidden;
-
-    transform:
-        scale(1.04);
-
-    transition:
-        opacity 1.1s ease,
-        transform 1.5s cubic-bezier(.2,.7,.2,1),
-        visibility 1.1s;
-
-}
-
-
-.scene.active {
-
-    opacity:
-        1;
-
-    visibility:
-        visible;
-
-    transform:
-        scale(1);
-
-}
-
-
-/* =====================================================
-   CONTENT
-   ===================================================== */
-
-.content {
-
-    position:
-        relative;
-
-    z-index:
-        5;
-
-    width:
-        min(1250px, 100%);
-
-    margin:
-        auto;
-
-}
-
-
-/* =====================================================
-   EYEBROW
-   ===================================================== */
-
-.eyebrow {
-
-    font-size:
-        clamp(13px, 1.25vw, 20px);
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        5px;
-
-    text-transform:
-        uppercase;
-
-    color:
-        var(--gold-soft);
-
-    margin-bottom:
-        22px;
-
-}
-
-
-/* =====================================================
-   BIG NUMBER
-   ===================================================== */
-
-.big-number {
-
-    font-family:
-        "Manrope",
-        sans-serif;
-
-    font-size:
-        clamp(130px, 22vw, 300px);
-
-    line-height:
-        .78;
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        -14px;
-
-    color:
-        #ffffff;
-
-    text-shadow:
-        0 0 60px
-        rgba(232,203,131,.18);
-
-}
-
-
-/* =====================================================
-   YEARS
-   ===================================================== */
-
-.years {
-
-    margin-top:
-        35px;
-
-    font-family:
-        "Manrope",
-        sans-serif;
-
-    font-size:
-        clamp(20px, 2.5vw, 42px);
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        3px;
-
-}
-
-
-.years span {
-
-    color:
-        var(--gold);
-
-}
-
-
-/* =====================================================
-   SUBTITLE
-   ===================================================== */
-
-.subtitle {
-
-    margin-top:
-        20px;
-
-    font-size:
-        clamp(15px, 1.5vw, 24px);
-
-    font-weight:
-        600;
-
-    letter-spacing:
-        4px;
-
-    color:
-        var(--text-soft);
-
-}
-
-
-/* =====================================================
-   CINEMATIC LINE
-   ===================================================== */
-
-.cinematic-line {
-
-    width:
-        min(280px, 45vw);
-
-    height:
-        2px;
-
-    margin:
-        30px auto;
-
+/* =========================================================
+   03. APP
+   ========================================================= */
+
+#app{
+    position:relative;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
     background:
         linear-gradient(
-            90deg,
-            transparent,
-            var(--gold),
-            transparent
+            180deg,
+            #fafdff 0%,
+            #e8f8ff 32%,
+            #ccefff 70%,
+            #a9dff3 100%
         );
-
-    box-shadow:
-        0 0 18px
-        rgba(232,203,131,.35);
-
 }
 
 
-/* =====================================================
-   RESPONSIVE
-   ===================================================== */
+/* =========================================================
+   04. SKY
+   ========================================================= */
 
-@media (max-width: 700px) {
-
-    .scene {
-
-        padding:
-            30px 22px;
-
-    }
-
-    .eyebrow {
-
-        letter-spacing:
-            3px;
-
-    }
-
-    .big-number {
-
-        letter-spacing:
-            -7px;
-
-    }
-
-    .years {
-
-        letter-spacing:
-            1px;
-
-    }
-
-}
-
-      </style>
-      <style>
-
-/* =====================================================
-   PART 2/10
-   CINEMATIC BACKGROUND
-   ===================================================== */
-
-
-/* =====================================================
-   BACKGROUND BASE
-   ===================================================== */
-
-#app::before {
-
-    content: "";
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    z-index:
-        0;
-
+.sky{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
     background:
-
         radial-gradient(
-            circle at 50% 40%,
-            rgba(48,105,132,.28),
-            transparent 35%
+            circle at 50% 28%,
+            rgba(255,255,255,.98) 0%,
+            rgba(255,255,255,.6) 22%,
+            transparent 55%
         ),
-
-        radial-gradient(
-            circle at 15% 80%,
-            rgba(232,203,131,.10),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 85% 15%,
-            rgba(114,198,216,.10),
-            transparent 30%
-        );
-
-    animation:
-        ambientGlow 12s ease-in-out infinite alternate;
-
-}
-
-
-@keyframes ambientGlow {
-
-    0% {
-
-        opacity:
-            .65;
-
-        transform:
-            scale(1);
-
-    }
-
-    100% {
-
-        opacity:
-            1;
-
-        transform:
-            scale(1.08);
-
-    }
-
-}
-
-
-/* =====================================================
-   MOVING LIGHT
-   ===================================================== */
-
-#app::after {
-
-    content: "";
-
-    position:
-        absolute;
-
-    z-index:
-        1;
-
-    width:
-        65vw;
-
-    height:
-        65vw;
-
-    max-width:
-        900px;
-
-    max-height:
-        900px;
-
-    left:
-        50%;
-
-    top:
-        50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius:
-        50%;
-
-    border:
-        1px solid
-        rgba(232,203,131,.08);
-
-    box-shadow:
-
-        0 0 80px
-        rgba(114,198,216,.05),
-
-        inset 0 0 80px
-        rgba(232,203,131,.035);
-
-    animation:
-        slowRotate 30s linear infinite;
-
-}
-
-
-@keyframes slowRotate {
-
-    from {
-
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-
-    }
-
-    to {
-
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-
-    }
-
-}
-
-
-/* =====================================================
-   CINEMATIC ORBIT
-   ===================================================== */
-
-.cinematic-orbit {
-
-    position:
-        absolute;
-
-    z-index:
-        2;
-
-    width:
-        75vw;
-
-    height:
-        75vw;
-
-    max-width:
-        1100px;
-
-    max-height:
-        1100px;
-
-    left:
-        50%;
-
-    top:
-        50%;
-
-    border:
-        1px solid
-        rgba(255,255,255,.045);
-
-    border-radius:
-        50%;
-
-    transform:
-        translate(-50%, -50%)
-        rotate(-20deg);
-
-    pointer-events:
-        none;
-
-}
-
-
-.cinematic-orbit::before {
-
-    content: "";
-
-    position:
-        absolute;
-
-    width:
-        18px;
-
-    height:
-        18px;
-
-    top:
-        7%;
-
-    left:
-        50%;
-
-    border-radius:
-        50%;
-
-    background:
-        var(--gold);
-
-    box-shadow:
-
-        0 0 15px
-        rgba(232,203,131,.8),
-
-        0 0 45px
-        rgba(232,203,131,.35);
-
-    transform:
-        translateX(-50%);
-
-    animation:
-        orbitPulse 3s ease-in-out infinite;
-
-}
-
-
-@keyframes orbitPulse {
-
-    0%,
-    100% {
-
-        opacity:
-            .45;
-
-        transform:
-            translateX(-50%)
-            scale(.7);
-
-    }
-
-    50% {
-
-        opacity:
-            1;
-
-        transform:
-            translateX(-50%)
-            scale(1.2);
-
-    }
-
-}
-
-
-/* =====================================================
-   LIGHT STREAKS
-   ===================================================== */
-
-.light-streak {
-
-    position:
-        absolute;
-
-    z-index:
-        2;
-
-    width:
-        35vw;
-
-    height:
-        1px;
-
-    background:
         linear-gradient(
-            90deg,
-            transparent,
-            rgba(114,198,216,.35),
-            transparent
+            180deg,
+            #fbfeff 0%,
+            #e7f8ff 42%,
+            #bde8f8 100%
+        );
+}
+
+
+/* =========================================================
+   05. SUN GLOW
+   ========================================================= */
+
+.sun{
+    position:absolute;
+
+    width:min(55vw,760px);
+    height:min(55vw,760px);
+
+    top:-25%;
+    right:-10%;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.98) 0%,
+            rgba(255,255,255,.65) 20%,
+            rgba(255,255,255,.18) 46%,
+            transparent 72%
         );
 
-    opacity:
-        .45;
-
-    transform:
-        rotate(-25deg);
+    filter:blur(12px);
 
     animation:
-        streakMove 8s ease-in-out infinite;
+        sunFloat 12s ease-in-out infinite alternate;
 
+    pointer-events:none;
 }
 
+@keyframes sunFloat{
 
-.streak-1 {
-
-    top:
-        25%;
-
-    left:
-        -15%;
-
-}
-
-
-.streak-2 {
-
-    top:
-        68%;
-
-    right:
-        -15%;
-
-    transform:
-        rotate(25deg);
-
-    animation-delay:
-        3s;
-
-}
-
-
-@keyframes streakMove {
-
-    0% {
-
-        opacity:
-            0;
-
-        transform:
-            translateX(-80px)
-            rotate(-25deg);
-
+    from{
+        transform:translate3d(-30px,10px,0) scale(1);
     }
 
-    35% {
-
-        opacity:
-            .5;
-
+    to{
+        transform:translate3d(30px,35px,0) scale(1.08);
     }
-
-    70% {
-
-        opacity:
-            .15;
-
-    }
-
-    100% {
-
-        opacity:
-            0;
-
-        transform:
-            translateX(120px)
-            rotate(-25deg);
-
-    }
-
 }
 
 
-/* =====================================================
-   PARTICLES
-   ===================================================== */
+/* =========================================================
+   06. CLOUD SYSTEM
+   ========================================================= */
 
-.particles {
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    z-index:
-        2;
-
-    pointer-events:
-        none;
-
-    overflow:
-        hidden;
-
+.cloud-world{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:5;
 }
 
-
-.particles span {
-
-    position:
-        absolute;
-
-    display:
-        block;
-
-    width:
-        3px;
-
-    height:
-        3px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(255,255,255,.55);
-
-    box-shadow:
-        0 0 8px
-        rgba(255,255,255,.25);
-
-    animation:
-        floatParticle
-        linear
-        infinite;
-
+.cloud-layer{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
 }
 
+.cloud{
+    position:absolute;
 
-.particles span:nth-child(1) {
-    left: 8%;
-    top: 78%;
-    animation-duration: 11s;
-    animation-delay: -3s;
-}
+    width:260px;
+    height:85px;
 
-.particles span:nth-child(2) {
-    left: 17%;
-    top: 32%;
-    animation-duration: 14s;
-    animation-delay: -8s;
-}
-
-.particles span:nth-child(3) {
-    left: 28%;
-    top: 85%;
-    animation-duration: 10s;
-    animation-delay: -4s;
-}
-
-.particles span:nth-child(4) {
-    left: 39%;
-    top: 18%;
-    animation-duration: 13s;
-    animation-delay: -7s;
-}
-
-.particles span:nth-child(5) {
-    left: 51%;
-    top: 72%;
-    animation-duration: 12s;
-    animation-delay: -2s;
-}
-
-.particles span:nth-child(6) {
-    left: 63%;
-    top: 25%;
-    animation-duration: 15s;
-    animation-delay: -9s;
-}
-
-.particles span:nth-child(7) {
-    left: 74%;
-    top: 82%;
-    animation-duration: 11s;
-    animation-delay: -6s;
-}
-
-.particles span:nth-child(8) {
-    left: 84%;
-    top: 38%;
-    animation-duration: 16s;
-    animation-delay: -5s;
-}
-
-.particles span:nth-child(9) {
-    left: 92%;
-    top: 67%;
-    animation-duration: 12s;
-    animation-delay: -1s;
-}
-
-.particles span:nth-child(10) {
-    left: 47%;
-    top: 92%;
-    animation-duration: 17s;
-    animation-delay: -10s;
-}
-
-
-@keyframes floatParticle {
-
-    0% {
-
-        transform:
-            translate3d(
-                0,
-                60px,
-                0
-            )
-            scale(.5);
-
-        opacity:
-            0;
-
-    }
-
-    20% {
-
-        opacity:
-            .6;
-
-    }
-
-    50% {
-
-        transform:
-            translate3d(
-                20px,
-                -40px,
-                0
-            )
-            scale(1);
-
-        opacity:
-            .8;
-
-    }
-
-    80% {
-
-        opacity:
-            .25;
-
-    }
-
-    100% {
-
-        transform:
-            translate3d(
-                -15px,
-                -130px,
-                0
-            )
-            scale(.3);
-
-        opacity:
-            0;
-
-    }
-
-}
-
-
-/* =====================================================
-   DECORATIVE CORNERS
-   ===================================================== */
-
-.corner {
-
-    position:
-        absolute;
-
-    z-index:
-        3;
-
-    width:
-        80px;
-
-    height:
-        80px;
-
-    opacity:
-        .45;
-
-}
-
-
-.corner::before,
-.corner::after {
-
-    content: "";
-
-    position:
-        absolute;
-
-    background:
-        var(--gold);
-
-}
-
-
-.corner-tl {
-
-    top:
-        25px;
-
-    left:
-        25px;
-
-    border-top:
-        1px solid
-        rgba(232,203,131,.35);
-
-    border-left:
-        1px solid
-        rgba(232,203,131,.35);
-
-}
-
-
-.corner-br {
-
-    right:
-        25px;
-
-    bottom:
-        25px;
-
-    border-right:
-        1px solid
-        rgba(232,203,131,.35);
-
-    border-bottom:
-        1px solid
-        rgba(232,203,131,.35);
-
-}
-
-
-/* =====================================================
-   TOP LIGHT LINE
-   ===================================================== */
-
-.top-line {
-
-    position:
-        absolute;
-
-    z-index:
-        4;
-
-    top:
-        0;
-
-    left:
-        0;
-
-    width:
-        100%;
-
-    height:
-        1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(232,203,131,.5),
-            rgba(114,198,216,.35),
-            transparent
-        );
-
-    animation:
-        topLinePulse 5s ease-in-out infinite;
-
-}
-
-
-@keyframes topLinePulse {
-
-    0%,
-    100% {
-
-        opacity:
-            .25;
-
-    }
-
-    50% {
-
-        opacity:
-            .9;
-
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE
-   ===================================================== */
-
-@media (max-width:700px) {
-
-    .cinematic-orbit {
-
-        width:
-            120vw;
-
-        height:
-            120vw;
-
-    }
-
-    .light-streak {
-
-        width:
-            70vw;
-
-    }
-
-    .corner {
-
-        width:
-            50px;
-
-        height:
-            50px;
-
-    }
-
-    .corner-tl {
-
-        top:
-            15px;
-
-        left:
-            15px;
-
-    }
-
-    .corner-br {
-
-        right:
-            15px;
-
-        bottom:
-            15px;
-
-    }
-
-}
-
-              </style>
-              <style>
-
-/* =====================================================
-   PART 3/10
-   TYPOGRAPHY + PHOTO SYSTEM
-   ===================================================== */
-
-
-/* =====================================================
-   LARGE DISPLAY TEXT
-   ===================================================== */
-
-.display-title {
-
-    font-family:
-        "Manrope",
-        sans-serif;
-
-    font-size:
-        clamp(48px, 7vw, 110px);
-
-    line-height:
-        .94;
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        -4px;
-
-    color:
-        #ffffff;
-
-    text-shadow:
-        0 5px 35px
-        rgba(0,0,0,.25);
-
-}
-
-
-.display-title .gold {
-
-    color:
-        var(--gold);
-
-}
-
-
-.display-title .cyan {
-
-    color:
-        var(--cyan);
-
-}
-
-
-/* =====================================================
-   LARGE STATEMENT
-   ===================================================== */
-
-.statement {
-
-    max-width:
-        1050px;
-
-    margin:
-        25px auto 0;
-
-    font-family:
-        "Manrope",
-        sans-serif;
-
-    font-size:
-        clamp(24px, 3vw, 48px);
-
-    line-height:
-        1.15;
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        -1px;
-
-}
-
-
-.statement strong {
-
-    color:
-        var(--gold);
-
-}
-
-
-/* =====================================================
-   SMALL CAPTION
-   ===================================================== */
-
-.caption {
-
-    max-width:
-        850px;
-
-    margin:
-        22px auto 0;
-
-    font-size:
-        clamp(14px, 1.3vw, 21px);
-
-    line-height:
-        1.6;
-
-    color:
-        var(--text-soft);
-
-}
-
-
-/* =====================================================
-   PHOTO SCENE
-   ===================================================== */
-
-.photo-scene {
-
-    width:
-        min(1150px, 100%);
-
-    margin:
-        auto;
-
-}
-
-
-.photo-title {
-
-    font-family:
-        "Manrope",
-        sans-serif;
-
-    font-size:
-        clamp(32px, 4vw, 64px);
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        -2px;
-
-}
-
-
-.photo-title span {
-
-    color:
-        var(--gold);
-
-}
-
-
-/* =====================================================
-   PHOTO COLLAGE
-   ===================================================== */
-
-.photo-collage {
-
-    position:
-        relative;
-
-    width:
-        min(1050px, 100%);
-
-    height:
-        min(520px, 54vh);
-
-    margin:
-        38px auto 0;
-
-}
-
-
-/* =====================================================
-   PHOTO CARD
-   ===================================================== */
-
-.photo-card {
-
-    position:
-        absolute;
-
-    overflow:
-        hidden;
-
-    border-radius:
-        18px;
-
-    background:
-        #122235;
-
-    border:
-        1px solid
-        rgba(255,255,255,.16);
-
-    box-shadow:
-        0 25px 60px
-        rgba(0,0,0,.40);
-
-    transition:
-        transform .5s ease,
-        box-shadow .5s ease;
-
-}
-
-
-.photo-card img {
-
-    width:
-        100%;
-
-    height:
-        100%;
-
-    display:
-        block;
-
-    object-fit:
-        cover;
-
-    filter:
-        saturate(.92)
-        contrast(1.04)
-        brightness(.92);
-
-    transition:
-        transform 1.2s ease,
-        filter 1.2s ease;
-
-}
-
-
-.photo-card::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset:
-        0;
+    border-radius:100px;
 
     background:
         linear-gradient(
             180deg,
-            transparent 55%,
-            rgba(0,0,0,.38)
+            rgba(255,255,255,.98),
+            rgba(239,249,255,.9)
         );
 
-    pointer-events:
-        none;
-
-}
-
-
-.photo-card:hover img {
-
-    transform:
-        scale(1.06);
-
     filter:
-        saturate(1)
-        contrast(1.05)
-        brightness(1);
+        blur(1px)
+        drop-shadow(
+            0 15px 25px rgba(50,130,165,.10)
+        );
 
+    opacity:.82;
 }
 
+.cloud::before,
+.cloud::after{
+    content:"";
 
-/* =====================================================
-   COLLAGE POSITION 1
-   ===================================================== */
+    position:absolute;
 
-.photo-main {
-
-    width:
-        54%;
-
-    height:
-        82%;
-
-    left:
-        23%;
-
-    top:
-        4%;
-
-    z-index:
-        5;
-
-    transform:
-        rotate(-1deg);
-
-}
-
-
-.photo-main:hover {
-
-    transform:
-        rotate(0deg)
-        scale(1.015);
-
-}
-
-
-/* =====================================================
-   COLLAGE POSITION 2
-   ===================================================== */
-
-.photo-left {
-
-    width:
-        29%;
-
-    height:
-        56%;
-
-    left:
-        0;
-
-    top:
-        25%;
-
-    z-index:
-        4;
-
-    transform:
-        rotate(-5deg);
-
-}
-
-
-/* =====================================================
-   COLLAGE POSITION 3
-   ===================================================== */
-
-.photo-right {
-
-    width:
-        29%;
-
-    height:
-        56%;
-
-    right:
-        0;
-
-    top:
-        20%;
-
-    z-index:
-        4;
-
-    transform:
-        rotate(5deg);
-
-}
-
-
-/* =====================================================
-   COLLAGE POSITION 4
-   ===================================================== */
-
-.photo-small-left {
-
-    width:
-        22%;
-
-    height:
-        38%;
-
-    left:
-        10%;
-
-    top:
-        0;
-
-    z-index:
-        3;
-
-    transform:
-        rotate(4deg);
-
-}
-
-
-/* =====================================================
-   COLLAGE POSITION 5
-   ===================================================== */
-
-.photo-small-right {
-
-    width:
-        22%;
-
-    height:
-        38%;
-
-    right:
-        10%;
-
-    bottom:
-        0;
-
-    z-index:
-        3;
-
-    transform:
-        rotate(-4deg);
-
-}
-
-
-/* =====================================================
-   PHOTO LABEL
-   ===================================================== */
-
-.photo-label {
-
-    position:
-        absolute;
-
-    left:
-        18px;
-
-    bottom:
-        15px;
-
-    z-index:
-        5;
-
-    padding:
-        7px 12px;
-
-    border-radius:
-        30px;
+    border-radius:50%;
 
     background:
-        rgba(5,12,22,.72);
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #eaf8ff
+        );
+}
 
-    border:
-        1px solid
-        rgba(255,255,255,.12);
+.cloud::before{
+    width:130px;
+    height:130px;
 
-    backdrop-filter:
-        blur(10px);
+    left:35px;
+    bottom:10px;
+}
 
-    font-size:
-        11px;
+.cloud::after{
+    width:105px;
+    height:105px;
 
-    font-weight:
-        700;
-
-    letter-spacing:
-        1.5px;
-
-    text-transform:
-        uppercase;
-
-    color:
-        rgba(255,255,255,.85);
-
+    left:120px;
+    bottom:18px;
 }
 
 
-/* =====================================================
-   PHOTO NUMBER
-   ===================================================== */
+/* BACK CLOUDS */
 
-.photo-number {
+.cloud-back .cloud:nth-child(1){
+    top:8%;
+    left:-300px;
+    transform:scale(.8);
+    animation:cloudMove1 55s linear infinite;
+}
 
-    position:
-        absolute;
+.cloud-back .cloud:nth-child(2){
+    top:26%;
+    left:25%;
+    transform:scale(.65);
+    opacity:.5;
+    animation:cloudFloat2 20s ease-in-out infinite alternate;
+}
 
-    top:
-        14px;
-
-    right:
-        14px;
-
-    z-index:
-        5;
-
-    width:
-        34px;
-
-    height:
-        34px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(5,12,22,.68);
-
-    border:
-        1px solid
-        rgba(232,203,131,.4);
-
-    color:
-        var(--gold);
-
-    font-size:
-        11px;
-
-    font-weight:
-        800;
-
+.cloud-back .cloud:nth-child(3){
+    top:42%;
+    left:70%;
+    transform:scale(.75);
+    opacity:.55;
+    animation:cloudMove2 65s linear infinite;
 }
 
 
-/* =====================================================
-   PHOTO REVEAL ANIMATION
-   ===================================================== */
+/* MID CLOUDS */
 
-.scene.active .photo-card {
+.cloud-mid .cloud:nth-child(1){
+    top:18%;
+    left:12%;
+    transform:scale(.7);
+    opacity:.6;
+    animation:cloudFloat1 15s ease-in-out infinite alternate;
+}
+
+.cloud-mid .cloud:nth-child(2){
+    top:60%;
+    left:-250px;
+    transform:scale(1);
+    animation:cloudMove3 48s linear infinite;
+}
+
+.cloud-mid .cloud:nth-child(3){
+    bottom:10%;
+    right:-250px;
+    transform:scale(1.1);
+    animation:cloudMove4 52s linear infinite;
+}
+
+
+/* FRONT CLOUDS */
+
+.cloud-front{
+    z-index:20;
+}
+
+.cloud-front .cloud{
+    opacity:.96;
+}
+
+.cloud-front .cloud:nth-child(1){
+    bottom:-35px;
+    left:-280px;
+    transform:scale(1.35);
+    animation:cloudMove5 38s linear infinite;
+}
+
+.cloud-front .cloud:nth-child(2){
+    top:5%;
+    right:-300px;
+    transform:scale(1.1);
+    animation:cloudMove6 42s linear infinite;
+}
+
+.cloud-front .cloud:nth-child(3){
+    bottom:15%;
+    right:-260px;
+    transform:scale(1.25);
+    animation:cloudMove7 50s linear infinite;
+}
+
+
+@keyframes cloudMove1{
+    from{transform:translateX(-300px) scale(.8)}
+    to{transform:translateX(125vw) scale(.8)}
+}
+
+@keyframes cloudMove2{
+    from{transform:translateX(0) scale(.75)}
+    to{transform:translateX(-130vw) scale(.75)}
+}
+
+@keyframes cloudMove3{
+    from{transform:translateX(-300px) scale(1)}
+    to{transform:translateX(130vw) scale(1)}
+}
+
+@keyframes cloudMove4{
+    from{transform:translateX(0) scale(1.1)}
+    to{transform:translateX(-130vw) scale(1.1)}
+}
+
+@keyframes cloudMove5{
+    from{transform:translateX(-300px) scale(1.35)}
+    to{transform:translateX(130vw) scale(1.35)}
+}
+
+@keyframes cloudMove6{
+    from{transform:translateX(0) scale(1.1)}
+    to{transform:translateX(-130vw) scale(1.1)}
+}
+
+@keyframes cloudMove7{
+    from{transform:translateX(0) scale(1.25)}
+    to{transform:translateX(-130vw) scale(1.25)}
+}
+
+@keyframes cloudFloat1{
+    from{transform:translateY(-15px) scale(.7)}
+    to{transform:translateY(20px) scale(.74)}
+}
+
+@keyframes cloudFloat2{
+    from{transform:translateY(20px) scale(.65)}
+    to{transform:translateY(-20px) scale(.68)}
+}
+
+
+/* =========================================================
+   07. PARTICLES
+   ========================================================= */
+
+.particles{
+    position:absolute;
+    inset:0;
+    z-index:7;
+    pointer-events:none;
+}
+
+.particle{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,.9);
+
+    opacity:.5;
 
     animation:
-        photoReveal 1.1s
-        cubic-bezier(.2,.8,.2,1)
+        particleFloat var(--duration) ease-in-out infinite alternate;
+}
+
+@keyframes particleFloat{
+
+    from{
+        transform:translate3d(0,20px,0);
+        opacity:.2;
+    }
+
+    to{
+        transform:translate3d(
+            var(--move-x),
+            -80px,
+            0
+        );
+        opacity:.8;
+    }
+}
+
+
+/* =========================================================
+   08. LIGHT SWEEP
+   ========================================================= */
+
+.light-sweep{
+    position:absolute;
+
+    top:-30%;
+    left:-50%;
+
+    width:25%;
+    height:160%;
+
+    z-index:100;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.85),
+            transparent
+        );
+
+    transform:
+        rotate(18deg)
+        translateX(-100vw);
+
+    filter:blur(18px);
+}
+
+.light-sweep.active{
+    animation:lightSweep .95s ease-out;
+}
+
+@keyframes lightSweep{
+
+    0%{
+        opacity:0;
+        transform:
+            rotate(18deg)
+            translateX(-100vw);
+    }
+
+    20%{
+        opacity:.8;
+    }
+
+    100%{
+        opacity:0;
+        transform:
+            rotate(18deg)
+            translateX(800vw);
+    }
+}
+
+
+/* =========================================================
+   09. OPENING
+   ========================================================= */
+
+.opening{
+    position:absolute;
+    inset:0;
+
+    z-index:80;
+
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fbfeff 0%,
+            #dff5ff 55%,
+            #a9def1 100%
+        );
+
+    transition:
+        opacity 1s ease,
+        transform 1.2s cubic-bezier(.16,1,.3,1);
+
+    transform-origin:center;
+}
+
+.opening.hidden{
+    opacity:0;
+    pointer-events:none;
+
+    transform:scale(1.12);
+}
+
+
+/* =========================================================
+   10. OPENING CAMERA
+   ========================================================= */
+
+.opening-camera{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    perspective:1200px;
+
+    transition:
+        transform 1.5s cubic-bezier(.16,1,.3,1);
+}
+
+
+/* =========================================================
+   11. OPENING CONTENT
+   ========================================================= */
+
+.opening-content{
+    position:relative;
+
+    width:min(1100px,92vw);
+    height:min(720px,86vh);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transform-style:preserve-3d;
+}
+
+
+/* =========================================================
+   12. OPENING IMAGE SLOT
+   ========================================================= */
+
+.opening-assets{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transform-style:preserve-3d;
+}
+
+
+/*
+   ========================================================
+   TEMPAT GAMBAR LOGO / DESAIN OPENING
+
+   NANTI GAMBAR KAMU DITARUH DI:
+
+   opening/
+       logo1.png
+       logo2.png
+       logo3.png
+       logo4.png
+
+   DAN NAMA FILE DI BAWAH INI YANG DIUBAH.
+
+   CONTOH:
+
+   <img src="opening/logo1.png">
+
+   ========================================================
+*/
+
+
+.opening-asset{
+    position:absolute;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    opacity:0;
+
+    transform-style:preserve-3d;
+
+    filter:
+        blur(16px)
+        drop-shadow(
+            0 30px 40px rgba(20,90,120,.15)
+        );
+
+    transition:
+        opacity .8s ease,
+        filter 1.2s ease,
+        transform 1.6s cubic-bezier(.16,1,.3,1);
+}
+
+.opening-asset img{
+    display:block;
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    max-width:100%;
+    max-height:100%;
+}
+
+
+/* LOGO 1 */
+
+.asset-one{
+
+    width:min(390px,55vw);
+    height:min(240px,28vh);
+
+    transform:
+        translate3d(-220px,40px,-350px)
+        rotateY(-20deg)
+        scale(.65);
+}
+
+
+/* LOGO 2 */
+
+.asset-two{
+
+    width:min(330px,48vw);
+    height:min(210px,25vh);
+
+    transform:
+        translate3d(260px,-50px,-420px)
+        rotateY(25deg)
+        scale(.55);
+}
+
+
+/* LOGO 3 */
+
+.asset-three{
+
+    width:min(300px,45vw);
+    height:min(200px,24vh);
+
+    transform:
+        translate3d(-40px,180px,-500px)
+        rotateX(20deg)
+        scale(.5);
+}
+
+
+/* LOGO 4 */
+
+.asset-four{
+
+    width:min(360px,50vw);
+    height:min(220px,25vh);
+
+    transform:
+        translate3d(80px,-190px,-550px)
+        rotateX(-20deg)
+        scale(.5);
+}
+
+
+/*
+   KELAK SCRIPT AKAN MEMBERIKAN CLASS .show
+   SECARA BERURUTAN.
+*/
+
+.opening.playing .asset-one{
+    opacity:1;
+
+    filter:
+        blur(0)
+        drop-shadow(
+            0 35px 50px rgba(20,90,120,.2)
+        );
+
+    transform:
+        translate3d(-120px,20px,40px)
+        rotateY(-5deg)
+        scale(1);
+}
+
+.opening.playing .asset-two{
+    opacity:1;
+
+    filter:
+        blur(0)
+        drop-shadow(
+            0 30px 45px rgba(20,90,120,.18)
+        );
+
+    transform:
+        translate3d(145px,-20px,-80px)
+        rotateY(5deg)
+        scale(.82);
+
+    transition-delay:.8s;
+}
+
+.opening.playing .asset-three{
+    opacity:.9;
+
+    filter:
+        blur(0)
+        drop-shadow(
+            0 30px 45px rgba(20,90,120,.15)
+        );
+
+    transform:
+        translate3d(-30px,105px,-180px)
+        rotateX(5deg)
+        scale(.7);
+
+    transition-delay:1.45s;
+}
+
+.opening.playing .asset-four{
+    opacity:.8;
+
+    filter:
+        blur(0)
+        drop-shadow(
+            0 30px 45px rgba(20,90,120,.15)
+        );
+
+    transform:
+        translate3d(70px,-115px,-230px)
+        rotateX(-5deg)
+        scale(.72);
+
+    transition-delay:2s;
+}
+
+
+/* =========================================================
+   13. OPENING CENTER TITLE
+   ========================================================= */
+
+.opening-title{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%)
+        translateZ(150px);
+
+    width:90%;
+
+    text-align:center;
+
+    z-index:30;
+
+    opacity:0;
+
+    animation:
+        titleAppear 1.4s
+        3.6s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+.opening-title .eyebrow{
+
+    font-size:
+        clamp(10px,1.2vw,15px);
+
+    letter-spacing:
+        .45em;
+
+    font-weight:700;
+
+    color:
+        rgba(16,64,87,.7);
+
+    margin-bottom:18px;
+}
+
+.opening-title h1{
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(45px,8vw,110px);
+
+    line-height:.86;
+
+    font-weight:800;
+
+    letter-spacing:-.055em;
+
+    color:#103f58;
+
+    text-shadow:
+        0 15px 40px rgba(40,120,160,.15);
+}
+
+.opening-title h1 span{
+
+    display:block;
+
+    color:#2586b3;
+
+    font-size:.48em;
+
+    letter-spacing:.02em;
+
+    margin-top:16px;
+}
+
+.opening-title .year{
+
+    margin-top:30px;
+
+    font-size:
+        clamp(13px,1.5vw,18px);
+
+    letter-spacing:.45em;
+
+    font-weight:600;
+
+    color:#55778a;
+}
+
+@keyframes titleAppear{
+
+    from{
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(150px)
+            scale(.8);
+
+        filter:blur(18px);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(150px)
+            scale(1);
+
+        filter:blur(0);
+    }
+}
+
+
+/* =========================================================
+   14. OPENING WIPE
+   ========================================================= */
+
+.opening-wipe{
+    position:absolute;
+
+    inset:0;
+
+    z-index:150;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255,255,255,1) 0%,
+            rgba(255,255,255,.9) 35%,
+            rgba(255,255,255,.4) 60%,
+            transparent 75%
+        );
+
+    opacity:0;
+
+    pointer-events:none;
+}
+
+.opening.wipe .opening-wipe{
+
+    animation:
+        openingWipe 1.4s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+@keyframes openingWipe{
+
+    0%{
+        opacity:0;
+        transform:scale(.2);
+    }
+
+    35%{
+        opacity:1;
+        transform:scale(1.3);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(3);
+    }
+}
+
+
+/* =========================================================
+   15. MAIN PRESENTATION
+   ========================================================= */
+
+.presentation{
+    position:absolute;
+    inset:0;
+
+    z-index:10;
+
+    opacity:0;
+
+    transform:scale(1.03);
+
+    transition:
+        opacity 1s ease,
+        transform 1.3s cubic-bezier(.16,1,.3,1);
+}
+
+.presentation.active{
+    opacity:1;
+    transform:scale(1);
+}
+
+
+/* =========================================================
+   16. SCENE
+   ========================================================= */
+
+.scene{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:
+        clamp(30px,6vw,100px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:
+        translate3d(80px,0,0)
+        scale(.94);
+
+    filter:blur(10px);
+
+    clip-path:
+        inset(0 0 0 100%);
+
+    transition:
+        opacity .9s ease,
+        transform 1.2s cubic-bezier(.16,1,.3,1),
+        filter 1.1s ease,
+        clip-path 1.2s cubic-bezier(.16,1,.3,1);
+
+    overflow:hidden;
+}
+
+.scene.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+        translate3d(0,0,0)
+        scale(1);
+
+    filter:blur(0);
+
+    clip-path:
+        inset(0 0 0 0);
+}
+
+
+/* outgoing */
+
+.scene.outgoing{
+
+    opacity:0;
+
+    transform:
+        translate3d(-80px,0,0)
+        scale(1.04);
+
+    filter:blur(14px);
+
+    clip-path:
+        inset(0 100% 0 0);
+}
+
+
+/* =========================================================
+   17. SCENE SKY
+   ========================================================= */
+
+.scene::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-3;
+
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(255,255,255,.95),
+            transparent 30%
+        ),
+        linear-gradient(
+            140deg,
+            #fafdff 0%,
+            #e4f7ff 48%,
+            #b9e5f5 100%
+        );
+}
+
+
+/* =========================================================
+   18. SCENE CONTENT
+   ========================================================= */
+
+.scene-content{
+
+    position:relative;
+
+    z-index:30;
+
+    width:min(1350px,100%);
+
+    max-height:100%;
+
+    margin:auto;
+}
+
+
+/* =========================================================
+   19. EYEBROW
+   ========================================================= */
+
+.eyebrow{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:22px;
+
+    color:#39718d;
+
+    font-size:
+        clamp(10px,1vw,14px);
+
+    font-weight:800;
+
+    letter-spacing:.28em;
+}
+
+.eyebrow::before{
+
+    content:"";
+
+    width:45px;
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2786ad,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   20. TYPOGRAPHY
+   ========================================================= */
+
+.scene h2{
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(38px,7vw,105px);
+
+    line-height:.9;
+
+    letter-spacing:-.055em;
+
+    font-weight:800;
+
+    color:#103f58;
+}
+
+.scene h2 span{
+
+    color:#2385af;
+}
+
+.lead{
+
+    max-width:780px;
+
+    margin-top:25px;
+
+    font-size:
+        clamp(17px,2vw,27px);
+
+    line-height:1.5;
+
+    color:#34586a;
+}
+
+.caption{
+
+    margin-top:28px;
+
+    max-width:650px;
+
+    font-size:
+        clamp(13px,1.25vw,17px);
+
+    line-height:1.7;
+
+    color:#607d8d;
+}
+
+.quote{
+
+    margin-top:28px;
+
+    max-width:760px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(17px,2vw,26px);
+
+    line-height:1.45;
+
+    font-weight:600;
+
+    color:#174861;
+}
+
+
+/* =========================================================
+   21. TWO COLUMN
+   ========================================================= */
+
+.two-column{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0, .9fr)
+        minmax(0, 1.1fr);
+
+    gap:
+        clamp(30px,6vw,100px);
+
+    align-items:center;
+}
+
+
+/* =========================================================
+   22. PHOTO GRID
+   ========================================================= */
+
+.photo-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:10px;
+
+    transform:
+        rotate(-2deg)
+        perspective(1000px)
+        rotateY(-4deg);
+
+    filter:
+        drop-shadow(
+            0 25px 50px rgba(22,88,115,.2)
+        );
+}
+
+.photo-grid img{
+
+    width:100%;
+
+    aspect-ratio:4/3;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    background:#d5edf6;
+
+    transform:
+        scale(1.03);
+
+    transition:
+        transform 1.2s
+        cubic-bezier(.16,1,.3,1);
+}
+
+.scene.active .photo-grid img{
+
+    animation:
+        photoReveal 1.5s
+        cubic-bezier(.16,1,.3,1)
         both;
-
 }
 
-
-.scene.active .photo-left {
-
-    animation-delay:
-        .12s;
-
+.scene.active .photo-grid img:nth-child(2){
+    animation-delay:.1s;
 }
 
-
-.scene.active .photo-main {
-
-    animation-delay:
-        .25s;
-
+.scene.active .photo-grid img:nth-child(3){
+    animation-delay:.2s;
 }
 
-
-.scene.active .photo-right {
-
-    animation-delay:
-        .38s;
-
+.scene.active .photo-grid img:nth-child(4){
+    animation-delay:.3s;
 }
 
-
-.scene.active .photo-small-left {
-
-    animation-delay:
-        .05s;
-
+.scene.active .photo-grid img:nth-child(5){
+    animation-delay:.4s;
 }
 
+@keyframes photoReveal{
 
-.scene.active .photo-small-right {
+    from{
 
-    animation-delay:
-        .48s;
-
-}
-
-
-@keyframes photoReveal {
-
-    from {
-
-        opacity:
-            0;
+        opacity:0;
 
         transform:
             translateY(35px)
-            scale(.92)
-            rotate(0deg);
+            scale(1.14);
 
+        filter:blur(10px);
     }
 
-    to {
+    to{
 
-        opacity:
-            1;
+        opacity:1;
 
+        transform:
+            translateY(0)
+            scale(1.03);
+
+        filter:blur(0);
     }
-
 }
 
 
-/* =====================================================
-   PHOTO STRIP
-   ===================================================== */
+/* =========================================================
+   23. DOCUMENTARY PHOTO STRIP
+   ========================================================= */
 
-.photo-strip {
+.photo-strip{
 
-    display:
-        grid;
+    display:flex;
+
+    gap:12px;
+
+    margin-top:40px;
+
+    transform:
+        rotate(-1.2deg);
+
+    overflow:hidden;
+}
+
+.photo-strip img{
+
+    width:
+        clamp(150px,18vw,270px);
+
+    height:
+        clamp(180px,25vw,330px);
+
+    flex:none;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    box-shadow:
+        0 25px 45px rgba(30,100,130,.16);
+
+    animation:
+        documentaryFloat
+        8s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+.photo-strip img:nth-child(2){
+    margin-top:25px;
+    animation-delay:-2s;
+}
+
+.photo-strip img:nth-child(3){
+    margin-top:-18px;
+    animation-delay:-4s;
+}
+
+.photo-strip img:nth-child(4){
+    margin-top:12px;
+    animation-delay:-6s;
+}
+
+@keyframes documentaryFloat{
+
+    from{
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+    to{
+        transform:
+            scale(1.035)
+            translateY(-8px);
+    }
+}
+
+
+/* =========================================================
+   24. BIG NUMBER
+   ========================================================= */
+
+.big-number{
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(160px,32vw,480px);
+
+    line-height:.7;
+
+    font-weight:800;
+
+    letter-spacing:-.09em;
+
+    color:
+        rgba(255,255,255,.55);
+
+    text-shadow:
+        0 30px 80px rgba(30,120,160,.13);
+
+    position:absolute;
+
+    right:-3%;
+
+    top:50%;
+
+    transform:
+        translateY(-50%);
+
+    z-index:-1;
+}
+
+
+/* =========================================================
+   25. STAT CARDS
+   ========================================================= */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+
+    margin-top:45px;
+
+    max-width:1000px;
+}
+
+.stat{
+
+    padding:
+        clamp(25px,3vw,45px);
+
+    border:
+        1px solid rgba(255,255,255,.75);
+
+    background:
+        rgba(255,255,255,.48);
+
+    backdrop-filter:
+        blur(18px);
+
+    border-radius:22px;
+
+    box-shadow:
+        0 25px 60px rgba(30,110,140,.12);
+}
+
+.stat strong{
+
+    display:block;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(38px,5vw,70px);
+
+    color:#1476a2;
+
+    letter-spacing:-.05em;
+}
+
+.stat span{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+
+    color:#5e7887;
+}
+
+
+/* =========================================================
+   26. TIMELINE
+   ========================================================= */
+
+.timeline{
+
+    display:grid;
 
     grid-template-columns:
         repeat(4,1fr);
 
-    gap:
-        16px;
+    gap:15px;
 
-    width:
-        min(1100px,100%);
-
-    margin:
-        35px auto 0;
-
+    margin-top:50px;
 }
 
+.timeline-item{
 
-.photo-strip .photo-card {
-
-    position:
-        relative;
-
-    width:
-        100%;
-
-    height:
-        210px;
-
-}
-
-
-.photo-strip .photo-card:hover {
-
-    transform:
-        translateY(-8px)
-        scale(1.02);
-
-    box-shadow:
-        0 30px 60px
-        rgba(0,0,0,.5);
-
-}
-
-
-/* =====================================================
-   PHOTO FRAME
-   ===================================================== */
-
-.photo-frame {
+    position:relative;
 
     padding:
-        8px;
+        25px 20px;
+
+    border-top:
+        1px solid rgba(35,133,175,.4);
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:#2385af;
+
+    top:-5px;
+    left:0;
+
+    box-shadow:
+        0 0 0 7px rgba(35,133,175,.1);
+}
+
+.timeline-item strong{
+
+    display:block;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:30px;
+
+    color:#17698e;
+}
+
+.timeline-item p{
+
+    margin-top:12px;
+
+    color:#5d7785;
+
+    font-size:14px;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   27. PEOPLE
+   ========================================================= */
+
+.people{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:35px;
+}
+
+.person{
+
+    padding:
+        12px 20px;
+
+    border-radius:999px;
 
     background:
-        rgba(255,255,255,.92);
+        rgba(255,255,255,.62);
 
-    border-radius:
-        14px;
+    border:
+        1px solid rgba(255,255,255,.9);
 
+    color:#285b72;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.1em;
+
+    box-shadow:
+        0 12px 25px rgba(30,100,130,.08);
 }
 
 
-.photo-frame img {
+/* =========================================================
+   28. HUMOR SCENE
+   ========================================================= */
 
-    border-radius:
-        8px;
+.humor{
 
+    text-align:center;
 }
 
+.humor h2{
 
-/* =====================================================
-   DOCUMENTATION QUOTE
-   ===================================================== */
+    max-width:1000px;
 
-.photo-quote {
+    margin:auto;
+}
 
-    margin:
-        30px auto 0;
+.humor-box{
 
-    max-width:
-        900px;
+    display:flex;
 
-    font-family:
-        "Manrope",
-        sans-serif;
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-top:45px;
+}
+
+.humor-card{
+
+    min-width:
+        min(320px,90vw);
+
+    padding:
+        28px 35px;
+
+    border-radius:22px;
+
+    background:
+        rgba(255,255,255,.55);
+
+    border:
+        1px solid rgba(255,255,255,.85);
+
+    box-shadow:
+        0 25px 60px rgba(30,110,140,.12);
 
     font-size:
-        clamp(18px, 2vw, 30px);
+        clamp(18px,2vw,27px);
 
-    line-height:
-        1.4;
+    color:#194e67;
 
-    font-weight:
-        600;
-
-    color:
-        rgba(255,255,255,.82);
-
+    font-weight:700;
 }
 
 
-.photo-quote span {
+/* =========================================================
+   29. FINAL
+   ========================================================= */
 
-    color:
-        var(--gold);
+.final-scene{
 
+    text-align:center;
+}
+
+.final-scene h2{
+
+    font-size:
+        clamp(48px,9vw,135px);
+}
+
+.final-scene .ten{
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(160px,30vw,420px);
+
+    line-height:.7;
+
+    font-weight:800;
+
+    letter-spacing:-.1em;
+
+    color:#167ba8;
+
+    text-shadow:
+        0 30px 80px rgba(20,110,150,.2);
+}
+
+.final-sub{
+
+    margin-top:35px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(17px,2vw,28px);
+
+    font-weight:700;
+
+    color:#275d74;
+
+    letter-spacing:.08em;
 }
 
 
-/* =====================================================
-   DESKTOP MONITOR
-   ===================================================== */
+/* =========================================================
+   30. SCENE DECOR
+   ========================================================= */
 
-@media (min-width:1200px) {
+.decor-circle{
 
-    .photo-collage {
+    position:absolute;
 
-        height:
-            58vh;
+    width:
+        clamp(300px,50vw,800px);
 
+    height:
+        clamp(300px,50vw,800px);
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(35,133,175,.1);
+
+    right:-15%;
+    bottom:-35%;
+
+    z-index:-1;
+
+    animation:
+        decorRotate
+        35s
+        linear
+        infinite;
+}
+
+.decor-circle::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12%;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(35,133,175,.08);
+}
+
+@keyframes decorRotate{
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   31. CONTROLS
+   ========================================================= */
+
+.controls{
+
+    position:absolute;
+
+    z-index:300;
+
+    left:50%;
+
+    bottom:
+        max(18px,env(safe-area-inset-bottom));
+
+    transform:
+        translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:9px;
+
+    border:
+        1px solid rgba(255,255,255,.75);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.55);
+
+    backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        0 15px 40px rgba(20,90,120,.15);
+}
+
+.control-btn{
+
+    width:40px;
+    height:40px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.72);
+
+    color:#1d617e;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:15px;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.control-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#ffffff;
+}
+
+.progress{
+
+    width:
+        clamp(80px,15vw,190px);
+
+    height:3px;
+
+    overflow:hidden;
+
+    border-radius:999px;
+
+    background:
+        rgba(35,110,140,.15);
+}
+
+.progress-bar{
+
+    width:0%;
+
+    height:100%;
+
+    background:#2584aa;
+
+    transition:
+        width .2s linear;
+}
+
+
+/* =========================================================
+   32. SCENE COUNTER
+   ========================================================= */
+
+.scene-counter{
+
+    position:absolute;
+
+    z-index:300;
+
+    top:
+        max(22px,env(safe-area-inset-top));
+
+    right:25px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:.2em;
+
+    color:#4c7180;
+
+    padding:10px 14px;
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.4);
+
+    backdrop-filter:blur(12px);
+}
+
+
+/* =========================================================
+   33. LOADING
+   ========================================================= */
+
+.loading{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:500;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#f8fdff;
+
+    transition:
+        opacity 1s ease;
+}
+
+.loading.hidden{
+
+    opacity:0;
+
+    pointer-events:none;
+}
+
+.loading-inner{
+
+    text-align:center;
+}
+
+.loading-title{
+
+    font-family:"Manrope",sans-serif;
+
+    font-weight:800;
+
+    font-size:
+        clamp(25px,4vw,50px);
+
+    color:#174a63;
+
+    letter-spacing:-.04em;
+}
+
+.loading-line{
+
+    width:150px;
+
+    height:2px;
+
+    margin:25px auto 0;
+
+    overflow:hidden;
+
+    background:#d1e8f1;
+}
+
+.loading-line span{
+
+    display:block;
+
+    width:40%;
+
+    height:100%;
+
+    background:#2584aa;
+
+    animation:
+        loadingMove 1.2s ease-in-out infinite;
+}
+
+@keyframes loadingMove{
+
+    from{
+        transform:translateX(-150%);
     }
 
-    .photo-card {
-
-        border-radius:
-            22px;
-
+    to{
+        transform:translateX(400%);
     }
+}
 
-    .photo-label {
 
-        font-size:
-            13px;
+/* =========================================================
+   34. RESPONSIVE
+   ========================================================= */
 
+@media(max-width:800px){
+
+    .scene{
         padding:
-            9px 15px;
-
+            70px 22px 90px;
     }
 
-}
+    .two-column{
 
+        grid-template-columns:1fr;
 
-/* =====================================================
-   TABLET
-   ===================================================== */
-
-@media (max-width:800px) {
-
-    .photo-collage {
-
-        height:
-            48vh;
-
+        gap:30px;
     }
 
-    .photo-main {
+    .photo-grid{
 
-        width:
-            58%;
+        max-width:600px;
 
-        left:
-            21%;
+        margin:auto;
 
+        transform:
+            rotate(-1deg);
     }
 
-    .photo-left,
-    .photo-right {
+    .stats{
 
-        width:
-            27%;
+        grid-template-columns:1fr;
 
+        max-width:500px;
     }
 
-    .photo-small-left,
-    .photo-small-right {
-
-        display:
-            none;
-
-    }
-
-    .photo-strip {
+    .timeline{
 
         grid-template-columns:
             repeat(2,1fr);
-
     }
 
-    .photo-strip .photo-card {
+    .timeline-item{
 
-        height:
-            150px;
-
+        padding:18px 12px;
     }
 
-}
-
-
-/* =====================================================
-   PHONE
-   ===================================================== */
-
-@media (max-width:520px) {
-
-    .photo-collage {
-
-        height:
-            42vh;
-
-        margin-top:
-            25px;
-
-    }
-
-    .photo-main {
-
-        width:
-            64%;
-
-        left:
-            18%;
-
-        height:
-            76%;
-
-    }
-
-    .photo-left {
-
-        width:
-            30%;
-
-        height:
-            48%;
-
-        left:
-            -2%;
-
-        top:
-            30%;
-
-    }
-
-    .photo-right {
-
-        width:
-            30%;
-
-        height:
-            48%;
-
-        right:
-            -2%;
-
-        top:
-            25%;
-
-    }
-
-    .photo-strip {
-
-        gap:
-            8px;
-
-    }
-
-    .photo-strip .photo-card {
-
-        height:
-            110px;
-
-        border-radius:
-            10px;
-
-    }
-
-    .photo-label {
-
-        left:
-            7px;
-
-        bottom:
-            7px;
+    .opening-title h1{
 
         font-size:
-            8px;
-
-        padding:
-            5px 8px;
-
+            clamp(42px,12vw,78px);
     }
 
-    .photo-number {
+    .opening-asset{
 
-        width:
-            25px;
+        max-width:70vw;
+    }
 
-        height:
-            25px;
+    .asset-one{
 
-        top:
-            7px;
+        width:58vw;
+        height:28vw;
+    }
 
-        right:
-            7px;
+    .asset-two{
 
+        width:48vw;
+        height:25vw;
+    }
+
+    .asset-three{
+
+        width:45vw;
+        height:23vw;
+    }
+
+    .asset-four{
+
+        width:50vw;
+        height:25vw;
+    }
+
+    .controls{
+
+        gap:5px;
+    }
+
+    .control-btn{
+
+        width:36px;
+        height:36px;
+
+        font-size:13px;
+    }
+
+    .progress{
+
+        width:70px;
     }
 
 }
 
-      </style>
-      <!-- =====================================================
-     PART 4/10
-     HTML STRUCTURE + SCENE 1–3
-     ===================================================== -->
+@media(max-width:520px){
 
+    .scene h2{
+
+        font-size:
+            clamp(36px,12vw,58px);
+    }
+
+    .lead{
+
+        font-size:16px;
+    }
+
+    .caption{
+
+        font-size:13px;
+    }
+
+    .quote{
+
+        font-size:17px;
+    }
+
+    .photo-strip{
+
+        overflow:visible;
+
+        transform:
+            rotate(-1deg)
+            scale(.9);
+
+        transform-origin:left center;
+    }
+
+    .photo-strip img{
+
+        width:145px;
+        height:190px;
+    }
+
+    .timeline{
+
+        grid-template-columns:1fr 1fr;
+
+        margin-top:30px;
+    }
+
+    .timeline-item strong{
+
+        font-size:22px;
+    }
+
+    .opening-content{
+
+        height:70vh;
+    }
+
+    .opening-title{
+
+        top:52%;
+    }
+
+    .opening-title .year{
+
+        margin-top:20px;
+
+        letter-spacing:.25em;
+    }
+
+}
+
+
+/* =========================================================
+   35. REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
 
 <div id="app">
 
 
-    <!-- =================================================
-         BACKGROUND ORNAMENTS
-         ================================================= -->
+    <!-- =====================================================
+         SKY
+         ===================================================== -->
 
-    <div class="cinematic-orbit"></div>
+    <div class="sky">
 
-    <div class="light-streak streak-1"></div>
-
-    <div class="light-streak streak-2"></div>
-
-    <div class="particles">
-
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <div class="sun"></div>
 
     </div>
 
-    <div class="corner corner-tl"></div>
 
-    <div class="corner corner-br"></div>
+    <!-- =====================================================
+         CLOUD SYSTEM
+         ===================================================== -->
 
-    <div class="top-line"></div>
+    <div class="cloud-world">
+
+        <!-- BACK CLOUD -->
+
+        <div class="cloud-layer cloud-back">
+
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+
+        </div>
 
 
-    <!-- =================================================
-         SCENES
-         ================================================= -->
+        <!-- MID CLOUD -->
 
-    <main id="scenes">
+        <div class="cloud-layer cloud-mid">
+
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+
+        </div>
 
 
-        <!-- =============================================
-             SCENE 1
-             OPENING
-             ============================================= -->
+        <!-- FRONT CLOUD -->
+
+        <div class="cloud-layer cloud-front">
+
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PARTICLES
+         ===================================================== -->
+
+    <div class="particles" id="particles"></div>
+
+
+    <!-- =====================================================
+         LIGHT
+         ===================================================== -->
+
+    <div class="light-sweep" id="lightSweep"></div>
+
+
+    <!-- =====================================================
+         OPENING
+         ===================================================== -->
+
+    <section class="opening" id="opening">
+
+        <div class="opening-camera" id="openingCamera">
+
+            <div class="opening-content">
+
+
+                <!-- =================================================
+                     OPENING IMAGE ASSETS
+
+                     GANTI NAMA FILE DI SINI.
+
+                     CONTOH:
+
+                     opening/logo1.png
+                     opening/logo2.png
+                     opening/logo3.png
+                     opening/logo4.png
+
+                     NANTI KAMU TINGGAL TARUH FILE GAMBARNYA
+                     DI FOLDER "opening".
+                     ================================================= -->
+
+                <div class="opening-assets">
+
+
+                    <!-- GAMBAR 1 -->
+
+                    <div class="opening-asset asset-one">
+
+                        <img
+                            src="opening/logo1.png"
+                            alt="Opening Image 1"
+                        >
+
+                    </div>
+
+
+                    <!-- GAMBAR 2 -->
+
+                    <div class="opening-asset asset-two">
+
+                        <img
+                            src="opening/logo2.png"
+                            alt="Opening Image 2"
+                        >
+
+                    </div>
+
+
+                    <!-- GAMBAR 3 -->
+
+                    <div class="opening-asset asset-three">
+
+                        <img
+                            src="opening/logo3.png"
+                            alt="Opening Image 3"
+                        >
+
+                    </div>
+
+
+                    <!-- GAMBAR 4 -->
+
+                    <div class="opening-asset asset-four">
+
+                        <img
+                            src="opening/logo4.png"
+                            alt="Opening Image 4"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPENING TITLE -->
+
+                <div class="opening-title">
+
+                    <div class="eyebrow">
+                        DRC CC 121 · INBOUND BANDUNG
+                    </div>
+
+                    <h1>
+
+                        A DECADE
+
+                        <span>
+                            IN MOTION
+                        </span>
+
+                    </h1>
+
+                    <div class="year">
+                        2016 — 2026
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="opening-wipe"></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PRESENTATION
+         ===================================================== -->
+
+    <main
+        class="presentation"
+        id="presentation"
+    >
+
+
+        <!-- =================================================
+             SCENE 01
+             ================================================= -->
 
         <section
-            class="scene active"
-            id="scene1"
+            class="scene"
+            data-duration="6500"
         >
 
-            <div class="content">
+            <div class="scene-content">
 
                 <div class="eyebrow">
-
-                    DRC CC 121
-                    <br>
-
-                    INBOUND BANDUNG
-
+                    DRC CC 121 · INBOUND BANDUNG
                 </div>
 
+                <h2>
+                    A DECADE
+                    <span>IN MOTION.</span>
+                </h2>
 
-                <div class="display-title">
-
-                    <span>
-                        A DECADE
-                    </span>
-
-                    <br>
-
-                    <span class="gold">
-                        IN MOTION
-                    </span>
-
+                <div class="lead">
+                    Sepuluh tahun bukan sekadar angka.
+                    Ini tentang perjalanan, manusia,
+                    dan cerita yang terus bergerak.
                 </div>
 
-
-                <div class="cinematic-line"></div>
-
-
-                <p class="subtitle">
-
+                <div class="caption">
                     2016 — 2026
-
-                </p>
+                </div>
 
             </div>
 
         </section>
 
 
-
-        <!-- =============================================
-             SCENE 2
-             TEN YEARS
-             ============================================= -->
+        <!-- =================================================
+             SCENE 02
+             ================================================= -->
 
         <section
             class="scene"
-            id="scene2"
+            data-duration="6000"
         >
 
-            <div class="content">
+            <div class="big-number">
+                10
+            </div>
+
+            <div class="scene-content">
 
                 <div class="eyebrow">
-
-                    TEN YEARS
-
+                    ONE DECADE
                 </div>
 
+                <h2>
+                    TEN
+                    <span>YEARS.</span>
+                </h2>
 
-                <div class="big-number">
-
-                    10
-
+                <div class="lead">
+                    DRC CC 121 INBOUND BANDUNG
                 </div>
 
-
-                <div class="years">
-
-                    DRC CC 121
-
-                    <span>
-                        INBOUND BANDUNG
-                    </span>
-
-                </div>
-
-
-                <div class="cinematic-line"></div>
-
-
-                <p class="subtitle">
-
+                <div class="quote">
                     ONE DECADE.
                     COUNTLESS STORIES.
-
-                </p>
+                </div>
 
             </div>
 
         </section>
 
 
-
-        <!-- =============================================
-             SCENE 3
-             FIRST DOCUMENTATION
-             
-             GANTI:
-             foto1.jpg
-             foto2.jpg
-             foto3.jpg
-             foto4.jpg
-             foto5.jpg
-             ============================================= -->
+        <!-- =================================================
+             SCENE 03
+             ================================================= -->
 
         <section
             class="scene"
-            id="scene3"
+            data-duration="8500"
         >
 
-            <div class="content photo-scene">
+            <div class="scene-content">
 
-                <div class="eyebrow">
+                <div class="two-column">
 
-                    THE BEGINNING
+                    <div>
+
+                        <div class="eyebrow">
+                            THE BEGINNING
+                        </div>
+
+                        <h2>
+                            Sepuluh tahun,
+                            <span>banyak cerita.</span>
+                        </h2>
+
+                        <div class="quote">
+                            Dari hari pertama hingga hari ini,
+                            setiap momen punya ceritanya sendiri.
+                        </div>
+
+                    </div>
+
+
+                    <div class="photo-grid">
+
+                        <img src="foto1.jpg" alt="">
+                        <img src="foto2.jpg" alt="">
+                        <img src="foto3.jpg" alt="">
+                        <img src="foto4.jpg" alt="">
+                        <img src="foto5.jpg" alt="">
+
+                    </div>
 
                 </div>
-
-
-                <div class="photo-title">
-
-                    Sepuluh tahun,
-
-                    <span>
-                        banyak cerita.
-                    </span>
-
-                </div>
-
-
-                <div class="photo-collage">
-
-
-                    <!-- FOTO UTAMA -->
-
-                    <div
-                        class="photo-card photo-main"
-                    >
-
-                        <img
-                            src="foto1.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-number">
-                            01
-                        </div>
-
-                        <div class="photo-label">
-
-                            OUR JOURNEY
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- FOTO KIRI -->
-
-                    <div
-                        class="photo-card photo-left"
-                    >
-
-                        <img
-                            src="foto2.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-number">
-                            02
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- FOTO KANAN -->
-
-                    <div
-                        class="photo-card photo-right"
-                    >
-
-                        <img
-                            src="foto3.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-number">
-                            03
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- FOTO KECIL KIRI -->
-
-                    <div
-                        class="photo-card photo-small-left"
-                    >
-
-                        <img
-                            src="foto4.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-number">
-                            04
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- FOTO KECIL KANAN -->
-
-                    <div
-                        class="photo-card photo-small-right"
-                    >
-
-                        <img
-                            src="foto5.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-number">
-                            05
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-                <p class="photo-quote">
-
-                    Dari hari pertama hingga hari ini,
-                    <span>
-                        setiap momen punya ceritanya sendiri.
-                    </span>
-
-                </p>
 
             </div>
 
         </section>
-        <!-- =====================================================
-     PART 5/10
-     SCENE 4–5
-     DOCUMENTATION + HUMOR
-     ===================================================== -->
 
 
-        <!-- =============================================
-             SCENE 4
-             DOCUMENTATION MOMENT
-             ============================================= -->
+        <!-- =================================================
+             SCENE 04
+             ================================================= -->
 
         <section
             class="scene"
-            id="scene4"
+            data-duration="8500"
         >
 
-            <div class="content photo-scene">
+            <div class="scene-content">
 
                 <div class="eyebrow">
-
                     MOMENTS WE KEEP
-
                 </div>
 
-
-                <div class="photo-title">
-
+                <h2>
                     Bukan cuma
-                    <span>
-                        pekerjaan.
-                    </span>
+                    <span>pekerjaan.</span>
+                </h2>
 
+                <div class="lead">
+                    Ada briefing. Ada tawa.
+                    Ada shift. Ada kopi.
+                    Ada cerita yang mungkin
+                    tidak pernah masuk laporan.
                 </div>
-
-
-                <p class="caption">
-
-                    Ada briefing, ada tawa,
-                    ada cerita sebelum shift,
-                    dan tentu saja...
-                    ada kopi yang entah sudah gelas ke berapa.
-
-                </p>
-
 
                 <div class="photo-strip">
 
-
-                    <!-- FOTO 6 -->
-
-                    <div
-                        class="photo-card photo-frame"
-                    >
-
-                        <img
-                            src="foto6.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-label">
-                            THE TEAM
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- FOTO 7 -->
-
-                    <div
-                        class="photo-card photo-frame"
-                    >
-
-                        <img
-                            src="foto7.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-label">
-                            TOGETHER
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- FOTO 8 -->
-
-                    <div
-                        class="photo-card photo-frame"
-                    >
-
-                        <img
-                            src="foto8.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-label">
-                            THE MOMENT
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- FOTO 9 -->
-
-                    <div
-                        class="photo-card photo-frame"
-                    >
-
-                        <img
-                            src="foto9.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-label">
-                            ONE TEAM
-                        </div>
-
-                    </div>
-
+                    <img src="foto6.jpg" alt="">
+                    <img src="foto7.jpg" alt="">
+                    <img src="foto8.jpg" alt="">
+                    <img src="foto9.jpg" alt="">
 
                 </div>
 
-
-                <p class="photo-quote">
-
-                    Karena sepuluh tahun perjalanan
-                    tidak mungkin hanya diingat
-                    dari angka.
-
-                    <span>
-                        Tapi dari orang-orang di dalamnya.
-                    </span>
-
-                </p>
+                <div class="quote">
+                    Karena pada akhirnya,
+                    yang paling kita ingat adalah orang-orangnya.
+                </div>
 
             </div>
 
         </section>
 
 
-
-        <!-- =============================================
-             SCENE 5
-             HUMOR
-             ============================================= -->
+        <!-- =================================================
+             SCENE 05
+             ================================================= -->
 
         <section
             class="scene"
-            id="scene5"
+            data-duration="6500"
         >
 
-            <div class="content">
+            <div class="scene-content humor">
 
-                <div class="eyebrow">
-
+                <div class="eyebrow" style="justify-content:center">
                     REALITY CHECK
+                </div>
+
+                <h2>
+                    10 YEARS.
+                    <span>STILL ANSWERING.</span>
+                </h2>
+
+                <div class="humor-box">
+
+                    <div class="humor-card">
+                        Incoming.
+                    </div>
+
+                    <div class="humor-card">
+                        Komplain.
+                    </div>
+
+                    <div class="humor-card">
+                        Pertanyaan yang sama.
+                    </div>
 
                 </div>
 
-
-                <div class="display-title">
-
-                    <span>
-                        10 YEARS.
-                    </span>
-
-                    <br>
-
-                    <span class="gold">
-                        STILL ANSWERING.
-                    </span>
-
+                <div class="caption" style="margin-left:auto;margin-right:auto">
+                    Setiap panggilan mungkin berbeda.
+                    Tapi satu hal tetap sama:
+                    selalu ada seseorang di ujung sana
+                    yang siap membantu.
                 </div>
-
-
-                <div class="cinematic-line"></div>
-
-
-                <p class="statement">
-
-                    Telepon masuk?
-
-                    <strong>
-                        Angkat.
-                    </strong>
-
-                    <br>
-
-                    Komplain?
-
-                    <strong>
-                        Hadapi.
-                    </strong>
-
-                    <br>
-
-                    Pertanyaan yang sama?
-
-                    <strong>
-                        Tetap jawab.
-                    </strong>
-
-                </p>
-
-
-                <p class="caption">
-
-                    Karena di balik setiap panggilan,
-                    selalu ada seseorang yang membutuhkan
-                    jawaban.
-
-                </p>
 
             </div>
 
         </section>
 
 
-
-        <!-- =============================================
-             SCENE 6
-             THE JOURNEY
-             ============================================= -->
+        <!-- =================================================
+             SCENE 06
+             ================================================= -->
 
         <section
             class="scene"
-            id="scene6"
+            data-duration="7000"
         >
 
-            <div class="content">
+            <div class="scene-content">
 
                 <div class="eyebrow">
-
                     THE JOURNEY
-
                 </div>
 
+                <h2>
+                    FROM 2016
+                    <span>TO 2026.</span>
+                </h2>
 
-                <div class="display-title">
-
-                    <span>
-                        FROM
-                    </span>
-
-                    <span class="gold">
-                        2016
-                    </span>
-
-                    <br>
-
-                    <span>
-                        TO
-                    </span>
-
-                    <span class="cyan">
-                        2026
-                    </span>
-
-                </div>
-
-
-                <div class="cinematic-line"></div>
-
-
-                <p class="statement">
-
+                <div class="lead">
                     Banyak yang berubah.
-
-                    <br>
-
                     Tapi satu hal tetap:
+                    tetap terhubung.
+                </div>
 
-                    <strong>
-                        tetap terhubung.
-                    </strong>
-
-                </p>
-
-
-                <p class="caption">
-
+                <div class="caption">
                     Teknologi berubah.
                     Sistem berkembang.
-                    Tantangan datang silih berganti.
-
-                    <br>
-
-                    Namun semangat untuk melayani
-                    terus berjalan.
-
-                </p>
+                    Cara bekerja bergerak maju.
+                    Tetapi tujuan untuk memberikan pelayanan
+                    tetap menjadi bagian dari perjalanan.
+                </div>
 
             </div>
 
         </section>
-        <!-- =====================================================
-     PART 6/10
-     SCENE 7–9
-     TIMELINE + DOCUMENTATION + STATISTICS
-     ===================================================== -->
 
 
-        <!-- =============================================
-             SCENE 7
-             TIMELINE
-             ============================================= -->
+        <!-- =================================================
+             SCENE 07
+             ================================================= -->
 
         <section
             class="scene"
-            id="scene7"
+            data-duration="8500"
         >
 
-            <div class="content">
+            <div class="scene-content">
 
                 <div class="eyebrow">
-
                     A DECADE OF JOURNEY
-
                 </div>
 
-
-                <div class="display-title">
-
-                    <span>
-                        10 YEARS.
-                    </span>
-
-                    <br>
-
-                    <span class="gold">
-                        MANY CHAPTERS.
-                    </span>
-
-                </div>
-
+                <h2>
+                    10 YEARS.
+                    <span>MANY CHAPTERS.</span>
+                </h2>
 
                 <div class="timeline">
 
-
                     <div class="timeline-item">
 
-                        <div class="timeline-year">
-                            2016
-                        </div>
+                        <strong>2016</strong>
 
-                        <div class="timeline-text">
-
+                        <p>
                             Awal perjalanan.
-                            Sebuah tim mulai
-                            menjalankan perannya.
-
-                        </div>
+                            Membuka bab pertama
+                            dari cerita DRC CC 121.
+                        </p>
 
                     </div>
 
 
-
                     <div class="timeline-item">
 
-                        <div class="timeline-year">
-                            2019
-                        </div>
+                        <strong>2019</strong>
 
-                        <div class="timeline-text">
-
+                        <p>
                             Bertumbuh,
-                            beradaptasi,
-                            dan menghadapi
+                            belajar, dan menghadapi
                             tantangan baru.
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="timeline-item">
-
-                        <div class="timeline-year">
-                            2022
-                        </div>
-
-                        <div class="timeline-text">
-
-                            Cara kerja berubah.
-                            Semangat pelayanan
-                            tetap berjalan.
-
-                        </div>
+                        </p>
 
                     </div>
 
 
+                    <div class="timeline-item">
+
+                        <strong>2022</strong>
+
+                        <p>
+                            Beradaptasi dengan
+                            perubahan dan terus
+                            memberikan pelayanan.
+                        </p>
+
+                    </div>
+
 
                     <div class="timeline-item">
 
-                        <div class="timeline-year">
-                            2026
-                        </div>
+                        <strong>2026</strong>
 
-                        <div class="timeline-text">
-
-                            Satu dekade.
+                        <p>
+                            Sepuluh tahun.
                             Dan perjalanan
-                            masih berlanjut.
-
-                        </div>
+                            masih terus berjalan.
+                        </p>
 
                     </div>
-
 
                 </div>
 
@@ -2820,302 +2695,138 @@ body {
         </section>
 
 
-
-        <!-- =============================================
-             SCENE 8
-             DOCUMENTATION
-             ============================================= -->
+        <!-- =================================================
+             SCENE 08
+             ================================================= -->
 
         <section
             class="scene"
-            id="scene8"
+            data-duration="8500"
         >
 
-            <div class="content photo-scene">
+            <div class="scene-content">
 
                 <div class="eyebrow">
-
                     ALONG THE WAY
-
                 </div>
 
-
-                <div class="photo-title">
-
+                <h2>
                     Setiap tahun
-                    <span>
-                        punya cerita.
-                    </span>
-
-                </div>
-
+                    <span>punya cerita.</span>
+                </h2>
 
                 <div class="photo-strip">
 
-
-                    <div
-                        class="photo-card"
-                    >
-
-                        <img
-                            src="foto10.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-number">
-                            10
-                        </div>
-
-                        <div class="photo-label">
-                            THE YEARS
-                        </div>
-
-                    </div>
-
-
-
-                    <div
-                        class="photo-card"
-                    >
-
-                        <img
-                            src="foto11.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-number">
-                            11
-                        </div>
-
-                        <div class="photo-label">
-                            THE PEOPLE
-                        </div>
-
-                    </div>
-
-
-
-                    <div
-                        class="photo-card"
-                    >
-
-                        <img
-                            src="foto12.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-number">
-                            12
-                        </div>
-
-                        <div class="photo-label">
-                            THE MEMORIES
-                        </div>
-
-                    </div>
-
-
-
-                    <div
-                        class="photo-card"
-                    >
-
-                        <img
-                            src="foto13.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-number">
-                            13
-                        </div>
-
-                        <div class="photo-label">
-                            THE JOURNEY
-                        </div>
-
-                    </div>
-
+                    <img src="foto10.jpg" alt="">
+                    <img src="foto11.jpg" alt="">
+                    <img src="foto12.jpg" alt="">
+                    <img src="foto13.jpg" alt="">
 
                 </div>
 
-
-                <p class="photo-quote">
-
-                    Momen-momen kecil yang akhirnya
-                    menjadi bagian dari
-
-                    <span>
-                        cerita besar.
-                    </span>
-
-                </p>
+                <div class="quote">
+                    Ada momen yang sederhana,
+                    tetapi justru paling sulit dilupakan.
+                </div>
 
             </div>
 
         </section>
 
 
-
-        <!-- =============================================
-             SCENE 9
-             STATISTICS
-             ============================================= -->
+        <!-- =================================================
+             SCENE 09
+             ================================================= -->
 
         <section
             class="scene"
-            id="scene9"
+            data-duration="6500"
         >
 
-            <div class="content">
+            <div class="scene-content">
 
                 <div class="eyebrow">
-
                     ONE DECADE
-
                 </div>
 
-
-                <div class="display-title">
-
-                    <span>
-                        MORE THAN
-                    </span>
-
-                    <br>
-
-                    <span class="gold">
-                        JUST A NUMBER.
-                    </span>
-
-                </div>
-
+                <h2>
+                    MORE THAN
+                    <span>JUST A NUMBER.</span>
+                </h2>
 
                 <div class="stats">
 
-
                     <div class="stat">
 
-                        <div class="stat-number">
-                            10
-                        </div>
+                        <strong>10</strong>
 
-                        <div class="stat-label">
-
+                        <span>
                             Years
-
-                        </div>
+                        </span>
 
                     </div>
 
 
-
                     <div class="stat">
 
-                        <div class="stat-number">
-                            1
-                        </div>
+                        <strong>1</strong>
 
-                        <div class="stat-label">
-
+                        <span>
                             Team
-
-                        </div>
+                        </span>
 
                     </div>
-
 
 
                     <div class="stat">
 
-                        <div class="stat-number">
-                            ∞
-                        </div>
+                        <strong>∞</strong>
 
-                        <div class="stat-label">
-
+                        <span>
                             Stories
-
-                        </div>
+                        </span>
 
                     </div>
-
 
                 </div>
 
-
-                <p class="caption">
-
-                    Angka mungkin sederhana.
-
-                    <br>
-
-                    Tapi perjalanan di baliknya
-                    tidak pernah sederhana.
-
-                </p>
+                <div class="caption">
+                    Karena sepuluh tahun tidak pernah
+                    benar-benar bisa dirangkum
+                    hanya dengan satu angka.
+                </div>
 
             </div>
 
         </section>
-        <!-- =====================================================
-     PART 7/10
-     SCENE 10–12
-     PEOPLE + DOCUMENTATION + APPRECIATION
-     ===================================================== -->
 
 
-        <!-- =============================================
+        <!-- =================================================
              SCENE 10
-             THE PEOPLE
-             ============================================= -->
+             ================================================= -->
 
         <section
             class="scene"
-            id="scene10"
+            data-duration="7000"
         >
 
-            <div class="content">
+            <div class="scene-content">
 
                 <div class="eyebrow">
-
                     BEHIND THE CALL
-
                 </div>
 
+                <h2>
+                    THE VOICE
+                    <span>BEHIND THE SERVICE.</span>
+                </h2>
 
-                <div class="display-title">
-
-                    <span>
-                        THE VOICE
-                    </span>
-
-                    <br>
-
-                    <span class="gold">
-                        BEHIND THE SERVICE.
-                    </span>
-
+                <div class="lead">
+                    Karena setiap suara yang terdengar
+                    di telepon, berasal dari manusia.
                 </div>
-
-
-                <p class="statement">
-
-                    Karena setiap suara
-                    yang terdengar di telepon,
-
-                    <br>
-
-                    berasal dari
-
-                    <strong>
-                        manusia.
-                    </strong>
-
-                </p>
-
 
                 <div class="people">
-
 
                     <div class="person">
                         AGENT
@@ -3137,1842 +2848,448 @@ body {
                         MANAGEMENT
                     </div>
 
-
                 </div>
-
-
-                <p class="caption">
-
-                    Berbeda peran.
-                    Berbeda karakter.
-                    Berbeda cerita.
-
-                    <br>
-
-                    Tetapi berada dalam
-                    perjalanan yang sama.
-
-                </p>
 
             </div>
 
         </section>
 
 
-
-        <!-- =============================================
+        <!-- =================================================
              SCENE 11
-             TEAM DOCUMENTATION
-             ============================================= -->
+             ================================================= -->
 
         <section
             class="scene"
-            id="scene11"
+            data-duration="8500"
         >
 
-            <div class="content photo-scene">
+            <div class="scene-content">
 
                 <div class="eyebrow">
-
                     THE PEOPLE
+                </div>
+
+                <h2>
+                    Di balik setiap panggilan,
+                    <span>ada cerita.</span>
+                </h2>
+
+                <div class="photo-grid"
+                     style="margin-top:40px">
+
+                    <img src="foto14.jpg" alt="">
+                    <img src="foto15.jpg" alt="">
+                    <img src="foto16.jpg" alt="">
+                    <img src="foto17.jpg" alt="">
+                    <img src="foto18.jpg" alt="">
 
                 </div>
 
-
-                <div class="photo-title">
-
-                    Di balik setiap
-                    <span>
-                        panggilan,
-                    </span>
-
-                    ada cerita.
-
+                <div class="quote">
+                    Perjalanan ini dibangun
+                    oleh banyak orang,
+                    banyak peran,
+                    dan banyak cerita.
                 </div>
-
-
-                <div class="photo-collage">
-
-
-                    <!-- FOTO UTAMA -->
-
-                    <div
-                        class="photo-card photo-main"
-                    >
-
-                        <img
-                            src="foto14.jpg"
-                            alt="Tim DRC CC 121 Inbound Bandung"
-                        >
-
-                        <div class="photo-number">
-                            14
-                        </div>
-
-                        <div class="photo-label">
-                            ONE TEAM
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- FOTO KIRI -->
-
-                    <div
-                        class="photo-card photo-left"
-                    >
-
-                        <img
-                            src="foto15.jpg"
-                            alt="Dokumentasi tim"
-                        >
-
-                        <div class="photo-number">
-                            15
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- FOTO KANAN -->
-
-                    <div
-                        class="photo-card photo-right"
-                    >
-
-                        <img
-                            src="foto16.jpg"
-                            alt="Dokumentasi tim"
-                        >
-
-                        <div class="photo-number">
-                            16
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- FOTO KECIL -->
-
-                    <div
-                        class="photo-card photo-small-left"
-                    >
-
-                        <img
-                            src="foto17.jpg"
-                            alt="Dokumentasi tim"
-                        >
-
-                        <div class="photo-number">
-                            17
-                        </div>
-
-                    </div>
-
-
-
-                    <div
-                        class="photo-card photo-small-right"
-                    >
-
-                        <img
-                            src="foto18.jpg"
-                            alt="Dokumentasi tim"
-                        >
-
-                        <div class="photo-number">
-                            18
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-                <p class="photo-quote">
-
-                    Bukan hanya tentang
-                    berapa lama kita bekerja.
-
-                    <br>
-
-                    Tapi tentang
-
-                    <span>
-                        siapa saja yang berjalan
-                        bersama kita.
-                    </span>
-
-                </p>
 
             </div>
 
         </section>
 
 
-
-        <!-- =============================================
+        <!-- =================================================
              SCENE 12
-             HUMOR SECOND
-             ============================================= -->
+             ================================================= -->
 
         <section
             class="scene"
-            id="scene12"
+            data-duration="6500"
         >
 
-            <div class="content">
+            <div class="scene-content humor">
 
-                <div class="eyebrow">
-
+                <div class="eyebrow" style="justify-content:center">
                     SOME THINGS NEVER CHANGE
-
                 </div>
 
+                <h2>
+                    10 YEARS
+                    <span>LATER...</span>
+                </h2>
 
-                <div class="display-title">
+                <div class="humor-box">
 
-                    <span>
-                        10 YEARS
-                    </span>
+                    <div class="humor-card">
+                        “Sebentar lagi selesai shift.”
+                    </div>
 
-                    <br>
-
-                    <span class="gold">
-                        LATER...
-                    </span>
-
-                </div>
-
-
-                <div class="cinematic-line"></div>
-
-
-                <p class="statement">
-
-                    "Sebentar lagi selesai shift."
-
-                </p>
-
-
-                <p class="statement">
-
-                    <strong>
+                    <div class="humor-card">
                         Incoming.
-                    </strong>
+                    </div>
 
-                </p>
+                </div>
 
+                <div class="caption"
+                     style="margin-left:auto;margin-right:auto">
 
-                <p class="caption">
+                    Beberapa hal memang berubah.
+                    Beberapa lainnya...
+                    sepertinya memilih untuk tetap sama.
 
-                    Dan sejarah kembali terulang.
-
-                    <br><br>
-
-                    Karena ternyata...
-
-                    <br>
-
-                    <strong>
-                        10 tahun pun belum cukup
-                        untuk menghabiskan semua cerita.
-                    </strong>
-
-                </p>
+                </div>
 
             </div>
 
         </section>
 
 
-
-        <!-- =============================================
+        <!-- =================================================
              SCENE 13
-             APPRECIATION
-             ============================================= -->
+             ================================================= -->
 
         <section
             class="scene"
-            id="scene13"
+            data-duration="7000"
         >
 
-            <div class="content">
+            <div class="scene-content">
 
                 <div class="eyebrow">
-
                     WITH GRATITUDE
-
                 </div>
 
+                <h2>
+                    THANK YOU
+                    <span>FOR THE JOURNEY.</span>
+                </h2>
 
-                <div class="display-title">
-
-                    <span>
-                        THANK YOU
-                    </span>
-
-                    <br>
-
-                    <span class="gold">
-                        FOR THE JOURNEY.
-                    </span>
-
-                </div>
-
-
-                <div class="cinematic-line"></div>
-
-
-                <p class="statement">
-
+                <div class="lead">
                     Untuk setiap shift.
-
-                    <br>
-
-                    Untuk setiap panggilan.
-
-                    <br>
-
-                    Untuk setiap masalah
-                    yang berhasil diselesaikan.
-
-                </p>
-
-
-                <p class="caption">
-
-                    Dan untuk setiap orang
-                    yang pernah menjadi bagian
+                    Setiap panggilan.
+                    Setiap masalah.
+                    Dan setiap orang yang
+                    pernah menjadi bagian
                     dari perjalanan ini.
+                </div>
 
-                </p>
+                <div class="caption">
+                    Terima kasih telah menjadi bagian
+                    dari sepuluh tahun perjalanan DRC CC 121
+                    Inbound Bandung.
+                </div>
 
             </div>
 
         </section>
-        <!-- =====================================================
-     PART 8/10
-     SCENE 14–16
-     FINAL DOCUMENTATION + CLIMAX
-     ===================================================== -->
 
 
-        <!-- =============================================
+        <!-- =================================================
              SCENE 14
-             FINAL DOCUMENTATION
-             ============================================= -->
+             ================================================= -->
 
         <section
             class="scene"
-            id="scene14"
+            data-duration="8500"
         >
 
-            <div class="content photo-scene">
+            <div class="scene-content">
 
                 <div class="eyebrow">
-
                     MEMORIES
-
                 </div>
 
-
-                <div class="photo-title">
-
-                    Yang tersisa adalah
-                    <span>
-                        kenangan.
-                    </span>
-
-                </div>
-
+                <h2>
+                    Yang tersisa
+                    <span>adalah kenangan.</span>
+                </h2>
 
                 <div class="photo-strip">
 
-
-                    <div
-                        class="photo-card"
-                    >
-
-                        <img
-                            src="foto19.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-number">
-                            19
-                        </div>
-
-                        <div class="photo-label">
-                            MEMORIES
-                        </div>
-
-                    </div>
-
-
-
-                    <div
-                        class="photo-card"
-                    >
-
-                        <img
-                            src="foto20.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-number">
-                            20
-                        </div>
-
-                        <div class="photo-label">
-                            MOMENTS
-                        </div>
-
-                    </div>
-
-
-
-                    <div
-                        class="photo-card"
-                    >
-
-                        <img
-                            src="foto21.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-number">
-                            21
-                        </div>
-
-                        <div class="photo-label">
-                            MEMORIES
-                        </div>
-
-                    </div>
-
-
-
-                    <div
-                        class="photo-card"
-                    >
-
-                        <img
-                            src="foto22.jpg"
-                            alt="Dokumentasi DRC CC 121"
-                        >
-
-                        <div class="photo-number">
-                            22
-                        </div>
-
-                        <div class="photo-label">
-                            TOGETHER
-                        </div>
-
-                    </div>
-
+                    <img src="foto19.jpg" alt="">
+                    <img src="foto20.jpg" alt="">
+                    <img src="foto21.jpg" alt="">
+                    <img src="foto22.jpg" alt="">
 
                 </div>
 
-
-                <p class="photo-quote">
-
-                    Beberapa momen mungkin berlalu.
-
-                    <br>
-
-                    Tapi ceritanya akan selalu menjadi
-                    bagian dari perjalanan kita.
-
-                </p>
+                <div class="quote">
+                    Dan mungkin,
+                    bertahun-tahun dari sekarang,
+                    kita akan kembali mengingat
+                    momen-momen sederhana ini.
+                </div>
 
             </div>
 
         </section>
 
 
-
-        <!-- =============================================
+        <!-- =================================================
              SCENE 15
-             ONE DECADE
-             ============================================= -->
+             ================================================= -->
 
         <section
-            class="scene"
-            id="scene15"
+            class="scene final-scene"
+            data-duration="6500"
         >
 
-            <div class="content">
+            <div class="scene-content">
 
-                <div class="eyebrow">
+                <div class="eyebrow"
+                     style="justify-content:center">
 
                     2016 — 2026
 
                 </div>
 
-
-                <div class="big-number">
-
+                <div class="ten">
                     10
-
                 </div>
 
-
-                <div class="years">
-
-                    YEARS OF
-
-                    <span>
-                        CONNECTION
-                    </span>
-
+                <div class="final-sub">
+                    YEARS OF CONNECTION
                 </div>
 
-
-                <div class="cinematic-line"></div>
-
-
-                <p class="subtitle">
+                <div class="quote"
+                     style="margin-left:auto;margin-right:auto">
 
                     ONE TEAM.
                     ONE JOURNEY.
                     COUNTLESS STORIES.
 
-                </p>
+                </div>
 
             </div>
 
         </section>
 
 
-
-        <!-- =============================================
+        <!-- =================================================
              SCENE 16
-             CLIMAX
-             ============================================= -->
+             ================================================= -->
 
         <section
-            class="scene"
-            id="scene16"
+            class="scene final-scene"
+            data-duration="7500"
         >
 
-            <div class="content">
+            <div class="scene-content">
 
-                <div class="eyebrow">
+                <div class="eyebrow"
+                     style="justify-content:center">
 
-                    DRC CC 121
-                    INBOUND BANDUNG
-
-                </div>
-
-
-                <div class="display-title">
-
-                    <span>
-                        10 YEARS
-                    </span>
-
-                    <br>
-
-                    <span class="gold">
-                        STILL CONNECTED.
-                    </span>
+                    DRC CC 121 · INBOUND BANDUNG
 
                 </div>
 
+                <h2>
+                    10 YEARS
+                    <span>STILL CONNECTED.</span>
+                </h2>
 
-                <div class="cinematic-line"></div>
-
-
-                <p class="statement">
+                <div class="lead"
+                     style="margin-left:auto;margin-right:auto">
 
                     Satu dekade telah berlalu.
+                    Tetapi perjalanan ini belum selesai.
 
-                    <br>
+                </div>
 
-                    Perjalanan belum selesai.
+                <div class="caption"
+                     style="margin-left:auto;margin-right:auto">
 
-                </p>
+                    Masih ada panggilan berikutnya.
+                    Tantangan berikutnya.
+                    Dan cerita berikutnya.
 
-
-                <p class="caption">
-
-                    Masih akan ada panggilan berikutnya.
-                    Masih akan ada tantangan berikutnya.
-                    Dan masih akan ada cerita berikutnya.
-
-                </p>
+                </div>
 
             </div>
 
         </section>
 
 
-
-        <!-- =============================================
+        <!-- =================================================
              SCENE 17
-             FINAL MESSAGE
-             ============================================= -->
+             ================================================= -->
 
         <section
-            class="scene"
-            id="scene17"
+            class="scene final-scene"
+            data-duration="10000"
         >
 
-            <div class="content">
+            <div class="scene-content">
 
-                <div class="eyebrow">
-
-                    HAPPY 10TH ANNIVERSARY
-
-                </div>
-
-
-                <div class="big-number">
-
-                    10
-
-                </div>
-
-
-                <div class="years">
-
-                    DRC CC 121
-
-                    <span>
-                        INBOUND BANDUNG
-                    </span>
-
-                </div>
-
-
-                <div class="cinematic-line"></div>
-
-
-                <p class="subtitle">
-
-                    STILL CONNECTED.
-
-                </p>
-
-
-                <p class="subtitle">
-
-                    STILL MOVING.
-
-                </p>
-
-
-                <p
-                    style="
-                        margin-top:28px;
-                        font-size:clamp(14px,1.4vw,22px);
-                        color:rgba(255,255,255,.55);
-                        letter-spacing:3px;
-                    "
-                >
+                <div class="eyebrow"
+                     style="justify-content:center">
 
                     2016 — 2026
 
-                </p>
+                </div>
+
+                <h2>
+                    HAPPY
+                    <span>10TH ANNIVERSARY.</span>
+                </h2>
+
+                <div class="ten">
+                    10
+                </div>
+
+                <div class="final-sub">
+                    DRC CC 121 INBOUND BANDUNG
+                </div>
+
+                <div class="quote"
+                     style="margin-left:auto;margin-right:auto">
+
+                    STILL CONNECTED.
+                    <br>
+                    STILL MOVING.
+
+                </div>
 
             </div>
 
         </section>
-        <!-- =====================================================
-     PART 9/10
-     CONTROLS + ANIMATION ENGINE
-     ===================================================== -->
-
-
-<style>
-
-/* =====================================================
-   FINAL TITLE
-   ===================================================== */
-
-.final-title {
-
-    margin-top:
-        25px;
-
-    font-family:
-        "Manrope",
-        sans-serif;
-
-    font-size:
-        clamp(55px, 8vw, 125px);
-
-    line-height:
-        .90;
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        -5px;
-
-}
-
-
-.final-title strong {
-
-    display:
-        block;
-
-    color:
-        var(--gold);
-
-}
-
-
-/* =====================================================
-   FINAL SUBTITLE
-   ===================================================== */
-
-.final-subtitle {
-
-    font-size:
-        clamp(14px, 1.5vw, 23px);
-
-    letter-spacing:
-        4px;
-
-    color:
-        var(--text-muted);
-
-}
-
-
-/* =====================================================
-   TIMELINE
-   ===================================================== */
-
-.timeline {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:
-        18px;
-
-    width:
-        min(1150px,100%);
-
-    margin:
-        45px auto 0;
-
-}
-
-
-.timeline-item {
-
-    padding:
-        28px 22px;
-
-    border-radius:
-        20px;
-
-    background:
-        rgba(255,255,255,.045);
-
-    border:
-        1px solid
-        rgba(255,255,255,.10);
-
-    backdrop-filter:
-        blur(12px);
-
-    transition:
-        .4s ease;
-
-}
-
-
-.timeline-item:hover {
-
-    transform:
-        translateY(-8px);
-
-    border-color:
-        rgba(232,203,131,.35);
-
-}
-
-
-.timeline-year {
-
-    font-family:
-        "Manrope",
-        sans-serif;
-
-    font-size:
-        clamp(25px,3vw,40px);
-
-    font-weight:
-        800;
-
-    color:
-        var(--gold);
-
-}
-
-
-.timeline-text {
-
-    margin-top:
-        12px;
-
-    font-size:
-        clamp(12px,1.1vw,17px);
-
-    line-height:
-        1.6;
-
-    color:
-        var(--text-muted);
-
-}
-
-
-/* =====================================================
-   STATISTICS
-   ===================================================== */
-
-.stats {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:
-        20px;
-
-    width:
-        min(900px,100%);
-
-    margin:
-        45px auto 0;
-
-}
-
-
-.stat {
-
-    padding:
-        32px 20px;
-
-    border-radius:
-        22px;
-
-    background:
-        rgba(255,255,255,.045);
-
-    border:
-        1px solid
-        rgba(255,255,255,.10);
-
-}
-
-
-.stat-number {
-
-    font-family:
-        "Manrope",
-        sans-serif;
-
-    font-size:
-        clamp(50px,6vw,85px);
-
-    line-height:
-        1;
-
-    font-weight:
-        800;
-
-    color:
-        var(--gold);
-
-}
-
-
-.stat-label {
-
-    margin-top:
-        10px;
-
-    font-size:
-        clamp(11px,1vw,15px);
-
-    letter-spacing:
-        3px;
-
-    text-transform:
-        uppercase;
-
-    color:
-        var(--text-muted);
-
-}
-
-
-/* =====================================================
-   PEOPLE
-   ===================================================== */
-
-.people {
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        12px;
-
-    margin:
-        38px auto 0;
-
-    max-width:
-        950px;
-
-}
-
-
-.person {
-
-    padding:
-        12px 20px;
-
-    border-radius:
-        100px;
-
-    background:
-        rgba(255,255,255,.055);
-
-    border:
-        1px solid
-        rgba(255,255,255,.10);
-
-    font-size:
-        clamp(11px,1vw,15px);
-
-    font-weight:
-        600;
-
-    letter-spacing:
-        1px;
-
-    color:
-        rgba(255,255,255,.72);
-
-}
-
-
-/* =====================================================
-   CONTROLS
-   ===================================================== */
-
-#controls {
-
-    position:
-        fixed;
-
-    z-index:
-        100;
-
-    left:
-        50%;
-
-    bottom:
-        30px;
-
-    transform:
-        translateX(-50%);
-
-    display:
-        flex;
-
-    gap:
-        9px;
-
-    padding:
-        9px;
-
-    border-radius:
-        100px;
-
-    background:
-        rgba(5,12,22,.75);
-
-    border:
-        1px solid
-        rgba(255,255,255,.12);
-
-    backdrop-filter:
-        blur(18px);
-
-    box-shadow:
-        0 15px 50px
-        rgba(0,0,0,.4);
-
-}
-
-
-.control-btn {
-
-    width:
-        44px;
-
-    height:
-        44px;
-
-    border:
-        0;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(255,255,255,.075);
-
-    color:
-        #ffffff;
-
-    font-size:
-        16px;
-
-    cursor:
-        pointer;
-
-    transition:
-        .25s ease;
-
-}
-
-
-.control-btn:hover {
-
-    background:
-        rgba(232,203,131,.18);
-
-    color:
-        var(--gold);
-
-    transform:
-        scale(1.08);
-
-}
-
-
-.control-btn:active {
-
-    transform:
-        scale(.92);
-
-}
-
-
-/* =====================================================
-   PROGRESS BAR
-   ===================================================== */
-
-#progress {
-
-    position:
-        fixed;
-
-    z-index:
-        101;
-
-    left:
-        25px;
-
-    right:
-        25px;
-
-    bottom:
-        18px;
-
-    height:
-        2px;
-
-    border-radius:
-        20px;
-
-    background:
-        rgba(255,255,255,.12);
-
-}
-
-
-#progressBar {
-
-    width:
-        0%;
-
-    height:
-        100%;
-
-    border-radius:
-        inherit;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--cyan),
-            var(--gold)
-        );
-
-    box-shadow:
-        0 0 14px
-        rgba(232,203,131,.5);
-
-}
-
-
-/* =====================================================
-   SCENE COUNTER
-   ===================================================== */
-
-#sceneCounter {
-
-    position:
-        fixed;
-
-    z-index:
-        100;
-
-    top:
-        25px;
-
-    right:
-        28px;
-
-    font-family:
-        "Manrope",
-        sans-serif;
-
-    font-size:
-        13px;
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        3px;
-
-    color:
-        rgba(255,255,255,.38);
-
-}
-
-
-#currentScene {
-
-    color:
-        var(--gold);
-
-}
-
-
-.counterLine {
-
-    margin:
-        0 7px;
-
-    color:
-        rgba(255,255,255,.2);
-
-}
-
-
-/* =====================================================
-   RESPONSIVE
-   ===================================================== */
-
-@media (max-width:900px) {
-
-    .timeline {
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-        gap:
-            10px;
-
-    }
-
-}
-
-
-@media (max-width:600px) {
-
-    #controls {
-
-        bottom:
-            28px;
-
-    }
-
-    .control-btn {
-
-        width:
-            39px;
-
-        height:
-            39px;
-
-        font-size:
-            14px;
-
-    }
-
-    #progress {
-
-        left:
-            15px;
-
-        right:
-            15px;
-
-    }
-
-    #sceneCounter {
-
-        top:
-            17px;
-
-        right:
-            18px;
-
-        font-size:
-            10px;
-
-    }
-
-    .timeline {
-
-        margin-top:
-            25px;
-
-    }
-
-    .timeline-item {
-
-        padding:
-            18px 12px;
-
-    }
-
-    .stats {
-
-        grid-template-columns:
-            1fr;
-
-        max-width:
-            300px;
-
-        margin-top:
-            25px;
-
-    }
-
-}
-
-
-/* =====================================================
-   JAVASCRIPT
-     ===================================================== */
-
-</style>
-
-
-<script>
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-
-        /* =============================================
-           ELEMENTS
-           ============================================= */
-
-        const scenes =
-            document.querySelectorAll(".scene");
-
-
-        const playBtn =
-            document.getElementById("playBtn");
-
-
-        const replayBtn =
-            document.getElementById("replayBtn");
-
-
-        const soundBtn =
-            document.getElementById("soundBtn");
-
-
-        const fullscreenBtn =
-            document.getElementById("fullscreenBtn");
-
-
-        const progressBar =
-            document.getElementById("progressBar");
-
-
-        const currentScene =
-            document.getElementById("currentScene");
-
-
-        /* =============================================
-           MUSIC
-           ============================================= */
-
-        const music =
-            new Audio("music.mp3");
-
-
-        music.loop =
-            true;
-
-
-        music.volume =
-            0.45;
-
-
-        /* =============================================
-           SETTINGS
-           ============================================= */
-
-        const SCENE_DURATION =
-            7000;
-
-
-        let currentIndex =
-            0;
-
-
-        let isPlaying =
-            false;
-
-
-        let soundOn =
-            true;
-
-
-        let sceneTimer =
-            null;
-
-
-        let progressTimer =
-            null;
-
-
-        let sceneStart =
-            0;
-
-
-        /* =============================================
-           SHOW SCENE
-           ============================================= */
-
-        function showScene(index) {
-
-
-            scenes.forEach(
-                function(scene, i) {
-
-                    scene.classList.toggle(
-                        "active",
-                        i === index
-                    );
-
-                }
-            );
-
-
-            currentIndex =
-                index;
-
-
-            if (currentScene) {
-
-                currentScene.textContent =
-                    String(index + 1)
-                    .padStart(2,"0");
-
-            }
-
-
-            sceneStart =
-                Date.now();
-
-
-            progressBar.style.width =
-                "0%";
-
-        }
-
-
-        /* =============================================
-           NEXT SCENE
-           ============================================= */
-
-        function nextScene() {
-
-
-            let next =
-                currentIndex + 1;
-
-
-            if (
-                next >= scenes.length
-            ) {
-
-                next = 0;
-
-            }
-
-
-            showScene(next);
-
-        }
-
-
-        /* =============================================
-           PROGRESS
-           ============================================= */
-
-        function startProgress() {
-
-
-            clearInterval(
-                progressTimer
-            );
-
-
-            progressTimer =
-                setInterval(
-                    function() {
-
-
-                        if (!isPlaying) {
-                            return;
-                        }
-
-
-                        const elapsed =
-                            Date.now()
-                            - sceneStart;
-
-
-                        let percent =
-                            (
-                                elapsed /
-                                SCENE_DURATION
-                            ) * 100;
-
-
-                        if (
-                            percent > 100
-                        ) {
-
-                            percent =
-                                100;
-
-                        }
-
-
-                        progressBar.style.width =
-                            percent + "%";
-
-
-                    },
-                    40
-                );
-
-        }
-
-
-        /* =============================================
-           PLAY
-           ============================================= */
-
-        function playAnimation() {
-
-
-            if (isPlaying) {
-                return;
-            }
-
-
-            isPlaying =
-                true;
-
-
-            playBtn.textContent =
-                "❚❚";
-
-
-            clearInterval(
-                sceneTimer
-            );
-
-
-            sceneTimer =
-                setInterval(
-                    nextScene,
-                    SCENE_DURATION
-                );
-
-
-            startProgress();
-
-
-            if (soundOn) {
-
-                music.play()
-                    .catch(
-                        function() {}
-                    );
-
-            }
-
-        }
-
-
-        /* =============================================
-           PAUSE
-           ============================================= */
-
-        function pauseAnimation() {
-
-
-            isPlaying =
-                false;
-
-
-            playBtn.textContent =
-                "▶";
-
-
-            clearInterval(
-                sceneTimer
-            );
-
-
-            clearInterval(
-                progressTimer
-            );
-
-
-            music.pause();
-
-        }
-
-
-        /* =============================================
-           PLAY / PAUSE
-           ============================================= */
-
-        playBtn.addEventListener(
-            "click",
-            function() {
-
-
-                if (isPlaying) {
-
-                    pauseAnimation();
-
-                } else {
-
-                    playAnimation();
-
-                }
-
-            }
-        );
-
-
-        /* =============================================
-           REPLAY
-           ============================================= */
-
-        replayBtn.addEventListener(
-            "click",
-            function() {
-
-
-                clearInterval(
-                    sceneTimer
-                );
-
-
-                clearInterval(
-                    progressTimer
-                );
-
-
-                currentIndex =
-                    0;
-
-
-                showScene(0);
-
-
-                isPlaying =
-                    false;
-
-
-                playBtn.textContent =
-                    "▶";
-
-
-                music.currentTime =
-                    0;
-
-
-                playAnimation();
-
-            }
-        );
-
-
-        /* =============================================
-           SOUND
-           ============================================= */
-
-        soundBtn.addEventListener(
-            "click",
-            function() {
-
-
-                soundOn =
-                    !soundOn;
-
-
-                if (soundOn) {
-
-
-                    soundBtn.textContent =
-                        "🔊";
-
-
-                    music.play()
-                        .catch(
-                            function() {}
-                        );
-
-
-                } else {
-
-
-                    soundBtn.textContent =
-                        "🔇";
-
-
-                    music.pause();
-
-                }
-
-            }
-        );
-
-
-        /* =============================================
-           FULLSCREEN
-           ============================================= */
-
-        fullscreenBtn.addEventListener(
-            "click",
-            function() {
-
-
-                if (
-                    !document.fullscreenElement
-                ) {
-
-
-                    document.documentElement
-                        .requestFullscreen()
-                        .catch(
-                            function() {}
-                        );
-
-
-                } else {
-
-
-                    document
-                        .exitFullscreen();
-
-                }
-
-            }
-        );
-
-
-        /* =============================================
-           INITIAL SCENE
-           ============================================= */
-
-        showScene(0);
-
-
-        playBtn.textContent =
-            "▶";
-
-
-        /* =============================================
-           START AFTER FIRST TOUCH
-           ============================================= */
-
-        document.addEventListener(
-            "click",
-            function startOnce() {
-
-
-                if (!isPlaying) {
-
-                    playAnimation();
-
-                }
-
-
-                document.removeEventListener(
-                    "click",
-                    startOnce
-                );
-
-
-            },
-            { once:true }
-        );
-
-
-    }
-);
-
-</script>
-<!-- =====================================================
-     PART 10/10
-     CONTROLS + FINAL HTML CLOSING
-     ===================================================== -->
-
-
-        <!-- =============================================
-             SCENE COUNTER
-             ============================================= -->
-
-        <div id="sceneCounter">
-
-            <span id="currentScene">
-                01
-            </span>
-
-            <span class="counterLine">
-                /
-            </span>
-
-            <span id="totalScenes">
-                17
-            </span>
-
-        </div>
-
-
-
-        <!-- =============================================
-             CONTROL PANEL
-             ============================================= -->
-
-        <div id="controls">
-
-
-            <!-- PLAY / PAUSE -->
-
-            <button
-                class="control-btn"
-                id="playBtn"
-                aria-label="Play atau Pause"
-                title="Play / Pause"
-            >
-                ▶
-            </button>
-
-
-            <!-- REPLAY -->
-
-            <button
-                class="control-btn"
-                id="replayBtn"
-                aria-label="Replay"
-                title="Replay"
-            >
-                ↻
-            </button>
-
-
-            <!-- SOUND -->
-
-            <button
-                class="control-btn"
-                id="soundBtn"
-                aria-label="Sound"
-                title="Sound"
-            >
-                🔊
-            </button>
-
-
-            <!-- FULLSCREEN -->
-
-            <button
-                class="control-btn"
-                id="fullscreenBtn"
-                aria-label="Fullscreen"
-                title="Fullscreen"
-            >
-                ⛶
-            </button>
-
-
-        </div>
-
-
-
-        <!-- =============================================
-             PROGRESS BAR
-             ============================================= -->
-
-        <div id="progress">
-
-            <div id="progressBar"></div>
-
-        </div>
 
 
     </main>
+
+
+    <!-- =====================================================
+         DECORATIVE CIRCLE
+         ===================================================== -->
+
+    <div class="decor-circle"></div>
+
+
+    <!-- =====================================================
+         SCENE COUNTER
+         ===================================================== -->
+
+    <div class="scene-counter">
+
+        <span id="currentScene">
+            01
+        </span>
+
+        /
+
+        <span id="totalScene">
+            17
+        </span>
+
+    </div>
+
+
+    <!-- =====================================================
+         CONTROLS
+         ===================================================== -->
+
+    <div class="controls">
+
+        <button
+            class="control-btn"
+            id="prevBtn"
+            title="Previous"
+        >
+            ‹
+        </button>
+
+
+        <button
+            class="control-btn"
+            id="playBtn"
+            title="Play / Pause"
+        >
+            ▶
+        </button>
+
+
+        <button
+            class="control-btn"
+            id="nextBtn"
+            title="Next"
+        >
+            ›
+        </button>
+
+
+        <button
+            class="control-btn"
+            id="replayBtn"
+            title="Replay"
+        >
+            ↻
+        </button>
+
+
+        <button
+            class="control-btn"
+            id="soundBtn"
+            title="Sound"
+        >
+            🔊
+        </button>
+
+
+        <button
+            class="control-btn"
+            id="fullscreenBtn"
+            title="Fullscreen"
+        >
+            ⛶
+        </button>
+
+
+        <div class="progress">
+
+            <div
+                class="progress-bar"
+                id="progressBar"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         LOADING
+         ===================================================== -->
+
+    <div
+        class="loading"
+        id="loading"
+    >
+
+        <div class="loading-inner">
+
+            <div class="loading-title">
+                DRC CC 121
+            </div>
+
+            <div class="loading-line">
+                <span></span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         AUDIO
+         ===================================================== -->
+
+    <audio
+        id="music"
+        src="music.mp3"
+        preload="auto"
+        loop
+    ></audio>
 
 
 </div>
@@ -4980,146 +3297,784 @@ document.addEventListener(
 
 <script>
 
-/* =====================================================
-   UPDATE TOTAL SCENE COUNT
-   ===================================================== */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        const totalScenes =
-            document.querySelectorAll(
-                ".scene"
-            ).length;
+/* =========================================================
+   DRC CC 121 — CINEMATIC ENGINE
+   ========================================================= */
 
 
-        const totalElement =
-            document.getElementById(
-                "totalScenes"
-            );
+/* =========================================================
+   01. ELEMENTS
+   ========================================================= */
+
+const opening =
+    document.getElementById("opening");
+
+const presentation =
+    document.getElementById("presentation");
+
+const openingCamera =
+    document.getElementById("openingCamera");
+
+const lightSweep =
+    document.getElementById("lightSweep");
+
+const loading =
+    document.getElementById("loading");
+
+const music =
+    document.getElementById("music");
+
+const playBtn =
+    document.getElementById("playBtn");
+
+const prevBtn =
+    document.getElementById("prevBtn");
+
+const nextBtn =
+    document.getElementById("nextBtn");
+
+const replayBtn =
+    document.getElementById("replayBtn");
+
+const soundBtn =
+    document.getElementById("soundBtn");
+
+const fullscreenBtn =
+    document.getElementById("fullscreenBtn");
+
+const progressBar =
+    document.getElementById("progressBar");
+
+const currentSceneText =
+    document.getElementById("currentScene");
+
+const totalSceneText =
+    document.getElementById("totalScene");
 
 
-        if (totalElement) {
+/* =========================================================
+   02. SCENES
+   ========================================================= */
 
-            totalElement.textContent =
-                String(totalScenes)
-                .padStart(2, "0");
+const scenes =
+    [...document.querySelectorAll(".scene")];
+
+let currentScene = 0;
+
+let isPlaying = true;
+
+let isMuted = false;
+
+let sceneTimer = null;
+
+let sceneStart = 0;
+
+let animationFrame = null;
+
+let openingFinished = false;
+
+
+/* =========================================================
+   03. TOTAL SCENE
+   ========================================================= */
+
+totalSceneText.textContent =
+    String(scenes.length).padStart(2,"0");
+
+
+/* =========================================================
+   04. PARTICLES
+   ========================================================= */
+
+const particleContainer =
+    document.getElementById("particles");
+
+for(let i = 0; i < 55; i++){
+
+    const p =
+        document.createElement("div");
+
+    p.className = "particle";
+
+    p.style.left =
+        Math.random() * 100 + "%";
+
+    p.style.top =
+        Math.random() * 100 + "%";
+
+    p.style.setProperty(
+        "--duration",
+        (5 + Math.random() * 8) + "s"
+    );
+
+    p.style.setProperty(
+        "--move-x",
+        (-40 + Math.random() * 80) + "px"
+    );
+
+    p.style.animationDelay =
+        (-Math.random() * 10) + "s";
+
+    particleContainer.appendChild(p);
+}
+
+
+/* =========================================================
+   05. MUSIC
+   ========================================================= */
+
+async function startMusic(){
+
+    if(isMuted) return;
+
+    try{
+
+        await music.play();
+
+    }catch(error){
+
+        /*
+         Browser biasanya memblokir autoplay.
+         Musik akan berjalan setelah user
+         menekan tombol / layar.
+        */
+
+        console.log(
+            "Autoplay menunggu interaksi pengguna."
+        );
+    }
+}
+
+
+/* =========================================================
+   06. OPENING
+   ========================================================= */
+
+function startOpening(){
+
+    opening.classList.add("playing");
+
+    setTimeout(() => {
+
+        opening.classList.add("wipe");
+
+    },5200);
+
+
+    setTimeout(() => {
+
+        finishOpening();
+
+    },6500);
+
+}
+
+
+function finishOpening(){
+
+    if(openingFinished) return;
+
+    openingFinished = true;
+
+    opening.classList.add("hidden");
+
+    presentation.classList.add("active");
+
+    showScene(0);
+
+    startMusic();
+
+}
+
+
+/* =========================================================
+   07. SHOW SCENE
+   ========================================================= */
+
+function showScene(index){
+
+    if(index < 0)
+        index = scenes.length - 1;
+
+    if(index >= scenes.length)
+        index = 0;
+
+    scenes.forEach((scene,i)=>{
+
+        scene.classList.remove(
+            "active",
+            "outgoing"
+        );
+
+        if(i === index){
+
+            scene.classList.add("active");
 
         }
 
+    });
+
+
+    currentScene = index;
+
+    currentSceneText.textContent =
+        String(index + 1).padStart(2,"0");
+
+    sceneStart =
+        performance.now();
+
+    resetProgress();
+
+    startSceneTimer();
+
+    cinematicSweep();
+
+}
+
+
+/* =========================================================
+   08. NEXT
+   ========================================================= */
+
+function nextScene(){
+
+    showScene(
+        (currentScene + 1) % scenes.length
+    );
+
+}
+
+
+/* =========================================================
+   09. PREVIOUS
+   ========================================================= */
+
+function previousScene(){
+
+    showScene(
+        (currentScene - 1 + scenes.length)
+        % scenes.length
+    );
+
+}
+
+
+/* =========================================================
+   10. TIMER
+   ========================================================= */
+
+function startSceneTimer(){
+
+    clearTimeout(sceneTimer);
+
+    if(!isPlaying) return;
+
+    const duration =
+        Number(
+            scenes[currentScene]
+                .dataset.duration
+        ) || 6500;
+
+    sceneTimer =
+        setTimeout(
+            nextScene,
+            duration
+        );
+
+}
+
+
+/* =========================================================
+   11. PROGRESS
+   ========================================================= */
+
+function updateProgress(){
+
+    if(!isPlaying) return;
+
+    const duration =
+        Number(
+            scenes[currentScene]
+                .dataset.duration
+        ) || 6500;
+
+    const elapsed =
+        performance.now() - sceneStart;
+
+    let percent =
+        (elapsed / duration) * 100;
+
+    percent =
+        Math.max(
+            0,
+            Math.min(
+                100,
+                percent
+            )
+        );
+
+    progressBar.style.width =
+        percent + "%";
+
+    animationFrame =
+        requestAnimationFrame(
+            updateProgress
+        );
+
+}
+
+
+/* =========================================================
+   12. RESET PROGRESS
+   ========================================================= */
+
+function resetProgress(){
+
+    cancelAnimationFrame(
+        animationFrame
+    );
+
+    progressBar.style.width =
+        "0%";
+
+    if(isPlaying){
+
+        animationFrame =
+            requestAnimationFrame(
+                updateProgress
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   13. PLAY / PAUSE
+   ========================================================= */
+
+function togglePlay(){
+
+    isPlaying = !isPlaying;
+
+    if(isPlaying){
+
+        playBtn.textContent = "Ⅱ";
+
+        startSceneTimer();
+
+        sceneStart =
+            performance.now();
+
+        startMusic();
+
+        resetProgress();
+
+    }else{
+
+        playBtn.textContent = "▶";
+
+        clearTimeout(sceneTimer);
+
+        cancelAnimationFrame(
+            animationFrame
+        );
+
+        music.pause();
+
+    }
+
+}
+
+
+/* =========================================================
+   14. CINEMATIC SWEEP
+   ========================================================= */
+
+function cinematicSweep(){
+
+    lightSweep.classList.remove("active");
+
+    /*
+       Force browser to restart animation.
+    */
+
+    void lightSweep.offsetWidth;
+
+    lightSweep.classList.add("active");
+
+}
+
+
+/* =========================================================
+   15. REPLAY
+   ========================================================= */
+
+function replay(){
+
+    openingFinished = false;
+
+    opening.classList.remove(
+        "hidden",
+        "wipe"
+    );
+
+    opening.classList.remove(
+        "playing"
+    );
+
+    presentation.classList.remove(
+        "active"
+    );
+
+    clearTimeout(sceneTimer);
+
+    music.currentTime = 0;
+
+    /*
+       Restart opening animation.
+    */
+
+    setTimeout(() => {
+
+        opening.classList.add(
+            "playing"
+        );
+
+    },100);
+
+    setTimeout(() => {
+
+        opening.classList.add(
+            "wipe"
+        );
+
+    },5200);
+
+    setTimeout(() => {
+
+        finishOpening();
+
+    },6500);
+
+}
+
+
+/* =========================================================
+   16. SOUND
+   ========================================================= */
+
+function toggleSound(){
+
+    isMuted = !isMuted;
+
+    music.muted = isMuted;
+
+    soundBtn.textContent =
+        isMuted
+        ? "🔇"
+        : "🔊";
+
+    if(!isMuted){
+
+        startMusic();
+
+    }
+
+}
+
+
+/* =========================================================
+   17. FULLSCREEN
+   ========================================================= */
+
+async function toggleFullscreen(){
+
+    try{
+
+        if(!document.fullscreenElement){
+
+            await document.documentElement
+                .requestFullscreen();
+
+        }else{
+
+            await document.exitFullscreen();
+
+        }
+
+    }catch(error){
+
+        console.log(
+            "Fullscreen tidak tersedia."
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   18. BUTTON EVENTS
+   ========================================================= */
+
+playBtn.addEventListener(
+    "click",
+    togglePlay
+);
+
+nextBtn.addEventListener(
+    "click",
+    nextScene
+);
+
+prevBtn.addEventListener(
+    "click",
+    previousScene
+);
+
+replayBtn.addEventListener(
+    "click",
+    replay
+);
+
+soundBtn.addEventListener(
+    "click",
+    toggleSound
+);
+
+fullscreenBtn.addEventListener(
+    "click",
+    toggleFullscreen
+);
+
+
+/* =========================================================
+   19. FIRST USER INTERACTION
+   ========================================================= */
+
+document.addEventListener(
+    "pointerdown",
+    () => {
+
+        if(
+            !openingFinished &&
+            !isMuted
+        ){
+
+            startMusic();
+
+        }
+
+    },
+    {
+        once:false
     }
 );
 
 
-/* =====================================================
-   KEYBOARD CONTROL
-   ===================================================== */
+/* =========================================================
+   20. KEYBOARD
+   ========================================================= */
 
 document.addEventListener(
     "keydown",
-    function (event) {
+    event => {
 
+        if(event.key === "ArrowRight"){
 
-        /*
-         * SPACE
-         * Play / Pause
-         */
+            nextScene();
 
-        if (
-            event.code === "Space"
-        ) {
+        }
+
+        if(event.key === "ArrowLeft"){
+
+            previousScene();
+
+        }
+
+        if(event.key === " "){
 
             event.preventDefault();
 
-            const button =
-                document.getElementById(
-                    "playBtn"
-                );
-
-            if (button) {
-
-                button.click();
-
-            }
+            togglePlay();
 
         }
 
+        if(event.key.toLowerCase() === "m"){
 
-        /*
-         * R
-         * Replay
-         */
-
-        if (
-            event.key.toLowerCase() === "r"
-        ) {
-
-            const button =
-                document.getElementById(
-                    "replayBtn"
-                );
-
-            if (button) {
-
-                button.click();
-
-            }
+            toggleSound();
 
         }
 
+        if(event.key.toLowerCase() === "f"){
 
-        /*
-         * M
-         * Mute / Sound
-         */
-
-        if (
-            event.key.toLowerCase() === "m"
-        ) {
-
-            const button =
-                document.getElementById(
-                    "soundBtn"
-                );
-
-            if (button) {
-
-                button.click();
-
-            }
-
-        }
-
-
-        /*
-         * F
-         * Fullscreen
-         */
-
-        if (
-            event.key.toLowerCase() === "f"
-        ) {
-
-            const button =
-                document.getElementById(
-                    "fullscreenBtn"
-                );
-
-            if (button) {
-
-                button.click();
-
-            }
+            toggleFullscreen();
 
         }
 
     }
 );
 
+
+/* =========================================================
+   21. TOUCH SWIPE
+   ========================================================= */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+document.addEventListener(
+    "touchstart",
+    event => {
+
+        touchStartX =
+            event.changedTouches[0].screenX;
+
+    },
+    {
+        passive:true
+    }
+);
+
+document.addEventListener(
+    "touchend",
+    event => {
+
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+        const distance =
+            touchEndX - touchStartX;
+
+        if(Math.abs(distance) < 50)
+            return;
+
+        if(distance < 0){
+
+            nextScene();
+
+        }else{
+
+            previousScene();
+
+        }
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+/* =========================================================
+   22. OPENING CAMERA PARALLAX
+   ========================================================= */
+
+document.addEventListener(
+    "pointermove",
+    event => {
+
+        if(openingFinished) return;
+
+        const x =
+            (event.clientX / window.innerWidth)
+            - .5;
+
+        const y =
+            (event.clientY / window.innerHeight)
+            - .5;
+
+        openingCamera.style.transform =
+            `
+            translate3d(
+                ${x * -18}px,
+                ${y * -12}px,
+                0
+            )
+            rotateY(${x * 2}deg)
+            rotateX(${y * -2}deg)
+            `;
+
+    }
+);
+
+
+/* =========================================================
+   23. INITIAL STATE
+   ========================================================= */
+
+scenes.forEach(scene => {
+
+    scene.classList.remove(
+        "active",
+        "outgoing"
+    );
+
+});
+
+
+/* =========================================================
+   24. LOADING
+   ========================================================= */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        setTimeout(() => {
+
+            loading.classList.add(
+                "hidden"
+            );
+
+            startOpening();
+
+        },800);
+
+    }
+);
+
+
+/* =========================================================
+   25. AUTO RESTART
+   ========================================================= */
+
+/*
+   Setelah scene terakhir selesai,
+   kembali ke scene pertama.
+*/
+
+setInterval(() => {
+
+    if(
+        openingFinished &&
+        isPlaying &&
+        currentScene === scenes.length - 1
+    ){
+
+        const duration =
+            Number(
+                scenes[currentScene]
+                    .dataset.duration
+            ) || 10000;
+
+        const elapsed =
+            performance.now() - sceneStart;
+
+        if(elapsed >= duration){
+
+            showScene(0);
+
+        }
+
+    }
+
+},1000);
+
+
 </script>
 
-
 </body>
-
 </html>
