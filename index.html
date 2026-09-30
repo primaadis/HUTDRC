@@ -1,0 +1,3369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+
+<title>
+DRC CC 121 Inbound Bandung — 10th Anniversary
+</title>
+
+<!-- =====================================================
+     GOOGLE FONTS
+     ===================================================== -->
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet">
+
+
+<!-- =====================================================
+     CSS
+     ===================================================== -->
+
+<style>
+
+/* =====================================================
+   RESET
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #07111f;
+
+    font-family: "DM Sans", sans-serif;
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   MAIN APP
+   ===================================================== */
+
+#app {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(45, 83, 115, .25),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            145deg,
+            #050b14,
+            #091827 55%,
+            #050a12
+        );
+}
+
+
+/* =====================================================
+   SCENE CONTAINER
+   ===================================================== */
+
+#scenes {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   SCENE
+   ===================================================== */
+
+.scene {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.04);
+
+    transition:
+        opacity 1s ease,
+        transform 1.2s ease,
+        visibility 1s ease;
+}
+
+
+.scene.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+/* =====================================================
+   CONTENT
+   ===================================================== */
+
+.content {
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    text-align: center;
+
+    margin: auto;
+}
+
+
+/* =====================================================
+   COLORS
+   ===================================================== */
+
+:root {
+
+    --navy:
+        #07111f;
+
+    --navy2:
+        #0c1d30;
+
+    --gold:
+        #e4c783;
+
+    --gold-light:
+        #f6e7b5;
+
+    --teal:
+        #6fa783;
+
+    --white:
+        #ffffff;
+
+    --muted:
+        rgba(255,255,255,.62);
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .scene {
+
+        padding:
+            25px 18px;
+
+    }
+
+    .content {
+
+        max-width:
+            100%;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .scene {
+
+        padding:
+            20px 14px;
+
+    }
+
+}
+/* =====================================================
+   PART 2/10
+   BACKGROUND CINEMATIC
+   ===================================================== */
+
+
+/* =====================================================
+   AMBIENT LIGHT
+   ===================================================== */
+
+.ambient {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(5px);
+
+    opacity: .45;
+}
+
+
+.ambient.gold {
+    width: 420px;
+    height: 420px;
+
+    left: -180px;
+    top: -180px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(228,199,131,.22),
+            transparent 70%
+        );
+
+    animation:
+        ambientGold 9s ease-in-out infinite;
+}
+
+
+.ambient.blue {
+    width: 500px;
+    height: 500px;
+
+    right: -230px;
+    bottom: -230px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(57,112,160,.20),
+            transparent 70%
+        );
+
+    animation:
+        ambientBlue 11s ease-in-out infinite;
+}
+
+
+@keyframes ambientGold {
+
+    0%,100% {
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(70px,50px)
+            scale(1.15);
+    }
+
+}
+
+
+@keyframes ambientBlue {
+
+    0%,100% {
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-60px,-50px)
+            scale(1.2);
+    }
+
+}
+
+
+/* =====================================================
+   CENTER GLOW
+   ===================================================== */
+
+.center-glow {
+
+    position: absolute;
+
+    width: 70vw;
+    height: 70vw;
+
+    max-width: 800px;
+    max-height: 800px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(228,199,131,.055),
+            transparent 65%
+        );
+
+    pointer-events: none;
+
+    animation:
+        centerGlow 6s ease-in-out infinite;
+}
+
+
+@keyframes centerGlow {
+
+    0%,100% {
+        opacity: .5;
+        transform:
+            translate(-50%,-50%)
+            scale(.95);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%,-50%)
+            scale(1.08);
+    }
+
+}
+
+
+/* =====================================================
+   PARTICLE FIELD
+   ===================================================== */
+
+#particles {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+.particle {
+
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.55);
+
+    box-shadow:
+        0 0 8px
+        rgba(255,255,255,.35);
+
+    animation:
+        particleFloat
+        var(--duration)
+        linear
+        infinite;
+
+    animation-delay:
+        var(--delay);
+
+    opacity: 0;
+}
+
+
+@keyframes particleFloat {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(.5);
+
+    }
+
+    15% {
+
+        opacity: .7;
+
+    }
+
+    70% {
+
+        opacity: .35;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(-110vh)
+            scale(1.2);
+
+    }
+
+}
+
+
+/* =====================================================
+   TOP & BOTTOM DECORATIVE LINES
+   ===================================================== */
+
+.decor-line {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    height: 1px;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(228,199,131,.25),
+            transparent
+        );
+}
+
+
+.decor-line.top {
+
+    top: 14%;
+
+}
+
+
+.decor-line.bottom {
+
+    bottom: 14%;
+
+}
+
+
+/* =====================================================
+   MOVING LIGHT
+   ===================================================== */
+
+.scan-light {
+
+    position: absolute;
+
+    top: 0;
+
+    left: -20%;
+
+    width: 20%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.025),
+            transparent
+        );
+
+    transform:
+        skewX(-15deg);
+
+    animation:
+        scanLight 9s linear infinite;
+
+}
+
+
+@keyframes scanLight {
+
+    0% {
+
+        left: -25%;
+
+    }
+
+    100% {
+
+        left: 125%;
+
+    }
+
+}
+
+
+/* =====================================================
+   VIGNETTE
+   ===================================================== */
+
+.vignette {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 3;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 45%,
+            rgba(0,0,0,.32) 100%
+        );
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width:600px) {
+
+    .ambient.gold {
+
+        width: 300px;
+        height: 300px;
+
+    }
+
+    .ambient.blue {
+
+        width: 340px;
+        height: 340px;
+
+    }
+
+    .center-glow {
+
+        width: 100vw;
+        height: 100vw;
+
+    }
+
+}
+  /* =====================================================
+   PART 3/10
+   TYPOGRAPHY & VISUAL COMPONENTS
+   ===================================================== */
+
+
+/* =====================================================
+   EYEBROW / SMALL LABEL
+   ===================================================== */
+
+.eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding:
+        8px 15px;
+
+    border:
+        1px solid
+        rgba(228,199,131,.30);
+
+    border-radius:
+        100px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    color:
+        var(--gold);
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        3px;
+
+    text-transform:
+        uppercase;
+
+    backdrop-filter:
+        blur(10px);
+
+    animation:
+        eyebrowFloat
+        4s ease-in-out infinite;
+
+}
+
+
+.eyebrow::before {
+
+    content: "";
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background:
+        var(--teal);
+
+    box-shadow:
+        0 0 10px
+        var(--teal);
+
+}
+
+
+@keyframes eyebrowFloat {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-4px);
+    }
+
+}
+
+
+/* =====================================================
+   MAIN TITLE
+   ===================================================== */
+
+.title {
+
+    margin-top:
+        24px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(42px, 9vw, 105px);
+
+    line-height:
+        .90;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -5px;
+
+    color:
+        var(--white);
+
+    text-shadow:
+        0 10px 50px
+        rgba(0,0,0,.25);
+
+    animation:
+        titleReveal
+        1.2s
+        cubic-bezier(.16,1,.3,1);
+
+}
+
+
+.title .gold {
+
+    color:
+        var(--gold);
+
+    background:
+        linear-gradient(
+            110deg,
+            #b89248,
+            #f8e8b2,
+            #d5b565,
+            #fff1bd,
+            #b89248
+        );
+
+    background-size:
+        250% auto;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+    animation:
+        goldShine
+        5s
+        linear
+        infinite;
+
+}
+
+
+@keyframes goldShine {
+
+    0% {
+        background-position:
+            0% center;
+    }
+
+    100% {
+        background-position:
+            250% center;
+    }
+
+}
+
+
+@keyframes titleReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(45px)
+            scale(.94);
+
+        filter:
+            blur(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBTITLE
+   ===================================================== */
+
+.subtitle {
+
+    max-width:
+        720px;
+
+    margin:
+        25px auto 0;
+
+    font-size:
+        clamp(14px, 2.2vw, 19px);
+
+    line-height:
+        1.75;
+
+    font-weight:
+        400;
+
+    color:
+        var(--muted);
+
+    animation:
+        subtitleReveal
+        1.2s
+        .25s
+        both;
+
+}
+
+
+@keyframes subtitleReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   CINEMATIC LINE
+   ===================================================== */
+
+.cinematic-line {
+
+    position:
+        relative;
+
+    width:
+        min(500px, 80%);
+
+    height:
+        1px;
+
+    margin:
+        32px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(228,199,131,.75),
+            transparent
+        );
+
+}
+
+
+.cinematic-line::after {
+
+    content: "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:
+        50%;
+
+    background:
+        var(--gold);
+
+    box-shadow:
+        0 0 12px
+        var(--gold),
+        0 0 25px
+        rgba(228,199,131,.5);
+
+}
+
+
+/* =====================================================
+   BIG NUMBER
+   ===================================================== */
+
+.big-number {
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(130px, 30vw, 350px);
+
+    line-height:
+        .75;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -15px;
+
+    color:
+        transparent;
+
+    -webkit-text-stroke:
+        2px
+        rgba(228,199,131,.72);
+
+    text-shadow:
+        0 0 80px
+        rgba(228,199,131,.12);
+
+    animation:
+        numberReveal
+        1.5s
+        cubic-bezier(.16,1,.3,1);
+
+}
+
+
+@keyframes numberReveal {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            scale(.55);
+
+        filter:
+            blur(20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1);
+
+        filter:
+            blur(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   YEARS
+   ===================================================== */
+
+.years {
+
+    margin-top:
+        32px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(18px, 4vw, 35px);
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        7px;
+
+    color:
+        #ffffff;
+
+}
+
+
+.years span {
+
+    color:
+        var(--gold);
+
+}
+
+
+/* =====================================================
+   QUOTE
+   ===================================================== */
+
+.quote {
+
+    max-width:
+        900px;
+
+    margin:
+        20px auto 0;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(27px, 5vw, 58px);
+
+    line-height:
+        1.12;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        -2px;
+
+    color:
+        #ffffff;
+
+}
+
+
+.quote em {
+
+    color:
+        var(--gold);
+
+    font-style:
+        normal;
+
+}
+
+
+/* =====================================================
+   HUMOR CARD
+   ===================================================== */
+
+.humor-card {
+
+    width:
+        min(650px, 100%);
+
+    margin:
+        30px auto 0;
+
+    padding:
+        28px 25px;
+
+    border-radius:
+        24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.28);
+
+    backdrop-filter:
+        blur(15px);
+
+    animation:
+        cardFloat
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+.humor-small {
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        3px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        var(--teal);
+
+}
+
+
+.humor-question {
+
+    margin-top:
+        13px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(20px, 4vw, 34px);
+
+    font-weight:
+        800;
+
+    color:
+        #ffffff;
+
+}
+
+
+.humor-answer {
+
+    margin-top:
+        12px;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.7;
+
+    color:
+        var(--muted);
+
+}
+
+
+@keyframes cardFloat {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-7px);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width:600px) {
+
+    .title {
+
+        letter-spacing:
+            -3px;
+
+    }
+
+    .big-number {
+
+        letter-spacing:
+            -8px;
+
+        -webkit-text-stroke:
+            1.5px
+            rgba(228,199,131,.72);
+
+    }
+
+    .years {
+
+        letter-spacing:
+            4px;
+
+    }
+
+    .quote {
+
+        letter-spacing:
+            -1px;
+
+    }
+
+    .humor-card {
+
+        padding:
+            23px 18px;
+
+    }
+
+  }
+  <!-- =====================================================
+     PART 4/10
+     HTML STRUCTURE + OPENING + 10 YEARS
+     ===================================================== -->
+
+</style>
+
+</head>
+
+
+<body>
+
+<div id="app">
+
+    <!-- =================================================
+         CINEMATIC BACKGROUND
+         ================================================= -->
+
+    <div class="ambient gold"></div>
+
+    <div class="ambient blue"></div>
+
+    <div class="center-glow"></div>
+
+    <div id="particles"></div>
+
+    <div class="decor-line top"></div>
+
+    <div class="decor-line bottom"></div>
+
+    <div class="scan-light"></div>
+
+    <div class="vignette"></div>
+
+
+    <!-- =================================================
+         ALL SCENES
+         ================================================= -->
+
+    <main id="scenes">
+
+
+        <!-- =============================================
+             SCENE 1
+             OPENING
+             ============================================= -->
+
+        <section
+            class="scene active"
+            id="scene1"
+        >
+
+            <div class="content">
+
+                <div class="eyebrow">
+                    DRC CC 121
+                </div>
+
+
+                <h1 class="title">
+
+                    INBOUND
+
+                    <br>
+
+                    <span class="gold">
+                        BANDUNG
+                    </span>
+
+                </h1>
+
+
+                <div class="cinematic-line"></div>
+
+
+                <p class="subtitle">
+
+                    Sepuluh tahun bukan sekadar angka.
+
+                    <br>
+
+                    Ini adalah perjalanan,
+                    cerita,
+                    dan orang-orang
+                    yang membuat setiap panggilan
+                    tetap berarti.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =============================================
+             SCENE 2
+             10 YEARS
+             ============================================= -->
+
+        <section
+            class="scene"
+            id="scene2"
+        >
+
+            <div class="content">
+
+                <div class="eyebrow">
+                    ONE DECADE
+                </div>
+
+
+                <div class="big-number">
+                    10
+                </div>
+
+
+                <div class="years">
+
+                    YEARS OF
+
+                    <span>
+                        CONNECTION
+                    </span>
+
+                </div>
+
+
+                <div class="cinematic-line"></div>
+
+
+                <p class="subtitle">
+
+                    10 tahun menemani perjalanan pelanggan.
+
+                    <br>
+
+                    10 tahun menjawab pertanyaan
+                    yang sama...
+
+                    <br>
+
+                    dan pertanyaan
+                    yang sama sekali tidak terduga.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =================================================
+         PART 5 AKAN DITEMPELKAN DI SINI
+         ================================================= -->
+  <!-- =====================================================
+     PART 5/10
+     SCENE 3 — HUMOR
+     SCENE 4 — THE JOURNEY
+     ================================================= -->
+
+
+<!-- =====================================================
+     SCENE 3
+     HUMOR
+     ===================================================== -->
+
+<section
+    class="scene"
+    id="scene3"
+>
+
+    <div class="content">
+
+        <div class="eyebrow">
+            THE REAL JOURNEY
+        </div>
+
+
+        <h2 class="quote">
+
+            “10 tahun kemudian...”
+
+            <br>
+
+            masih dengar
+
+            <em>
+                “SELAMAT PAGI”
+            </em>
+
+            setiap hari?
+
+        </h2>
+
+
+        <div class="humor-card">
+
+            <div class="humor-small">
+                Jawabannya...
+            </div>
+
+
+            <div class="humor-question">
+
+                Tentu saja. 😌
+
+            </div>
+
+
+            <div class="humor-answer">
+
+                Karena perjalanan belum selesai.
+
+                <br><br>
+
+                Selama masih ada pelanggan yang menelepon,
+                selalu ada cerita baru untuk dijawab.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCENE 4
+     THE JOURNEY
+     ===================================================== -->
+
+<section
+    class="scene"
+    id="scene4"
+>
+
+    <div class="content">
+
+        <div class="eyebrow">
+            MORE THAN A CALL
+        </div>
+
+
+        <h2 class="quote">
+
+            Dari satu panggilan
+
+            <br>
+
+            menjadi
+
+            <em>
+                sejuta cerita.
+            </em>
+
+        </h2>
+
+
+        <div class="cinematic-line"></div>
+
+
+        <p class="subtitle">
+
+            Di balik setiap panggilan ada kebutuhan.
+
+            <br>
+
+            Ada pertanyaan,
+            keluhan,
+            informasi,
+
+            <br>
+
+            bahkan terkadang
+            cerita kehidupan.
+
+            <br><br>
+
+            Dan di ujung telepon,
+            selalu ada seseorang
+            yang siap mendengarkan.
+
+        </p>
+
+    </div>
+
+</section>
+<!-- =====================================================
+     PART 6/10
+     SCENE 5 — TIMELINE
+     SCENE 6 — STATISTICS
+     ===================================================== -->
+
+
+<!-- =====================================================
+     SCENE 5
+     TIMELINE
+     ===================================================== -->
+
+<section
+    class="scene"
+    id="scene5"
+>
+
+    <div class="content">
+
+        <div class="eyebrow">
+            A DECADE IN MOTION
+        </div>
+
+
+        <h2
+            class="title"
+            style="
+                font-size:clamp(38px,7vw,76px);
+                letter-spacing:-3px;
+            "
+        >
+
+            10 TAHUN
+
+            <br>
+
+            <span class="gold">
+                SATU PERJALANAN
+            </span>
+
+        </h2>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-year">
+                    2016
+                </div>
+
+                <div class="timeline-text">
+
+                    Awal perjalanan
+                    DRC CC 121
+                    Inbound Bandung.
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-year">
+                    2019
+                </div>
+
+                <div class="timeline-text">
+
+                    Terus berkembang,
+                    terus belajar,
+                    terus melayani.
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-year">
+                    2022
+                </div>
+
+                <div class="timeline-text">
+
+                    Beradaptasi dengan
+                    perubahan dan
+                    tantangan baru.
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-year">
+                    2026
+                </div>
+
+                <div class="timeline-text">
+
+                    Satu dekade perjalanan
+                    dan masih terus melaju.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p class="subtitle">
+
+            Empat tahun mungkin terasa singkat.
+
+            <br>
+
+            Tapi sepuluh tahun menyimpan
+            begitu banyak cerita.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCENE 6
+     STATISTICS
+     ===================================================== -->
+
+<section
+    class="scene"
+    id="scene6"
+>
+
+    <div class="content">
+
+        <div class="eyebrow">
+            BEHIND THE NUMBERS
+        </div>
+
+
+        <h2 class="quote">
+
+            Angka boleh dihitung.
+
+            <br>
+
+            <em>
+                Dedikasi tidak.
+            </em>
+
+        </h2>
+
+
+        <div class="stats">
+
+
+            <!-- STAT 1 -->
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    10
+                </div>
+
+                <div class="stat-label">
+                    Tahun Perjalanan
+                </div>
+
+            </div>
+
+
+            <!-- STAT 2 -->
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    24/7
+                </div>
+
+                <div class="stat-label">
+                    Selalu Terhubung
+                </div>
+
+            </div>
+
+
+            <!-- STAT 3 -->
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    ∞
+                </div>
+
+                <div class="stat-label">
+                    Cerita & Pengalaman
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <p class="subtitle">
+
+            Bukan sekadar angka di layar.
+
+            <br>
+
+            Setiap angka mewakili
+            waktu, tenaga,
+            kerja sama,
+            dan dedikasi.
+
+        </p>
+
+    </div>
+
+</section>
+<!-- =====================================================
+     PART 7/10
+     SCENE 7 — PEOPLE
+     SCENE 8 — FUNNY CALLBACK
+     SCENE 9 — THANK YOU
+     ===================================================== -->
+
+
+<!-- =====================================================
+     SCENE 7
+     THE PEOPLE BEHIND EVERY CALL
+     ===================================================== -->
+
+<section
+    class="scene"
+    id="scene7"
+>
+
+    <div class="content">
+
+        <div class="eyebrow">
+            THE PEOPLE BEHIND EVERY CALL
+        </div>
+
+
+        <h2 class="quote">
+
+            Karena di balik
+
+            <br>
+
+            setiap
+
+            <em>
+                panggilan,
+            </em>
+
+            <br>
+
+            ada manusia.
+
+        </h2>
+
+
+        <div class="people">
+
+            <div class="person">
+                🎧 Agent
+            </div>
+
+            <div class="person">
+                💻 Support
+            </div>
+
+            <div class="person">
+                🚆 Operations
+            </div>
+
+            <div class="person">
+                🤝 Teamwork
+            </div>
+
+            <div class="person">
+                ❤️ Dedication
+            </div>
+
+        </div>
+
+
+        <p class="subtitle">
+
+            Mereka yang datang bekerja,
+            menjawab panggilan,
+            menyelesaikan masalah,
+
+            <br>
+
+            dan memastikan perjalanan pelanggan
+            tetap berjalan.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCENE 8
+     FUNNY CALLBACK
+     ===================================================== -->
+
+<section
+    class="scene"
+    id="scene8"
+>
+
+    <div class="content">
+
+        <div class="eyebrow">
+            AFTER 10 YEARS
+        </div>
+
+
+        <h2 class="quote">
+
+            Headset masih dipakai.
+
+            <br>
+
+            Telepon masih berbunyi.
+
+            <br>
+
+            Dan kalimatnya...
+
+        </h2>
+
+
+        <div class="humor-card">
+
+            <div class="humor-small">
+                THE FAMILIAR LINE
+            </div>
+
+
+            <div class="humor-question">
+
+                “Ada yang bisa kami bantu?”
+
+            </div>
+
+
+            <div class="humor-answer">
+
+                Spoiler:
+
+                <br>
+
+                <strong
+                    style="
+                        color:var(--gold);
+                        font-size:22px;
+                    "
+                >
+                    Masih. 😌
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCENE 9
+     THANK YOU
+     ===================================================== -->
+
+<section
+    class="scene"
+    id="scene9"
+>
+
+    <div class="content">
+
+        <div class="eyebrow">
+            THANK YOU
+        </div>
+
+
+        <h2 class="quote">
+
+            Untuk setiap suara
+            yang pernah menjawab,
+
+            <br>
+
+            setiap tangan
+            yang pernah membantu,
+
+            <br>
+
+            dan setiap orang
+            yang terus
+
+            <em>
+                bertahan.
+            </em>
+
+        </h2>
+
+
+        <div class="cinematic-line"></div>
+
+
+        <p class="subtitle">
+
+            Terima kasih telah menjadi bagian
+            dari perjalanan ini.
+
+            <br><br>
+
+            Karena perjalanan sepuluh tahun
+            tidak pernah dibangun oleh satu orang.
+
+        </p>
+
+    </div>
+
+</section>
+<!-- =====================================================
+     PART 8/10
+     SCENE 10 — CLOSING CINEMATIC
+     SCENE 11 — FINAL MESSAGE
+     CONTROL PANEL
+     ===================================================== -->
+
+
+<!-- =====================================================
+     SCENE 10
+     CLOSING CINEMATIC
+     ===================================================== -->
+
+<section
+    class="scene"
+    id="scene10"
+>
+
+    <div class="content">
+
+        <div class="eyebrow">
+            DRC CC 121 INBOUND BANDUNG
+        </div>
+
+
+        <div class="final-title">
+
+            <span>
+                10 YEARS
+            </span>
+
+            <strong>
+                STILL MOVING
+            </strong>
+
+            <span>
+                FORWARD
+            </span>
+
+        </div>
+
+
+        <div class="cinematic-line"></div>
+
+
+        <div class="final-subtitle">
+
+            ONE DECADE.
+            ONE JOURNEY.
+            COUNTLESS STORIES.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCENE 11
+     FINAL MESSAGE
+     ===================================================== -->
+
+<section
+    class="scene"
+    id="scene11"
+>
+
+    <div class="content">
+
+        <div class="eyebrow">
+            2016 — 2026
+        </div>
+
+
+        <div class="big-number">
+            10
+        </div>
+
+
+        <div class="years">
+
+            DRC CC 121
+
+            <span>
+                INBOUND BANDUNG
+            </span>
+
+        </div>
+
+
+        <div class="cinematic-line"></div>
+
+
+        <p class="subtitle">
+
+            HAPPY 10TH ANNIVERSARY
+
+        </p>
+
+
+        <p
+            style="
+                margin-top:18px;
+                font-size:12px;
+                letter-spacing:3px;
+                text-transform:uppercase;
+                color:rgba(255,255,255,.38);
+            "
+        >
+
+            STILL CONNECTED.
+            STILL MOVING.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTROL PANEL
+     ===================================================== -->
+
+<div id="controls">
+
+
+    <!-- PLAY / PAUSE -->
+
+    <button
+        class="control-btn"
+        id="playBtn"
+        type="button"
+        aria-label="Play atau Pause"
+    >
+        ▶
+    </button>
+
+
+    <!-- REPLAY -->
+
+    <button
+        class="control-btn"
+        id="replayBtn"
+        type="button"
+        aria-label="Ulangi"
+    >
+        ↻
+    </button>
+
+
+    <!-- SOUND -->
+
+    <button
+        class="control-btn"
+        id="soundBtn"
+        type="button"
+        aria-label="Sound"
+    >
+        🔊
+    </button>
+
+
+    <!-- FULLSCREEN -->
+
+    <button
+        class="control-btn"
+        id="fullscreenBtn"
+        type="button"
+        aria-label="Fullscreen"
+    >
+        ⛶
+    </button>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     PROGRESS INDICATOR
+     ===================================================== -->
+
+<div id="progress">
+
+    <div id="progressBar"></div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SCENE COUNTER
+     ===================================================== -->
+
+<div id="sceneCounter">
+
+    <span id="currentScene">
+        01
+    </span>
+
+    <span class="counterLine">
+        /
+    </span>
+
+    <span>
+        11
+    </span>
+
+</div>
+<!-- =====================================================
+     PART 9/10
+     CONTROL CSS + JAVASCRIPT ENGINE
+     ===================================================== -->
+
+
+<style>
+
+/* =====================================================
+   FINAL TITLE
+   ===================================================== */
+
+.final-title {
+
+    margin-top: 28px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(42px, 8vw, 100px);
+
+    line-height:
+        .92;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -5px;
+
+    color:
+        #ffffff;
+
+}
+
+
+.final-title strong {
+
+    display:
+        block;
+
+    color:
+        var(--gold);
+
+    text-shadow:
+        0 0 60px
+        rgba(228,199,131,.25);
+
+}
+
+
+/* =====================================================
+   FINAL SUBTITLE
+   ===================================================== */
+
+.final-subtitle {
+
+    font-size:
+        clamp(11px, 2vw, 17px);
+
+    letter-spacing:
+        4px;
+
+    color:
+        rgba(255,255,255,.48);
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* =====================================================
+   TIMELINE
+   ===================================================== */
+
+.timeline {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        14px;
+
+    margin-top:
+        38px;
+
+}
+
+
+.timeline-item {
+
+    padding:
+        22px 15px;
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.timeline-item:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(228,199,131,.35);
+
+    background:
+        rgba(228,199,131,.06);
+
+}
+
+
+.timeline-year {
+
+    font-size:
+        25px;
+
+    font-weight:
+        900;
+
+    color:
+        var(--gold);
+
+}
+
+
+.timeline-text {
+
+    margin-top:
+        8px;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.55;
+
+    color:
+        rgba(255,255,255,.55);
+
+}
+
+
+/* =====================================================
+   STATISTICS
+   ===================================================== */
+
+.stats {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        16px;
+
+    width:
+        min(800px,100%);
+
+    margin:
+        40px auto 0;
+
+}
+
+
+.stat {
+
+    padding:
+        25px 15px;
+
+    border-radius:
+        20px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+.stat-number {
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(38px,6vw,60px);
+
+    font-weight:
+        900;
+
+    color:
+        var(--gold);
+
+}
+
+
+.stat-label {
+
+    margin-top:
+        5px;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        rgba(255,255,255,.48);
+
+}
+
+
+/* =====================================================
+   PEOPLE
+   ===================================================== */
+
+.people {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px;
+
+    margin-top:
+        30px;
+
+}
+
+
+.person {
+
+    padding:
+        10px 15px;
+
+    border-radius:
+        100px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    font-size:
+        12px;
+
+    color:
+        rgba(255,255,255,.72);
+
+}
+
+
+/* =====================================================
+   CONTROL PANEL
+   ===================================================== */
+
+#controls {
+
+    position:
+        fixed;
+
+    z-index:
+        100;
+
+    left:
+        50%;
+
+    bottom:
+        25px;
+
+    transform:
+        translateX(-50%);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        8px;
+
+    border-radius:
+        100px;
+
+    background:
+        rgba(5,12,22,.72);
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 10px 40px
+        rgba(0,0,0,.35);
+
+}
+
+
+/* =====================================================
+   CONTROL BUTTON
+   ===================================================== */
+
+.control-btn {
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+    border:
+        none;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,255,255,.07);
+
+    color:
+        #ffffff;
+
+    font-size:
+        15px;
+
+    cursor:
+        pointer;
+
+    transition:
+        .25s ease;
+
+}
+
+
+.control-btn:hover {
+
+    background:
+        rgba(228,199,131,.18);
+
+    color:
+        var(--gold);
+
+    transform:
+        scale(1.08);
+
+}
+
+
+.control-btn:active {
+
+    transform:
+        scale(.92);
+
+}
+
+
+/* =====================================================
+   PROGRESS
+   ===================================================== */
+
+#progress {
+
+    position:
+        fixed;
+
+    z-index:
+        101;
+
+    left:
+        20px;
+
+    right:
+        20px;
+
+    bottom:
+        16px;
+
+    height:
+        2px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    border-radius:
+        10px;
+
+}
+
+
+#progressBar {
+
+    width:
+        0%;
+
+    height:
+        100%;
+
+    border-radius:
+        inherit;
+
+    background:
+        var(--gold);
+
+    box-shadow:
+        0 0 10px
+        rgba(228,199,131,.5);
+
+}
+
+
+/* =====================================================
+   SCENE COUNTER
+   ===================================================== */
+
+#sceneCounter {
+
+    position:
+        fixed;
+
+    z-index:
+        100;
+
+    top:
+        25px;
+
+    right:
+        25px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        2px;
+
+    color:
+        rgba(255,255,255,.4);
+
+}
+
+
+#currentScene {
+
+    color:
+        var(--gold);
+
+    font-weight:
+        800;
+
+}
+
+
+.counterLine {
+
+    margin:
+        0 5px;
+
+    color:
+        rgba(255,255,255,.2);
+
+}
+
+
+/* =====================================================
+   MOBILE CONTROL
+   ===================================================== */
+
+@media (max-width:600px) {
+
+    #controls {
+
+        bottom:
+            28px;
+
+    }
+
+    .control-btn {
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+    }
+
+    #sceneCounter {
+
+        top:
+            18px;
+
+        right:
+            18px;
+
+    }
+
+    #progress {
+
+        left:
+            15px;
+
+        right:
+            15px;
+
+        bottom:
+            18px;
+
+    }
+
+    .timeline {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .stats {
+
+        grid-template-columns:
+            1fr;
+
+        max-width:
+            300px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONE
+   ===================================================== */
+
+@media (max-width:380px) {
+
+    #controls {
+
+        gap:
+            5px;
+
+        padding:
+            6px;
+
+    }
+
+    .control-btn {
+
+        width:
+            35px;
+
+        height:
+            35px;
+
+        font-size:
+            13px;
+
+    }
+
+}
+
+
+/* =====================================================
+   JAVASCRIPT ENGINE
+   ===================================================== */
+
+</style>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* =============================================
+           ELEMENTS
+           ============================================= */
+
+        const scenes =
+            document.querySelectorAll(".scene");
+
+        const playBtn =
+            document.getElementById("playBtn");
+
+        const replayBtn =
+            document.getElementById("replayBtn");
+
+        const soundBtn =
+            document.getElementById("soundBtn");
+
+        const fullscreenBtn =
+            document.getElementById("fullscreenBtn");
+
+        const progressBar =
+            document.getElementById("progressBar");
+
+        const currentScene =
+            document.getElementById("currentScene");
+
+
+        /* =============================================
+           MUSIC
+           ============================================= */
+
+        const music =
+            new Audio("music.mp3");
+
+        music.loop = true;
+
+        music.volume = 0.45;
+
+
+        /* =============================================
+           SETTINGS
+           ============================================= */
+
+        const SCENE_DURATION =
+            7000;
+
+        let currentIndex =
+            0;
+
+        let isPlaying =
+            true;
+
+        let soundOn =
+            true;
+
+        let timer =
+            null;
+
+        let progressTimer =
+            null;
+
+        let sceneStart =
+            0;
+
+
+        /* =============================================
+           SHOW SCENE
+           ============================================= */
+
+        function showScene(index) {
+
+            scenes.forEach(
+                function(scene, i) {
+
+                    scene.classList.toggle(
+                        "active",
+                        i === index
+                    );
+
+                }
+            );
+
+
+            currentIndex =
+                index;
+
+
+            currentScene.textContent =
+                String(index + 1)
+                    .padStart(2, "0");
+
+
+            resetProgress();
+
+        }
+
+
+        /* =============================================
+           NEXT SCENE
+           ============================================= */
+
+        function nextScene() {
+
+            let next =
+                currentIndex + 1;
+
+
+            if (next >= scenes.length) {
+
+                next = 0;
+
+            }
+
+
+            showScene(next);
+
+        }
+
+
+        /* =============================================
+           PLAY
+           ============================================= */
+
+        function playAnimation() {
+
+            if (isPlaying) {
+                return;
+            }
+
+
+            isPlaying = true;
+
+
+            playBtn.textContent =
+                "❚❚";
+
+
+            sceneStart =
+                Date.now();
+
+
+            timer =
+                setInterval(
+                    nextScene,
+                    SCENE_DURATION
+                );
+
+
+            startProgress();
+
+
+            if (soundOn) {
+
+                music.play()
+                    .catch(
+                        function () {}
+                    );
+
+            }
+
+        }
+
+
+        /* =============================================
+           PAUSE
+           ============================================= */
+
+        function pauseAnimation() {
+
+            isPlaying = false;
+
+
+            playBtn.textContent =
+                "▶";
+
+
+            clearInterval(timer);
+
+            clearInterval(progressTimer);
+
+        }
+
+
+        /* =============================================
+           PLAY / PAUSE BUTTON
+           ============================================= */
+
+        playBtn.addEventListener(
+            "click",
+            function () {
+
+                if (isPlaying) {
+
+                    pauseAnimation();
+
+                } else {
+
+                    playAnimation();
+
+                }
+
+            }
+        );
+
+
+        /* =============================================
+           REPLAY
+           ============================================= */
+
+        replayBtn.addEventListener(
+            "click",
+            function () {
+
+                clearInterval(timer);
+
+                clearInterval(progressTimer);
+
+
+                currentIndex =
+                    0;
+
+
+                showScene(0);
+
+
+                isPlaying =
+                    false;
+
+
+                playBtn.textContent =
+                    "▶";
+
+
+                playAnimation();
+
+            }
+        );
+
+
+        /* =============================================
+           SOUND
+           ============================================= */
+
+        soundBtn.addEventListener(
+            "click",
+            function () {
+
+                soundOn =
+                    !soundOn;
+
+
+                if (soundOn) {
+
+                    soundBtn.textContent =
+                        "🔊";
+
+
+                    music.play()
+                        .catch(
+                            function () {}
+                        );
+
+                } else {
+
+                    soundBtn.textContent =
+                        "🔇";
+
+
+                    music.pause();
+
+                }
+
+            }
+        );
+
+
+        /* =============================================
+           FULLSCREEN
+           ============================================= */
+
+        fullscreenBtn.addEventListener(
+            "click",
+            function () {
+
+                if (!document.fullscreenElement) {
+
+                    document.documentElement
+                        .requestFullscreen()
+                        .catch(
+                            function () {}
+                        );
+
+                } else {
+
+                    document
+                        .exitFullscreen();
+
+                }
+
+            }
+        );
+
+
+        /* =============================================
+           PROGRESS RESET
+           ============================================= */
+
+        function resetProgress() {
+
+            progressBar.style.width =
+                "0%";
+
+
+            sceneStart =
+                Date.now();
+
+        }
+
+
+        /* =============================================
+           PROGRESS ANIMATION
+           ============================================= */
+
+        function startProgress() {
+
+            clearInterval(progressTimer);
+
+
+            progressTimer =
+                setInterval(
+                    function () {
+
+                        if (!isPlaying) {
+                            return;
+                        }
+
+
+                        const elapsed =
+                            Date.now()
+                            - sceneStart;
+
+
+                        let percent =
+                            (elapsed /
+                            SCENE_DURATION)
+                            * 100;
+
+
+                        if (percent > 100) {
+
+                            percent = 100;
+
+                        }
+
+
+                        progressBar.style.width =
+                            percent + "%";
+
+                    },
+                    40
+                );
+
+        }
+
+
+        /* =============================================
+           INITIAL STATE
+           ============================================= */
+
+        showScene(0);
+
+
+        playBtn.textContent =
+            "❚❚";
+
+
+        /*
+         * Jangan langsung memutar musik.
+         * Browser Android biasanya memblokir
+         * autoplay audio sebelum user berinteraksi.
+         */
+
+        isPlaying =
+            false;
+
+
+        /*
+         * Animasi otomatis dimulai setelah
+         * halaman disentuh/diklik.
+         */
+
+        document.addEventListener(
+            "click",
+            function startAfterInteraction() {
+
+                if (!isPlaying) {
+
+                    playAnimation();
+
+                }
+
+                document.removeEventListener(
+                    "click",
+                    startAfterInteraction
+                );
+
+            },
+            { once: true }
+        );
+
+
+    }
+);
+
+      </script>
+      <!-- =====================================================
+     PART 10/10
+     FINAL CLOSING
+     ===================================================== -->
+
+
+<script>
+
+/* =====================================================
+   PREVENT ACCIDENTAL PAGE SCROLL
+   ===================================================== */
+
+document.addEventListener(
+    "touchmove",
+    function(event) {
+
+        if (
+            event.target.closest("#controls")
+        ) {
+            return;
+        }
+
+        event.preventDefault();
+
+    },
+    { passive: false }
+);
+
+
+/* =====================================================
+   KEYBOARD CONTROL
+   ===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        /* SPACE = PLAY / PAUSE */
+
+        if (event.code === "Space") {
+
+            event.preventDefault();
+
+            const button =
+                document.getElementById("playBtn");
+
+            if (button) {
+                button.click();
+            }
+
+        }
+
+
+        /* R = REPLAY */
+
+        if (
+            event.key.toLowerCase() === "r"
+        ) {
+
+            const button =
+                document.getElementById("replayBtn");
+
+            if (button) {
+                button.click();
+            }
+
+        }
+
+
+        /* F = FULLSCREEN */
+
+        if (
+            event.key.toLowerCase() === "f"
+        ) {
+
+            const button =
+                document.getElementById(
+                    "fullscreenBtn"
+                );
+
+            if (button) {
+                button.click();
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+
+<!-- =====================================================
+     CLOSE MAIN APPLICATION
+     ===================================================== -->
+
+</main>
+
+</div>
+
+
+<!-- =====================================================
+     END DOCUMENT
+     ===================================================== -->
+
+</body>
+
+</html>
